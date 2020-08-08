@@ -27,12 +27,12 @@ var wizard = {
 **Null is special Javascript type, it’s an empty Object**
 ```js
 var wizard = {}
-wizard.name = 'Gandalf';  // all good
+wizard.name = 'Gandalf';
 
-var wizard = undefined; // wizard now is NOT an object!
+var wizard = undefined; // wizard is NOT an object anymore
 
 var wizard = null; // wizard is an object but completely empty
-wizard.name = 'Gandalf'; // an error!
+wizard.name = 'Gandalf'; // an error is returned
 ```
 
 -----------------------------------------------------------------------------------------------------------
@@ -41,31 +41,37 @@ wizard.name = 'Gandalf'; // an error!
 
 ---------------------------------------------------------------------------------------------------------
 
-Arguments VS Parameters
-function foo ( username ){}  //username is parameter
-foo(“vova”); //vova is argument
-Function accepts parameters but is run using arguments to match parameters.
+**Arguments VS Parameters**
+```js
+function foo ( username ){}  // username is parameter
+foo('vova'); // vova is an argument
+```
+Function accepts **parameters** but is run using **arguments** to match parameters.
 
 -------------------------------------------------------------------------------------------------------
 
-Expressions end with semicolons, not declarations
-function foo() {  } 	//DECLARATION
-var foo = function(){ }; 	//EXPRESSION (somethign that produces a value)
-if (n == 0){} 	//DECLARATION
+**Expressions end with semicolons, not declarations**
+```js
+function foo() {  } 	// declaration
+var foo = function(){ }; 	// expression (somethign that produces a value)
+if (n == 0){} 	// declaration
+```
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-++a VS a++
+**++a VS a++**
+```js
 var a = 0;
-a++;  //returns 0 (original value)
+a++;  // returns 0 (original value)
 a // returns 1
 var a = 0;
-++a;  //returns 1
-a //returns 1 
+++a;  // returns 1
+a // returns 1 
+```
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-Prefer querySelector over getElementBy, it has css syntax and is more powerful
+Prefer **querySelector** over getElementBy, it has css syntax and is more powerful
 
 ------------------------------------------------------------------------------------------------------------------------------
 
