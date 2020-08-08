@@ -1,35 +1,39 @@
 # Javascript Aha-s
 
-### Array is an Object (key = index ) :
+** Array is an Object (key = index) **
 ```js
-var arr = {
-	0: “monkey”
-	1: “rhino”
-	2: “dog”
-}
-typeof(arr) //returns “object”
+var arr = [
+	0: "hola"
+	1: "hello"
+	2: "privet"
+]
+typeof(arr) //returns "object"
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-Method is a function inside an Object
+** Method is a function inside an Object **
+```js
 var wizard = {
-	name:”Gandalf”
-	shout: function(){
-		return “Frooodo!”
+	name: "Gandalf"
+	excuse: function(){
+		return "Wizard is never late!"
+	}
 }
-}
+```
 
 --------------------------------------------------------------------------------------------------------------
 
-Null is special Javascript type, it’s an EMPTY OBJECT
+** Null is special Javascript type, it’s an EMPTY OBJECT **
+```js
 var wizard = {}
-wizard.name = ‘Gandalf’;  //All good
+wizard.name = 'Gandalf';  //All good
 
 var wizard = undefined; // wizard now is NOT an object!
 
 var wizard = null; //wizard is an object but completely empty
-wizard.name = ‘Gandalf’; //Error!
+wizard.name = 'Gandalf'; //Error!
+```
 
 -----------------------------------------------------------------------------------------------------------
 
