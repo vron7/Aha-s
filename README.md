@@ -29,10 +29,11 @@ var wizard = {
 var wizard = {}
 wizard.name = 'Gandalf';
 
-var wizard = undefined; // wizard is NOT an object anymore
+wizard = undefined; // wizard is NOT an object anymore
 
-var wizard = null; // wizard is an object but completely empty
-wizard.name = 'Gandalf'; // an error is returned
+wizard = null; // wizard is an object but completely empty
+typeof(wizard); // returns "object"
+wizard.name = 'Gandalf'; // returns error
 ```
 
 -----------------------------------------------------------------------------------------------------------
@@ -74,10 +75,11 @@ a // returns 1
 Prefer **querySelector** over getElementBy, it has css syntax and is more powerful
 
 ------------------------------------------------------------------------------------------------------------------------------
-
+```js
 btn.addEventListener("click",handler) - handler is treated as callback
 
 <button onclick=”handler()”></button> - handler is string treated as JS expression
+```
 
 For example can be: onclick=”handler();alert(77);”
 
@@ -88,16 +90,20 @@ React - is declarative
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-Ternary operator (use when 1 check and 2 possible outcomes)
+**Ternary operator** (use when 1 check and 2 possible outcomes)
+```js
 condition ? expr1 : expr2; (Is this condition true/false?, if true then expr1 else expr2)
-var mood = isTodayFriday() ? “super” : “not good”
+var mood = isTodayFriday() ? 'super' : 'not good'
+```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Babel - js compiler, which takes in newest ES code and compiles into regular javascript for all browsers. 
+**Babel** - js compiler, which takes in newest ES code and compiles into regular javascript for all browsers.
+Idea here is to write the latest js syntax so that developers have similar understanding of code.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-let vs var
+**let vs var**
+```js
 var level = false;
 let level1 = false; 
 If (true){
@@ -106,18 +112,20 @@ If (true){
 }
 console.log(level); // true
 console.log(level1); // false
+```
 
 Anytime let is wrapped with curly brackets (block), it creates a new scope(block scope), just like var inside a function
-
+```js
 let player = yes;
 let player = false;  // Returns an error! Already decleared!
+```
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-const (wannabe constant)
-const player = { name: “Tim” };
-player = {}; //Returns error, cannot be reassigned
-player.name = “bob”; //No error, allowed
+**const** (wannabe constant)
+const player = { name: 'Tim' };
+player = {}; // returns error, cannot be reassigned
+player.name = 'Bob'; // no error, allowed
 
 -------------------------------------------------------------------------------------------------------------------------------
 
