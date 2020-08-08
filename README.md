@@ -44,7 +44,7 @@ wizard.name = 'Gandalf'; // returns error
 
 **Arguments VS Parameters**
 ```js
-function foo ( username ){}  // username is parameter
+function foo ( username ){}  // username is a parameter
 foo('vova'); // vova is an argument
 ```
 Function accepts **parameters** but is run using **arguments** to match parameters.
@@ -92,8 +92,8 @@ React - is declarative
 
 **Ternary operator** (use when 1 check and 2 possible outcomes)
 ```js
-condition ? expr1 : expr2; (Is this condition true/false?, if true then expr1 else expr2)
-var mood = isTodayFriday() ? 'super' : 'not good'
+condition ? expr1 : expr2; //(Is this condition true/false?, if true then expr1 else expr2)
+var mood = isTodayFriday() ? 'super' : 'not bad either'
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
