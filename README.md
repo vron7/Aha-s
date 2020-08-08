@@ -1,14 +1,13 @@
-# Aha-s
-Javascript Aha-s
+# Javascript Aha-s
 
-**Array is an Object (key = index ) :**
+### Array is an Object (key = index ) :
 ```js
 var arr = {
 	0: “monkey”
 	1: “rhino”
 	2: “dog”
 }
-typeof(arr) returns “object”
+typeof(arr) //returns “object”
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
