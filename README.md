@@ -84,7 +84,7 @@ For example can be: *onclick="handler();alert(77);"*
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-jQuery - was good when it came, now deprecated, is imperative
+jQuery - was good when it came, now deprecated, is imperative  
 React - is declarative
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -208,7 +208,7 @@ var r = { n: ( ) => { console.log(this) } } 	  // this returns Window, arrow fun
 
 ---
 
-**map, reduce, filter vs forEach**
+**map, reduce, filter vs forEach**  
 Map, reduce and filter are pure functions, they all expect a return, forEach does not.
 ```js
 const arr = [1, 4, 6];
@@ -240,7 +240,8 @@ mult2(6); //returns 12
 ```
 ---
 
-**Closure** is a feature in Javascript when the inner function has access to outer function variables(scope/context). Closure remembers variables from the place where it is defined, no matter where it is executed.
+**Closure** is a feature in Javascript when the inner function has access to outer function variables(scope/context).  
+Closure remembers variables from the place where it is defined, no matter where it is executed.
 ```js
 const hello = ( ) => {
 	const greet = 'Hello!';
