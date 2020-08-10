@@ -173,8 +173,8 @@ const greetingNew = `Hello ${name} your age is  ${age}`
 
 **Arrow functions**
 ```js
-function add(a,b) {
-	return a+b;
+function add(a, b) {
+	return a + b;
 } 
 ```
 
@@ -185,7 +185,7 @@ const add = (a, b) => a + b;
 
 Or
 ```js
-const add = (a, b) =>{
+const add = (a, b) => {
 	return a + b;
 }
 ```
@@ -193,12 +193,12 @@ const add = (a, b) =>{
 
 Oneliner assumes there is a single return:
 ```js
-(const add = (a, b) => a + b;)
+const add = (a, b) => a + b;
 ```
 
 Extra: when 1 parameter, brackets can be ignored:
 ```js
-const sqrt = b => b*b;
+const sqrt = b => b * b;
 ```
 
 An arrow function expression is a compact alternative to a regular function expression, although without its own bindings to the this, arguments, super, or new.target keywords. Arrow function expressions are ill suited as methods, and they cannot be used as constructors.
@@ -221,38 +221,40 @@ const double = []
 const newArr = arr.forEach(num => double.push(num*2));  //Returns undefined 
 ```
 Also - map, reduce, filter all return a new array!
-------------------------------------------------------------------------------------------------------------------
 
-Currying is a process of turning a function with multiple arity into a function with less arity.
+---
+
+**Currying** is a process of turning a function with multiple arity into a function with less arity.
 Or other words - transform a function of arity n to n functions of arity 1.
 f(a, b, c) ---------------> f(a)(b)(c)
-
-const mult = (a, b) => a * b;	//normal
-const cMult = (a) => (b) => a * b;  //curried
+```js
+const mult = (a, b) => a * b;		// normal
+const cMult = (a) => (b) => a * b;  	// curried
 
 mult(2, 3) is same as cMult(2)(3) 
 
-Benefits? I can build and configure functions like so:
+//Benefits? I can build and configure functions like so:
 
 const mult2 = cMult(2);
 mult2(4); //returns 8
 mult2(6); //returns 12
+```
+---
 
-----------------------------------------------------------------------------------------------------------------------------
-
-Closure is a feature in Javascript when the inner function has access to outer function variables(scope/context). Closure remembers variables from the place where it is defined, no matter where it is executed.
-
+**Closure** is a feature in Javascript when the inner function has access to outer function variables(scope/context). Closure remembers variables from the place where it is defined, no matter where it is executed.
+```js
 const hello = ( ) => {
-	const greet = ‘Hello!’;
+	const greet = 'Hello!';
 	const sayHello = ( ) => {
-		const name = ‘John’;
+		const name = 'John';
 		alert(greet + name);
 }
 return sayHello
 }
-
+```
 Closure = function + functions lexical scope
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---
 
 More about Currie-ing
 Curried function is a function which takes multiple arguments, one at a time.
