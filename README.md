@@ -53,8 +53,8 @@ Function accepts **parameters** but is run using **arguments** to match paramete
 
 **Expressions end with semicolons, not declarations**
 ```js
-function foo() {  } 	// declaration
-var foo = function(){ }; 	// expression (somethign that produces a value)
+function foo() {} 	// declaration
+var foo = function(){}; 	// expression (somethign that produces a value)
 if (n == 0){} 	// declaration
 ```
 
@@ -81,7 +81,7 @@ btn.addEventListener("click",handler) - handler is treated as callback
 <button onclick=”handler()”></button> - handler is string treated as JS expression
 ```
 
-For example can be: onclick=”handler();alert(77);”
+For example can be: *onclick="handler();alert(77);"*
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -123,42 +123,52 @@ let player = false;  // Returns an error! Already decleared!
 -------------------------------------------------------------------------------------------------------------------------------
 
 **const** (wannabe constant)
+```js
 const player = { name: 'Tim' };
 player = {}; // returns error, cannot be reassigned
 player.name = 'Bob'; // no error, allowed
+```
 
--------------------------------------------------------------------------------------------------------------------------------
+---
 
-Destructing
+**Destructing**
+```js
 const player = {
-	name = ‘Tim’
-level = 99
+	name = 'Tim',
+	level = 5
 }
-const {name, level} = player; //Select properties you want from an object
+const {name, level} = player; // Select specific properties from an object
+```
 
 Same as:
-
+```js
 const name = player.name;
 const level = player.level;
+```
+---
 
--------------------------------------------------------------------------------------------------------------------------------
-
-Dynamic object properties
-const playerProp = ‘firstName’’
-const player = { [playerProp ]: ‘Bob’}
-const silly= { [1+2 ]: 3 }
+**Dynamic object properties**
+```js
+const playerProp = 'firstName';
+const player = { [playerProp ]: 'Bob'};
+const silly = { [1+2]: 3 };
+```
 Also we can do:
-const name = ‘Bob’;
+```js
+const name = 'Bob';
 const level = 1;
 const bag= {};
 const player = {name, level, bag};
--------------------------------------------------------------------------------------------------------------------------------
+```
+---
 
-Template strings (uses character  `)
-const name = ‘Bob’;
+**Template strings** (uses character  **`**)
+```js
+const name = 'Bob';
 const age = 33;
-const greetingOld = “Hello ” + name + “ your age is ” + age;
+const greetingOld = "Hello " + name + " your age is " + age;
 const greetingNew = `Hello ${name} your age is  ${age}`
+```
 
 -------------------------------------------------------------------------------------------------------------------------------
 
