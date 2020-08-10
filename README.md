@@ -54,8 +54,8 @@ Function accepts **parameters** but is run using **arguments** to match paramete
 **Expressions end with semicolons, not declarations**
 ```js
 function foo() {} 	// declaration
-var foo = function(){}; 	// expression (somethign that produces a value)
-if (n == 0){} 	// declaration
+var foo = function(){}; // expression (somethign that produces a value)
+if (n == 0){} 		// declaration
 ```
 
 ------------------------------------------------------------------------------------------------------------------------------
@@ -149,63 +149,77 @@ const level = player.level;
 
 **Dynamic object properties**
 ```js
-const playerProp = 'firstName';
-const player = { [playerProp ]: 'Bob'};
+const prop = 'firstName';
+const player = { [prop]: 'Timmy'};
 const silly = { [1+2]: 3 };
 ```
 Also we can do:
 ```js
-const name = 'Bob';
+const name = 'Timmy';
 const level = 1;
 const bag= {};
 const player = {name, level, bag};
 ```
 ---
 
-**Template strings** (uses character  **`**)
+**Template strings** (uses character  **`** )
 ```js
-const name = 'Bob';
+const name = 'Timmy';
 const age = 33;
 const greetingOld = "Hello " + name + " your age is " + age;
 const greetingNew = `Hello ${name} your age is  ${age}`
 ```
+---
 
--------------------------------------------------------------------------------------------------------------------------------
-
-Arrow functions
+**Arrow functions**
+```js
 function add(a,b) {
 	return a+b;
 } 
+```
 
 Can be written as:
-
+```js
 const add = (a, b) => a + b;
+```
 
 Or
-
+```js
 const add = (a, b) =>{
 	return a + b;
 }
+```
 
 
-Oneliner assumes there is a single return (const add = (a, b) => a + b;)
+Oneliner assumes there is a single return:
+```js
+(const add = (a, b) => a + b;)
+```
 
 Extra: when 1 parameter, brackets can be ignored:
+```js
 const sqrt = b => b*b;
+```
 
 An arrow function expression is a compact alternative to a regular function expression, although without its own bindings to the this, arguments, super, or new.target keywords. Arrow function expressions are ill suited as methods, and they cannot be used as constructors.
-var r = { n: function( ) { console.log(this) } } //this returns r
-var r = { n: ( ) => { console.log(this) } } //this returns Window, arrow function not suited as method!
+```js
+var r = { n: function( ) { console.log(this) } }  // this returns r
+var r = { n: ( ) => { console.log(this) } } 	  // this returns Window, arrow function not suited as method!
+```
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-map, reduce, filter vs forEach
+**map, reduce, filter vs forEach**
 Map, reduce and filter are pure functions, they all expect a return, forEach does not.
+```js
 const arr = [1, 4, 6];
 const mapArr = arr.map(num => num * 2); //Each callback has to return something
+```
 	vs
+```js
 const double = []
 const newArr = arr.forEach(num => double.push(num*2));  //Returns undefined 
+```
 Also - map, reduce, filter all return a new array!
 ------------------------------------------------------------------------------------------------------------------
 
