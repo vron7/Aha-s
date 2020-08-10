@@ -29,10 +29,9 @@ var wizard = {
 var wizard = {}
 wizard.name = 'Gandalf';
 
-wizard = undefined; // wizard is NOT an object anymore
-
-wizard = null; // wizard is an object but completely empty
-typeof(wizard); // returns "object"
+wizard = undefined; 	 // wizard is NOT an object anymore
+wizard = null; 		 // wizard is an object but completely empty
+typeof(wizard); 	 // returns "object"
 wizard.name = 'Gandalf'; // returns error
 ```
 
@@ -44,8 +43,8 @@ wizard.name = 'Gandalf'; // returns error
 
 **Arguments VS Parameters**
 ```js
-function foo ( username ){}  // username is a parameter
-foo('vova'); // vova is an argument
+function foo ( username ){}  	// username is a parameter
+foo('vova'); 			// vova is an argument
 ```
 Function accepts **parameters** but is run using **arguments** to match parameters.
 
@@ -63,11 +62,11 @@ if (n == 0){} 		// declaration
 **++a** or **a++**
 ```js
 var a = 0;
-a++;  // returns 0 (original value)
-a // returns 1
+a++;	// returns 0 (original value)
+a 	// returns 1
 var a = 0;
-++a;  // returns 1
-a // returns 1 
+++a;  	// returns 1
+a 	// returns 1 
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -125,8 +124,8 @@ let player = false;  // Returns an error! Already decleared!
 **const** (wannabe constant)
 ```js
 const player = { name: 'Tim' };
-player = {}; // returns error, cannot be reassigned
-player.name = 'Bob'; // no error, allowed
+player = {}; 		// returns error, cannot be reassigned
+player.name = 'Bob'; 	// no error, allowed
 ```
 
 ---
@@ -256,11 +255,12 @@ Closure = function + functions lexical scope
 
 ---
 
-More about Currie-ing
+**More about Currie-ing**
 Curried function is a function which takes multiple arguments, one at a time.
-
+```js
 const add = a => b => a + b;
-const result = add(2)(4); //6
+const result = add(2)(4); // 6
+```
 
 In this example, the add function takes one argument and then returns a partial application of itself with a fixed in the closure scope.
 
@@ -272,18 +272,18 @@ Curried functions always return a unary function.(function which takes one argum
 
 So all curried functions return partial applications but not all partial applications are the result of curried functions.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-Compose is a way to combine multiple functions to create a new function
-
+**Compose** is a way to combine multiple functions to create a new function
+```js
 const compose = ( f, g ) => a => f(g(a));
 const f1 = n => n + ‘!!!’
 const f2 = n => n + ‘???’
 const create = compose(f1, f2);
-create(‘Whats up’); //Whats up!!!???
+create(‘Whats up’); // Whats up!!!???
+```
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 Reference type
 
 Primitive types (Known by javascript, immutable) - string, number, boolean, null, undefined
