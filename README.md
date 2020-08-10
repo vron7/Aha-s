@@ -60,7 +60,7 @@ if (n == 0){} 		// declaration
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-**++a or a++**
+**++a** or **a++**
 ```js
 var a = 0;
 a++;  // returns 0 (original value)
@@ -102,7 +102,7 @@ var mood = isTodayFriday() ? 'super' : 'not bad either'
 Idea here is to write the latest js syntax so that developers have similar understanding of code.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-**let vs var**
+**let** vs **var**
 ```js
 var level = false;
 let level1 = false; 
