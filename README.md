@@ -285,34 +285,43 @@ create(‘Whats up’); // Whats up!!!???
 ```
 
 ---
-Reference type
+**Reference type**
 
-Primitive types (Known by javascript, immutable) - string, number, boolean, null, undefined
+**Primitive types** (Known by javascript, immutable) - string, number, boolean, null, undefined
+```js
 var a = 1; //value gets stored in variable (memory)
 var b = a; //value gets copied to a new variable (new slot in memory)
 a === b; // returns true 
 a = 2; // here we do not mutate number 1 into 2, we just replace the 1 with 2
 a === b // returns false, because a holds 2 and b holds 1
+```
 
 Primitive types are immutable, meaning their value(state/structure) cannot be changed after creation.
-var name = “John”; //name now points to “John” in memory
-name = “Fred”; // new block of memory is allocated for “Fred”, name now points to “Fred” in memory,  “John” is still in memory and will be garbage collected.
+```js
+var name = 'Tim'; //name now points to 'Tim' in memory
+name = 'Tom'; // new block of memory is allocated for 'Tom', name now points to 'Tom' in memory,  'Tim' is still in memory and will be garbage collected.
+```
 
 Using const is just protection, not immutability!
 
-Reference types (created by developer) - Object (Array, Function - also technically objects)
+**Reference types** (created by developer) - Object (Array, Function - also technically objects)
+```js
 var n = { id: 1} //value gets stored in memory, address of the stored object gets stored in variable
 var m = n; //address gets copied, a reference to the value is set
 m === n; //returns true, they both point to a same address
 m.id = 2 //here we mutate the object
 m === n //returns true, they both point to the same mutated object in memory
 m = n = { id: 3 } // new object is created in memory, both variables receive the new reference, reference to the old object is lost, old object can be garbage collected!
-
+```
+```js
 [] === []; // returns false, they do not share the same reference
+```
 
 For immutable data, the equality is more reliable!
+```js
 1 === 1 //true
 {id: 1} === {id: 1} //false
+```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
