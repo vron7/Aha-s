@@ -409,26 +409,25 @@ for(car in cars){console.log(car)} //Prints out all the properties
 
 //bmw is ignored, because its property .enumerable is set to false, for others its set to true by default!
 ```
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-An object is a collection of properties!
-Property - is an association between a name(key) and a value
+**An object** is a collection of properties!
+*Property* - is an association between a name(key) and a value
 Property's value can be a function in which case the property is known as a method.
 
-
+```js
 var wizard = { name: 'Gandalf' } //name is a property with a value Gandalf
 var wizard = ['Gandalf'] // 0 is a property with a value Gandalf
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+---
 
 How async works in synchronous Javascript:
-![alt text](https://github.com/vron7/Aha-s/blob/master/jsrte.png "How JS engine works")  
+![alt text](https://github.com/vron7/Aha-s/blob/master/jsre.png "How JS engine works")  
 *Image credit:* https://medium.com/@olinations/the-javascript-runtime-environment-d58fa2e60dd0
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-More *let*
-
+---
+More **let**
+```js
 var cb = []
 
 for(var i = 0; i < 3; i++){
@@ -440,19 +439,19 @@ for(let i = 0; i < 3; i++){
 	cb[i] = function(){ return i }
 }
 cb[0](); //returns 0
-
+```
 
 Let’s try to fix the the first example using IIFE (Immediately Invoked Function Expression):
-
+```js
 for(var i = 0; i < 3; i++){
 	(function(i){
 		cb[i] = function(){ return i }
 })(i);
 }
 cb[0](); //returns 0
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-read
+```
+---
+**read**
 
 https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/
 https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch1.md
