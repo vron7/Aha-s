@@ -291,9 +291,9 @@ create(‘Whats up’); // Whats up!!!???
 ```js
 var a = 1; //value gets stored in variable (memory)
 var b = a; //value gets copied to a new variable (new slot in memory)
-a === b; // returns true 
-a = 2; // here we do not mutate number 1 into 2, we just replace the 1 with 2
-a === b // returns false, because a holds 2 and b holds 1
+a === b;   // returns true 
+a = 2;     // here we do not mutate number 1 into 2, we just replace the 1 with 2
+a === b    // returns false, because a holds 2 and b holds 1
 ```
 
 Primitive types are immutable, meaning their value(state/structure) cannot be changed after creation.
@@ -325,31 +325,34 @@ For immutable data, the equality is more reliable!
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Cloning objects
+**Cloning objects**
+```js
 var w = { name: {fn: Harry, sn: Potter}, house: Gryffindor};
 
-Shallow clone
+//Shallow clone
 var w2 = {...w}; //w2 no longer references w but w2.name still references w.name object in memory! Only the first layer is cloned!
 
-Deep clone
+//Deep clone
 var w3 = JSON.parse(JSON.stringify(w)); //Object is converted to string and then back to object - no more references (Can be slow!).
+```
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-Context
+**Context**
 
-this - inside what object am I right now? What’s the context?
-
+*this* - inside what object am I right now? What’s the context?
+```js
 console.log(this); //returns Window (in browser)
 function a(){ console.log(this) }; //returns Window 
 var obj = { a: function(){ console.log(this) } }; //returns obj
---------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+---
 
-Classes
+**Classes**
 Javascript classes are special functions (syntactical sugar to prototype inheritance). 
 
-super - refers to parent class, it is used to call the constructor of the parent’s class and access its properties and functions.
-
+*super* - refers to parent class, it is used to call the constructor of the parent’s class and access its properties and functions.
+```js
 class Hooman {
 	constructor(name) {
 		this.name = name;
@@ -363,48 +366,49 @@ console.log(this.name); //returns name
 	this.profession = profession;
 }
 }
+```
+---
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-=== or == ?
-
-1 == "1" //returns true, type coercion is applied
-1 === "1" //returns false, explicit check
-true == 1 //true, 1 is coerced to true by JS
+**===** or **==** ?
+```js
+1 == "1"   //returns true, type coercion is applied
+1 === "1"  //returns false, explicit check
+true == 1  //true, 1 is coerced to true by JS
 true === 1 //false
+```
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-Array.prototype.join()
-
-
+**Array.prototype.join()**
+```js
 const arr =[['My', 'name'],['is', 'Constantine']];
 arr.map(n => n.join(" ")).join(' '); //My name is Constantine
 
 const obj = {my:'name', is: 'Constantine'};
 Object.entries(obj).map(n=>n.join(' ')).join(' '); //My name is Constantine
+```
+---
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+**Enumeration** vs **Iteration**
 
-Enumeration vs Iteration
-
+```js
 for(item of arr) {} // iterate, throws error when using on object, objects are not iterable
 
 for (item in obj) {} //enumerate - loop through all properties which are enumerable, also works for arrays, because array is an object
-
+```
 Example:
+```js
 var cars = ['Toyota', 'Ford']
 cars.vw = 'Volkswagen'
 Object.defineProperty(cars, 'bmw', {value:'BMW', enumerable: false })
 
-
 for(car in cars){console.log(car)} //Prints out all the properties
-0
-1
-vw
+//0
+//1
+//vw
 
 //bmw is ignored, because its property .enumerable is set to false, for others its set to true by default!
-
+```
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 An object is a collection of properties!
