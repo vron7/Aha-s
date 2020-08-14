@@ -1,6 +1,6 @@
 # Javascript Aha-s
 
-**Array is an Object (key = index)**
+**Array is an Object** (key = index)
 ```js
 var arr = [
 	0: 'hola'
@@ -41,7 +41,7 @@ wizard.name = 'Gandalf'; // returns error
 
 ---------------------------------------------------------------------------------------------------------
 
-**Arguments VS Parameters**
+**Arguments** vs **Parameters**
 ```js
 function foo ( username ){}  	// username is a parameter
 foo('vova'); 			// vova is an argument
@@ -84,8 +84,8 @@ For example can be: *onclick="handler();alert(77);"*
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-jQuery - was good when it came, now deprecated, is imperative  
-React - is declarative
+*jQuery* - was good when it came, now deprecated, is imperative    
+*React* - is declarative
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -208,7 +208,7 @@ var r = { n: ( ) => { console.log(this) } } 	  // this returns Window, arrow fun
 
 ---
 
-**map, reduce, filter vs forEach**  
+**map, reduce, filter** vs **forEach**  
 Map, reduce and filter are pure functions, they all expect a return, forEach does not.
 ```js
 const arr = [1, 4, 6];
