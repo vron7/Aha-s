@@ -2,12 +2,12 @@
 
 **Array is an Object** (key = index)
 ```js
-var arr = [
+var arr = {
 	0: 'hola'
 	1: 'hi'
 	2: 'privet'
-]
-typeof(arr); // returns "object"
+}
+typeof([]); // returns "object"
 ```
 
 ------
