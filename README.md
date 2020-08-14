@@ -4,15 +4,15 @@
 ```js
 var arr = [
 	0: 'hola'
-	1: 'hello'
+	1: 'hi'
 	2: 'privet'
 ]
-typeof(arr) // returns "object"
+typeof(arr); // returns "object"
 ```
 
 ------
 
-**Method is a function inside an Object**
+**Method** is a function inside an Object
 ```js
 var wizard = {
 	name: 'Gandalf'
@@ -24,9 +24,9 @@ var wizard = {
 
 --------------------------------------------------------------------------------------------------------------
 
-**Null is special Javascript type, it’s an empty Object**
+**Null** is special Javascript type, it’s an empty Object
 ```js
-var wizard = {}
+var wizard = {};
 wizard.name = 'Gandalf';
 
 wizard = undefined; 	 // wizard is NOT an object anymore
