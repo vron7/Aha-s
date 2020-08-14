@@ -421,7 +421,7 @@ var wizard = ['Gandalf'] // 0 is a property with a value Gandalf
 ```
 ---
 
-How async works in synchronous Javascript:  
+How **async** works in **synchronous** Javascript:  
 ![alt text](https://github.com/vron7/Aha-s/blob/master/jsre.png "How JS engine works")  
 *Image credit:* https://medium.com/@olinations/the-javascript-runtime-environment-d58fa2e60dd0
 
