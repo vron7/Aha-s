@@ -456,13 +456,13 @@ cb[0](); //returns 0
 function bag() {
   var arr = [];
   return {
-    append: function append(v) {
+    append: function(v) {
       arr.push(v);
     },
-    get: function get(i) {
-      arr array[i];
+    get: function(i) {
+      return arr[i];
     },
-    store: function store(i, v) {
+    store: function(i, v) {
       arr[i] = v;
     }
   };
@@ -474,8 +474,8 @@ Is it possible to access internal variable **arr** outside the bag? Let's try!
 ```js
 var arrSteal;
 var b = bag();
-b.store('push', function(x){arrSteal = this); // b['push'] = function(){this}, ARRAY is an OBJECT!
-b.append(4345234);
+b.store('push', function(x){arrSteal = this}); // b['push'] = function(){this}, ARRAY is an OBJECT!
+b.append(2);
 console.log(arrSteal); // arr
 ```
 
