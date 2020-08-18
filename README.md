@@ -451,20 +451,14 @@ for(var i = 0; i < 3; i++){
 cb[0](); //returns 0
 ```
 ---
-**exploit**
+Let's **exploit** internal variable
 ```js
-function bag() {
-  var arr = [];
+const bag = () => {
+  let arr = [];
   return {
-    append: function(v) {
-      arr.push(v);
-    },
-    get: function(i) {
-      return arr[i];
-    },
-    store: function(i, v) {
-      arr[i] = v;
-    }
+    append: (n) => arr.push(n),
+    get: (i) => arr[i],
+    store: (i, n) => arr[i] = n
   };
 }
 ```
@@ -474,8 +468,12 @@ Is it possible to access internal variable **arr** outside the bag? Let's try!
 ```js
 var arrSteal;
 var b = bag();
-b.store('push', function(x){arrSteal = this}); // b['push'] = function(){this}, ARRAY is an OBJECT!
+b.store('push', function(x){arrSteal = this}); // arr['push'] = function(){this}, ARRAY is an OBJECT!
 b.append(2);
 console.log(arrSteal); // arr
+```
+How to fix?
+```js
+arr.splice(index, 0, n) // instead of arr[i] = n
 ```
 
