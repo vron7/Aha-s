@@ -451,7 +451,7 @@ for(var i = 0; i < 3; i++){
 cb[0](); //returns 0
 ```
 ---
-Let's **exploit** internal variable
+Let's **exploit** following code
 ```js
 const bag = () => {
   let arr = [];
