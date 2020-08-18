@@ -451,5 +451,31 @@ for(var i = 0; i < 3; i++){
 cb[0](); //returns 0
 ```
 ---
+**exploit**
+```js
+function bag() {
+  var arr = [];
+  return {
+    append: function append(v) {
+      arr.push(v);
+    },
+    get: function get(i) {
+      arr array[i];
+    },
+    store: function store(i, v) {
+      arr[i] = v;
+    }
+  };
+}
+```
 
+Is it possible to access internal variable **arr** outside the bag? Let's try!
+
+```js
+var arrSteal;
+var b = bag();
+b.store('push', function(x){arrSteal = this); // b['push'] = function(){this}, ARRAY is an OBJECT!
+b.append(4345234);
+console.log(arrSteal); // arr
+```
 
