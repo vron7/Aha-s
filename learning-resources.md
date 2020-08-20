@@ -13,3 +13,5 @@ https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-prob
 https://fishshell.com/  
 
 https://javascript.info/object-methods  
+
+https://addyosmani.com/resources/essentialjsdesignpatterns/book/#constructorpatternjavascript
