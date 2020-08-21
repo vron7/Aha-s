@@ -248,8 +248,8 @@ const hello = ( ) => {
 	const sayHello = ( ) => {
 		const name = 'John';
 		alert(greet + name);
-}
-return sayHello
+	}
+	return sayHello
 }
 ```
 Closure = function + functions lexical scope
