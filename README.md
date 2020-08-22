@@ -95,11 +95,6 @@ condition ? expr1 : expr2; //(Is this condition true/false?, if true then expr1 
 var mood = isTodayFriday() ? 'super' : 'not bad either'
 ```
 
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-**Babel** - js compiler, which takes in newest ES code and compiles into regular javascript for all browsers.
-Idea here is to write the latest js syntax so that developers have similar understanding of code.
-
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 **let** vs **var**
 ```js
