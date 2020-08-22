@@ -1,1 +1,1 @@
-**Browserify** - enables to use modules ( *require(“jquery”)* ) in a browser
+**Browserify** - enables to use modules ( **require** ) in a browser
