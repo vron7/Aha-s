@@ -244,10 +244,9 @@ mult2(6); //returns 12
 Closure remembers variables from the place where it is defined, no matter where it is executed.
 ```js
 const hello = ( ) => {
-	const greet = 'Hello!';
-	const sayHello = ( ) => {
-		const name = 'John';
-		alert(greet + name);
+	const greet = 'Hello';
+	const sayHello = ( name ) => {
+		alert(`${greet} ${name} !`);
 	}
 	return sayHello
 }
