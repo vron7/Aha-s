@@ -17,3 +17,5 @@ https://javascript.info/object-methods
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/#constructorpatternjavascript
 
 https://coggle.it/diagram/XfeRbWj7xy3dsEX8/t/web-development-in-2020
+
+https://semver.npmjs.com/
