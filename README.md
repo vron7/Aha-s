@@ -355,10 +355,10 @@ class Hooman {
 class Worker extends Hooman{
 	constructor(name, profession) {
 		console.log(this.name); //returns error, call super first!
-	super(name) //access parents properties and functions
-console.log(this.name); //returns name
-	this.profession = profession;
-}
+		super(name) //access parents properties and functions
+		console.log(this.name); //returns name
+		this.profession = profession;
+	}
 }
 ```
 ---
