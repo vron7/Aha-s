@@ -21,3 +21,5 @@ https://coggle.it/diagram/XfeRbWj7xy3dsEX8/t/web-development-in-2020
 https://semver.npmjs.com/  
 
 https://areknawo.com/why-i-dont-use-react/
+
+https://www.youtube.com/watch?v=NCwa_xi0Uuc
