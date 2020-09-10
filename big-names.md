@@ -15,8 +15,8 @@ Redux is a state manager, mainly used to manage state in React, has 3 principles
 
 **Store** - holds application state
 
-**ACTION** (user action) -> **REDUCER** (pure function) -> **STORE** (state) -> **CHANGE VIEW** (react)
+**ACTION** (user action) --> **REDUCER** (pure function) --> **STORE** (state) --> **CHANGE VIEW** (react)
 
-**ACTION** -> **CHANGE VIEW** *(the old way, for example jQuery - gets complex on modern apps)*
+**ACTION** --> **CHANGE VIEW** *(the old way, for example jQuery - gets complex on modern apps)*
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
