@@ -12,10 +12,10 @@ Idea here is to write the latest js syntax so that developers have similar under
 2) Is read only (immutable)
 3) Changes using pure functions
 
-Store - holds application state
+*Store* - holds application state
 
-*ACTION* (user action) -> *REDUCER* (pure function) -> *STORE* (state) -> *CHANGE VIEW* (react)
+ACTION (user action) **->** REDUCER (pure function) **->** STORE (state) **->** CHANGE VIEW (react)
 
-*ACTION* -> *CHANGE VIEW* (the old way, for example jQuery - gets complex on modern apps)
+ACTION **->** CHANGE VIEW (the old way, for example jQuery - gets complex on modern apps)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
