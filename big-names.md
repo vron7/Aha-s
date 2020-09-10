@@ -16,4 +16,10 @@ Idea here is to write the latest js syntax so that developers have similar under
 
 **ACTION** --> **CHANGE VIEW** *(the old way, for example jQuery - gets complex on modern apps)*
 
---------------------------------------------------------------------------------------------------------------------------------------------------
+---
+
+**Flux** - is an application archiceture utilizing an undirectional data flow  
+Action --> Dispatcher --> Store --> View
+
+---
+
