@@ -23,3 +23,5 @@ https://semver.npmjs.com/
 https://areknawo.com/why-i-dont-use-react/
 
 https://www.youtube.com/watch?v=NCwa_xi0Uuc
+
+Hacker Way: Rethinking Web App Development at Facebook  https://www.youtube.com/watch?time_continue=243&v=nYkdrAPrdcw&feature=emb_title
