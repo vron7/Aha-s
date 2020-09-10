@@ -7,7 +7,7 @@ Idea here is to write the latest js syntax so that developers have similar under
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-**Redux**
+**Redux**  
 Redux is a state manager, mainly used to manage state in React, has 3 principles:
 1) Single source of thruth
 2) Is read only (immutable)
