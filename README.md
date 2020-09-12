@@ -98,14 +98,14 @@ var mood = isTodayFriday() ? 'super' : 'not bad either'
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 **let** vs **var**
 ```js
-var level = false;
-let level1 = false; 
-If (true){
-	var level = true;
-	let level1 = true;
+var notChange = true;
+let notReallyChange = true; 
+if (true){
+	var notChange = false;
+	let notReallyChange = false;
 }
-console.log(level); // true
-console.log(level1); // false
+console.log(notChange); // false
+console.log(notReallyChange); // true
 ```
 
 Anytime let is wrapped with curly brackets (block), it creates a new scope(block scope), just like var inside a function
