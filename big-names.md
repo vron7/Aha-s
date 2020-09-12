@@ -10,7 +10,8 @@ Idea here is to write the latest js syntax so that developers have similar under
 **React** - scalable and declarative Javascript library for building interactive UI applications.    
 Solves the problem of imperative actions that mutate the state over time (it is very difficult to understand what   
 the state is at the end of these mutations) by taking these mutations and presenting them as a snapshot of program   
-in a single point of time.
+in a single point of time.  
+It represent the mental model of 90-s era server rendered web apps - when data changes, Refresh! 
 
 ---
 
