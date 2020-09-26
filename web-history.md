@@ -55,8 +55,18 @@ Content-Type: text/gif
 (image content)
 ```
 
+### HTTP/1.1
+* Connection resue    
+* Pipelining - second request can be sent before answer to the first one is fully transmitted    
+* Additional cache control mechanisms    
+* Chunked responses  
+* Content negotiation - language, encoding, type etc  
 
-
+### HTTP/2
+* Binary protocol rather than text (optimization!)
+* Multiplexed -parallel requests can be handled over the same connection  
+* Compressed headers (removed duplication and overhead)  
+* Allows a server to populate data in a client cache, in advance of it being required, through a mechanism called the server push.
 
 
 --
