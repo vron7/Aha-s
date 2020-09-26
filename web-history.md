@@ -14,7 +14,9 @@ Request consist of a single line GET method, followed by the path to the resourc
 `GET /mypage.html`  
 
 Response was the file itself  
-`<HTML>Simple HTML page</HTML>`
+`<HTML>Simple HTML page</HTML>`  
+
+No HTTP headers, status or error codes. Only HTML files could be trasmitted.
 
 
 --
