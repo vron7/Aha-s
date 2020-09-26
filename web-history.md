@@ -18,6 +18,38 @@ Response was the file itself
 
 No HTTP headers, status or error codes. Only HTML files could be trasmitted.
 
+**HTTP/1.0**  
+HTTP headers introduced for both response and request.
+Headers enable to transport other documents rather than just HTML (using Content-Type).
+
+Request:
+`GET /mypage.html HTTP/1.0
+User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)`
+
+Response:  
+`200 OK
+Date: Tue, 15 Nov 1994 08:12:31 GMT
+Server: CERN/3.0 libwww/2.17
+Content-Type: text/html
+<HTML> 
+A page with an image
+  <IMG SRC="/myimage.gif">
+</HTML>`
+
+Next request to fetch image:  
+`GET /myimage.gif HTTP/1.0
+User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)`
+
+Response with image:  
+`200 OK
+Date: Tue, 15 Nov 1994 08:12:32 GMT
+Server: CERN/3.0 libwww/2.17
+Content-Type: text/gif
+(image content)`
+
+
+
+
 
 --
 
