@@ -7,9 +7,9 @@ Tim had written 3 fundamental technologies that remain foundation of todays web:
 **WorldWideWeb** - first web browser and editor, later renamed to Nexus to avoid confusion with World Wide Web.
 
 ---
-**HTTP** evolution
+#### HTTP evolution
 
-**HTTP/0.9:**  *(initial version)*  
+#### HTTP/0.9: *(initial version)*  
 Request consist of a single line GET method, followed by the path to the resource (no URL)  
 ```GET /mypage.html```
 
@@ -18,7 +18,7 @@ Response was the file itself
 
 No HTTP headers, status or error codes. Only HTML files could be trasmitted.
 
-**HTTP/1.0**  
+#### HTTP/1.0  
 HTTP headers introduced for both response and request.  
 Headers enable to transport other documents rather than just HTML (using Content-Type).
 
