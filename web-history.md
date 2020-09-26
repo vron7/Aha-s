@@ -41,11 +41,13 @@ Next request to fetch image:
 User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)`
 
 Response with image:  
-`200 OK
+```
+200 OK
 Date: Tue, 15 Nov 1994 08:12:32 GMT
 Server: CERN/3.0 libwww/2.17
 Content-Type: text/gif
-(image content)`
+(image content)
+```
 
 
 
