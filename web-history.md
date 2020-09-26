@@ -6,4 +6,17 @@ Tim had written 3 fundamental technologies that remain foundation of todays web:
 
 **WorldWideWeb** - first web browser and editor, later renamed to Nexus to avoid confusion with World Wide Web.
 
+---
+**HTTP** evolution
+
+**HTTP/0.9:**  *(initial version)*  
+Request consist of a single line GET method, followed by the path to the resource (no URL)  
+`GET /mypage.html`  
+
+Response was the file itself  
+`<HTML>Simple HTML page</HTML>`
+
+
+--
+
 
