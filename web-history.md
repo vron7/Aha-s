@@ -19,12 +19,12 @@ Response was the file itself
 No HTTP headers, status or error codes. Only HTML files could be trasmitted.
 
 **HTTP/1.0**  
-HTTP headers introduced for both response and request.
+HTTP headers introduced for both response and request.  
 Headers enable to transport other documents rather than just HTML (using Content-Type).
 
 Request:
-`GET /mypage.html HTTP/1.0  
-User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)`
+`GET /mypage.html HTTP/1.0`  
+`User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)`
 
 Response:  
 `200 OK
