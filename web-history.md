@@ -11,10 +11,10 @@ Tim had written 3 fundamental technologies that remain foundation of todays web:
 
 **HTTP/0.9:**  *(initial version)*  
 Request consist of a single line GET method, followed by the path to the resource (no URL)  
-`GET /mypage.html`  
+```GET /mypage.html```
 
 Response was the file itself  
-`<HTML>Simple HTML page</HTML>`  
+```<HTML>Simple HTML page</HTML>``` 
 
 No HTTP headers, status or error codes. Only HTML files could be trasmitted.
 
@@ -36,13 +36,13 @@ Server: CERN/3.0 libwww/2.17
 Content-Type: text/html 
 <HTML>
 A page with an image
-  <IMG SRC="/myimage.gif"> 
+  <IMG SRC="/avatar.gif"> 
 </HTML>
 ```
 
 Next request to fetch image:
 ```
-GET /myimage.gif HTTP/1.0
+GET /avatar.gif HTTP/1.0
 User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
 ```
 
