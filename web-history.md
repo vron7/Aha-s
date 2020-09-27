@@ -80,7 +80,8 @@ Content-Type: text/gif
 
 ## AJAX
 
-AJAX is a group of technologies
+AJAX is a set of web development techniques to create asynchronus web application.  
+It enables to update the web page without a reload.
 
 The old way:
 ```js
@@ -96,6 +97,12 @@ request.onerror = function(){
   // An error occured
 }
 request.send();
+```
+The new way:
+```js
+fetch('/my/url').then(response => {
+  console.log(response);
+});
 ```
 
 
