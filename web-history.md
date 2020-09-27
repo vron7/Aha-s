@@ -68,10 +68,14 @@ Content-Type: text/gif
 * Compressed headers (removed duplication and overhead)  
 * Allows a server to populate data in a client cache, in advance of it being required, through a mechanism called the server push.
 
---
+---
+
+## HTTP common methods:
+* GET - data is appended to the URL
+* POST - data is included in the request body
 
 *An **HTML form** on a web page is nothing more than a convenient user-friendly way to configure an HTTP request to send data to a server. This enables the user to provide information to be delivered in the HTTP request.
 
---
+---
 
 
