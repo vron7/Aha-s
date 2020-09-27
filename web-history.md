@@ -81,7 +81,7 @@ Content-Type: text/gif
 ## AJAX
 
 The old way:
-```
+```js
 var request = new XMLHttpRequest();
 request.open('GET', '/my/url', true);
 request.onload = function() {
