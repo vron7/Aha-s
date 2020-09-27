@@ -80,6 +80,8 @@ Content-Type: text/gif
 
 ## AJAX
 
+AJAX is a group of technologies
+
 The old way:
 ```js
 var request = new XMLHttpRequest();
