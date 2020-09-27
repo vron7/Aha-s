@@ -88,9 +88,7 @@ request.onload = function() {
   if (request.status >= 200 && request.status < 400){
     // Success!
     var data = JSON.parse(request.responseText);
-  } else {
-    // Server returned an error
-  }  
+  } 
 };
 request.onerror = function(){
   // An error occured
