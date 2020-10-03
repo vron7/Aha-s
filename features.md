@@ -34,10 +34,10 @@ p.then(console.log); // returns val
 **async** before a function means that the function will **return a promise**.
 ```js
 async function f() {
-  return 'hello!' // could also explicitly return Promise.resolve(1), which would be the same
+  return 'hello' // could also explicitly return Promise.resolve('hello'), which would be the same
 }
 
-f().then(alert); // hello!
+f().then(alert); // hello
 ```
 
 
