@@ -4,7 +4,9 @@ The **Promise** *(ES6)* object represents the eventual completion (or failure) o
 Simply - container for a future value.  
 
 ```js
-const p = new Promise((resolve, reject) => {setTimeout(resolve, 200, 'success!')});
+const p = new Promise((resolve, reject) => {
+  setTimeout(resolve, 200, 'success!');
+});
 ```
 
 
