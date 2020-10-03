@@ -29,3 +29,13 @@ p.then(console.log); // returns val
 
 
 ---
+
+## Async Await
+Async before a function means that the function will return a promise.
+```js
+async function f(){
+  return 'hello!'
+}
+f.then(alert); // hello!
+```
+---
