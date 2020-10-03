@@ -39,6 +39,37 @@ async function f() {
 
 f().then(alert); // hello
 ```
+**await** only works inside function with *async* keyword  
+* makes javascript wait until promise settles and returns itself,
+* is a syntax sugar for .then()
+* is non blocking, makes async code look and behave a bit like syncronous
+```js
+async function f() {
 
+  let p = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("done!"), 1000)
+  });
+
+  let result = await promise; // execution is paused until the promise resolves (*)
+
+  alert(result); // "done!"
+}
+```
+Promise vs Await
+```js
+const makeRequest = () =>
+  getJSON()
+    .then(data => {
+      console.log(data)
+      return "done"
+    })
+```
+**vs**
+```js
+const makeRequest = async () => {
+  console.log(await getJSON())
+  return "done"
+}
+```
 
 ---
