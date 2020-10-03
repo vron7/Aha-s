@@ -47,12 +47,11 @@ f().then(alert); // hello
 async function f() {
 
   let p = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("done!"), 1000)
+    setTimeout(resolve, 1000, 'hello')
   });
 
-  let result = await promise; // execution is paused until the promise resolves (*)
-
-  alert(result); // "done!"
+  let result = await p; // execution is paused until the promise resolves (*)
+  alert(result); // "hello"
 }
 ```
 Promise vs Await
@@ -63,9 +62,7 @@ const makeRequest = () =>
       console.log(data)
       return "done"
     })
-```
-**vs**
-```js
+
 const makeRequest = async () => {
   console.log(await getJSON())
   return "done"
