@@ -1,7 +1,7 @@
 ---
 
 The **Promise** *(ES6)* object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.  
-Simply - container for a future value.  
+Simply - container for a future value.
 
 ```js
 const p = new Promise((resolve, reject) => {
@@ -22,6 +22,10 @@ const resolved = (val) => val;
 p.then(resolved);
 p.then(console.log); // returns val
 ```
+
+* Promise can only succeed or fail **once**
+* If a callback (.then) is added to already resolved promise, a correct callback will be called even though the event took palce earlier.
+* Promise executes as soon as you declear and bind it to a variable.
 
 
 ---
