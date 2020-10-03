@@ -8,6 +8,12 @@ const p = new Promise((resolve, reject) => {
   setTimeout(resolve, 200, 'success!');
 });
 ```
+All Promise instances have a **.then()** method, which accepts two callbacks. Then returns a promise.   
+```js
+const onResolved = (val) => console.log(val);
+const onRejected = (err) => console.log(err);
+p.then(onResolved, onRejected);
+```
 
 
 ---
