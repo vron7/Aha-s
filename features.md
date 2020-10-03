@@ -8,12 +8,19 @@ const p = new Promise((resolve, reject) => {
   setTimeout(resolve, 200, 'success!');
 });
 ```
-All Promise instances have a **.then()** method, which accepts two callbacks. Then returns a promise.   
+All Promise instances have a **.then()** method, which accepts two callbacks. Then mehtod always returns a promise.   
 ```js
 const resolved = (val) => console.log(val);
 const rejected = (err) => console.log(err);
 
 p.then(resolved, rejected);
+```
+
+Chaining  
+```js
+const resolved = (val) => val;
+p.then(resolved);
+p.then(console.log); // returns val
 ```
 
 
