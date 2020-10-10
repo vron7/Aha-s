@@ -23,7 +23,7 @@ p.then(resolved);
 p.then(console.log); // returns val
 ```
 
-Finally - so some processing after promise is settles, regardless of outcome
+**finally** - do some processing after promise is settles, regardless of outcome
 ```js
 const p = Promise.resolve('done')
 p.then(fn);
