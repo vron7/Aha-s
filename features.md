@@ -1,5 +1,5 @@
 ---
-## Promise
+### Promise
 The **Promise** *(ES6)* object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.  
 Simply - container for a future value.
 
@@ -39,7 +39,7 @@ p.finally(fn); // fn is called without arguments
 
 ---
 
-## Async Await
+### Async Await
 **async** before a function means that the function will **return a promise**.
 ```js
 async function f() {
@@ -93,7 +93,7 @@ const getData = async function(urls) {
 
 ---
 
-## {...} spread syntax
+### {...} spread syntax
 
 **in arrays literals**
 ```js
