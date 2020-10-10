@@ -29,3 +29,5 @@ Hacker Way: Rethinking Web App Development at Facebook  https://www.youtube.com/
 https://medium.com/@madasamy/flux-vs-mvc-design-pattern-de134dfaa12b#:~:text=In%20Web%20Application%20development%20MVC%20is%20an%20design%20pattern%20for,focuses%20on%20unidirectional%20data%20flow.
 
 course - https://www.udemy.com/user/c9993219-3239-4b38-a5ec-d4c39885250b/
+
+https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2019.MD
