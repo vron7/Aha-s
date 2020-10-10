@@ -73,7 +73,13 @@ const makeRequest = async () => {
 
 ## {...} spread syntax
 
-** for object literals** *(ES9)*
+**in arrays literals**
+```js
+let rest = ['warrior', 'lover']; 
+let archetypes = ['king', ...rest, 'and', 'magician']; 
+```
+
+**in object literals** *(ES9)*
 ```js
 const archetypes = {
   king: 1,
