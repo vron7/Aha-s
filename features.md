@@ -70,3 +70,19 @@ const makeRequest = async () => {
 ```
 
 ---
+
+## Object spread operator
+```js
+const archetypes = {
+  king: 1,
+  warrior: 2,
+  lover: 3,
+  magician: 4
+}
+const { lover, king , ...rest} = archetypes;
+console.log(lover); // 3
+console.log(rest); // { warrior:2, magician:4 }
+```
+
+
+---
