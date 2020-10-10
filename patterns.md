@@ -1,7 +1,6 @@
----
 ### Factory Function  
 
-```js 
+```js
 function createCircle(radius) {
   return {
     radius: radius, 
