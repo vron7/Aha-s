@@ -23,6 +23,15 @@ p.then(resolved);
 p.then(console.log); // returns val
 ```
 
+Finally - so some processing after promise is settles, regardless of outcome
+```js
+const p = Promise.resolve('done')
+p.then(fn);
+p.catch(fn);
+p.finally(fn); // fn is called without arguments
+```
+
+
 * Promise can only succeed or fail **once**
 * If a callback (.then) is added to already resolved promise, a correct callback will be called even though the event took palce earlier.
 * Promise executes as soon as you declear and bind it to a variable.
