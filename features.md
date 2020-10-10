@@ -77,6 +77,19 @@ const makeRequest = async () => {
   return "done"
 }
 ```
+---
+### await of
+*(ES9)*
+```js
+const getData = async function(urls) {
+  const promises = urls.map(url => fetch(url));
+  for await (let request of promises) {
+    const data = await request.json();
+    console.log('Wohoo, data! ', data);
+  }
+}
+```
+
 
 ---
 
