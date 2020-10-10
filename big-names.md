@@ -33,6 +33,6 @@ Action --> Dispatcher --> Store --> View
 
 ---
 
-**redux-thunk** - redux middleware enabling to return functions rather than just actions within Redux. Allows working with delayd actiosn and promises.  
+**redux-thunk** - redux middleware enabling to return functions rather than just actions within Redux. Allows working with delayed actions and promises.  
 The term originated as a humorous past-tense version of "think".
 
