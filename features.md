@@ -71,7 +71,9 @@ const makeRequest = async () => {
 
 ---
 
-## Object spread operator
+## {...} spread syntax
+
+** for object literals** *(ES9)*
 ```js
 const archetypes = {
   king: 1,
@@ -79,9 +81,9 @@ const archetypes = {
   lover: 3,
   magician: 4
 }
-const { lover, king , ...rest} = archetypes;
+const { lover, king , ...others} = archetypes;
 console.log(lover); // 3
-console.log(rest); // { warrior:2, magician:4 }
+console.log(others); // { warrior:2, magician:4 }
 ```
 
 
