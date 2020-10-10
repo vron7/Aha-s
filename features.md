@@ -87,7 +87,7 @@ const archetypes = {
   lover: 3,
   magician: 4
 }
-const { lover, king , ...others} = archetypes;
+const { lover, king , ...others } = archetypes;
 console.log(lover); // 3
 console.log(others); // { warrior:2, magician:4 }
 ```
