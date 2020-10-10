@@ -76,7 +76,7 @@ const makeRequest = async () => {
 **in arrays literals**
 ```js
 let rest = ['warrior', 'lover']; 
-let archetypes = ['king', ...rest, 'and', 'magician']; 
+let archetypes = ['king', ...rest, 'and', 'magician']; // [ 'king', 'warrior', 'lover', 'and', 'magician']
 ```
 
 **in object literals** *(ES9)*
