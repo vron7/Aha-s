@@ -35,3 +35,7 @@ What happens when you call **new** operator ?
 - a new empty object is created
 - **this** is set to the newly created object
 - returns **this** if function does not return an object
+
+```js
+const o = new Object();
+```
