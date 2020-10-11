@@ -475,10 +475,10 @@ arr.splice(index, 0, n) // instead of arr[i] = n
 
 **new** operator
 
-When a function is executed with **new**, following occurs:
-*a new empty object is created and assigned to this
-*the function body executes. Usually it modifies this, adds new properties to it.
-*the value of this is returned.
+When a function is executed with **new**, following occurs:  
+* a new empty object is created and assigned to this
+* the function body executes. Usually it modifies this, adds new properties to it.
+* the value of this is returned.
 
 ```js
 function User(name) {
