@@ -30,3 +30,8 @@ function Circle(radius) { //Pascal notation!
 ```js
 const circle = new Circle(5);
 ```
+
+What happens when you call **new** ?
+- a new empty object is created
+- **this** is set to the newly created object
+- returns **this** if function does not return an object
