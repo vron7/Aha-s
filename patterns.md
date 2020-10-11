@@ -1,4 +1,4 @@
-### Factory Function  
+### Factory function  
 
 ```js
 function createCircle(radius) {
@@ -11,4 +11,22 @@ function createCircle(radius) {
 }
 ```
 
+```js
+const circle = createCircle(5);
+```
 ---
+
+### Constructor function
+
+```js
+function Circle(radius) { //Pascal notation!
+  this.radius = radius;
+  this.draw = function() {
+    console.log();
+  }
+}
+```
+
+```js
+const circle = new Circle(5);
+```
