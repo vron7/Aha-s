@@ -119,7 +119,7 @@ console.log(others); // { warrior:2, magician:4 }
 *(ES6)*  
 **shorthand property names**
 ```js
-let a = 1, b = 'foo', c = {}
+let a = 1, b = 'foo', c = {}:
 let o = {a, b, c}
 ```  
 
