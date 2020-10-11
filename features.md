@@ -113,6 +113,21 @@ const { lover, king , ...others } = archetypes;
 console.log(lover); // 3
 console.log(others); // { warrior:2, magician:4 }
 ```
+---
 
+### shorthand object notations
+*(ES6)*
+**shorthand property names**
+```js
+let a = 1, b = 'foo', c = {}
+let o = {a, b, c}
+```  
+
+**shorthand method names**
+```js
+let o = { 
+  draw(params){ } 
+}
+```  
 
 ---
