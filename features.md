@@ -116,7 +116,7 @@ console.log(others); // { warrior:2, magician:4 }
 ---
 
 ### shorthand object notations
-*(ES6)*
+*(ES6)*  
 **shorthand property names**
 ```js
 let a = 1, b = 'foo', c = {}
