@@ -31,7 +31,7 @@ function Circle(radius) { //Pascal notation!
 const circle = new Circle(5);
 ```
 
-What happens when you call **new** ?
+What happens when you call **new** operator ?
 - a new empty object is created
 - **this** is set to the newly created object
 - returns **this** if function does not return an object
