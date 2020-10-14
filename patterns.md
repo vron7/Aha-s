@@ -39,3 +39,30 @@ What happens when you call **new** operator ?
 ```js
 const o = new Object();
 ```
+---
+### Singelton
+
+```js
+const Singelton = (function(){
+    function ProcessManager(){ // constructor funtion
+        this.numProcess = 0;
+    }
+    let pm;
+    function createProcessManager(){
+        pm = new ProcessManager();
+        return pm;
+    }
+    return {
+        getProcessManager: () => {
+            if(!pm)
+                pm = createProcessManager();
+            return pm;
+        }
+    }
+})()
+```
+```js
+pm = Singelton.getProcessManager();
+pm2 = Singelton.getProcessManager();
+pm === pm2 // return true, they point to the same reference on memory
+```
