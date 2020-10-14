@@ -62,7 +62,7 @@ const Singelton = (function(){
 })()
 ```
 ```js
-pm = Singelton.getProcessManager();
-pm2 = Singelton.getProcessManager();
+const pm = Singelton.getProcessManager();
+const pm2 = Singelton.getProcessManager();
 pm === pm2 // return true, they point to the same reference on memory
 ```
