@@ -113,6 +113,7 @@ fetch('/my/url').then(response => {
 * **Apache** (web server)
 * **MySQL** (data storage)
 * **PHP / Perl / Python** (scripting language)  
+
 *a classic web server stack, well suited for multipage, dynamic websites*
 
 ### WISA
@@ -120,6 +121,7 @@ fetch('/my/url').then(response => {
 * **IIS** (web server)
 * **SQL server** (data storage)
 * **ASP.NET** (programming language lib)  
+
 *a Microsoft stack, all components are programmed with cooperation in mind, well suited for challenging, complex web projects*
 
 ###
