@@ -122,9 +122,20 @@ fetch('/my/url').then(response => {
 * **SQL server** (data storage)
 * **ASP.NET** (programming language lib)  
 
-*a Microsoft stack, all components are programmed with cooperation in mind, well suited for challenging, complex web projects*
+*a Microsoft stack, all components are programmed with cooperation in mind, well suited for challenging, complex web projects*  
+*VisualC#/Visual Basic.NET can be directly executed from the system, no script interpreters required - considerable performance advantage*  
+*the need for a lincence*
 
-###
+### MEAN
+* **MongoDB** (data storage)
+* **Express.js** (server side web application framework)
+* **AngularJS** (client side front-end framework)
+* **Node.js** (Javascript rte)  
+
+*all elements of this package support javascript, no need for multiple programming languages*  
+*modern architecture for single-page web applications and mobiel apps*  
+*MERN - uses Reach.js as frontend*
+
 
 ---
 
