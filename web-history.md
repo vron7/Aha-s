@@ -104,12 +104,14 @@ fetch('/my/url').then(response => {
   console.log(response);
 });
 ```
-
 ---
 
-##LAMP stack (a classic web server stack)
-**Linux** OS
-**Apache** web server
-**MySQL** data storage
-**PHP / Perl / Python** scripting language
+## LAMP stack  
+*(a classic web server stack)
+* **Linux** OS
+* **Apache** web server
+* **MySQL** data storage
+* **PHP / Perl / Python** scripting language
+
+---
 
