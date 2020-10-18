@@ -106,7 +106,7 @@ fetch('/my/url').then(response => {
 ```
 ---
 
-## LAMP stack  
+## LAMP stack    
 *a classic web server stack
 
 * **Linux** (OS)
