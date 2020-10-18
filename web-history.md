@@ -107,11 +107,12 @@ fetch('/my/url').then(response => {
 ---
 
 ## LAMP stack  
-*(a classic web server stack)
-* **Linux** OS
-* **Apache** web server
-* **MySQL** data storage
-* **PHP / Perl / Python** scripting language
+*a classic web server stack
+
+* **Linux** (OS)
+* **Apache** (web server)
+* **MySQL** (data storage)
+* **PHP / Perl / Python** (scripting language)
 
 ---
 
