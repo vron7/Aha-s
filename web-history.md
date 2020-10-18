@@ -109,19 +109,20 @@ fetch('/my/url').then(response => {
 ## Backend stacks
 
 ### LAMP stack    
-*a classic web server stack*
-
 * **Linux** (OS)
 * **Apache** (web server)
 * **MySQL** (data storage)
 * **PHP / Perl / Python** (scripting language)
+*a classic web server stack, well suited for multipage, dynamic websites*
 
 ### WISA
-*Microsoft stack*
-
 * **Windows server** (OS)
 * **IIS** (web server)
 * **SQL server** (data storage)
 * **ASP.NET** (programming language lib)
+*a Microsoft stack, all components are programmed with cooperation in mind, well suited for challenging, complex web projects*
+
+###
+
 ---
 
