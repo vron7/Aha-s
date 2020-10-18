@@ -108,7 +108,7 @@ fetch('/my/url').then(response => {
 
 ## Backend stacks
 
-###LAMP stack    
+### LAMP stack    
 *a classic web server stack*
 
 * **Linux** (OS)
@@ -116,7 +116,7 @@ fetch('/my/url').then(response => {
 * **MySQL** (data storage)
 * **PHP / Perl / Python** (scripting language)
 
-###WISA
+### WISA
 *Microsoft stack*
 
 * **Windows server** (OS)
