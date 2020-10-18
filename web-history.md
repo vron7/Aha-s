@@ -133,7 +133,7 @@ fetch('/my/url').then(response => {
 * **Node.js** (Javascript rte)  
 
 *all elements of this package support javascript, no need for multiple programming languages*  
-*modern architecture for single-page web applications and mobiel apps*  
+*modern architecture for single-page web applications and mobile apps*  
 *MERN - uses Reach.js as frontend*
 
 
