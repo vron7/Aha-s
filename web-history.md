@@ -107,7 +107,7 @@ fetch('/my/url').then(response => {
 ---
 
 ## LAMP stack    
-*a classic web server stack
+*a classic web server stack*
 
 * **Linux** (OS)
 * **Apache** (web server)
