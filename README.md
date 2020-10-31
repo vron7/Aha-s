@@ -200,6 +200,11 @@ An arrow function expression is a compact alternative to a regular function expr
 var r = { n: function( ) { console.log(this) } }  // this returns r
 var r = { n: ( ) => { console.log(this) } } 	  // this returns Window, arrow function not suited as method!
 ```
+An arrow function **cannot** be used as a **constructor**
+```js
+const Car = (model) => {this.model = model}
+const car = new Car('Ford'); // throws error 'Car is not a constructor'
+```
 
 ---
 
