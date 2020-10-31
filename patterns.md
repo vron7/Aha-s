@@ -39,7 +39,7 @@ What happens when you call **new** operator ?
 ```js
 const o = new Object();
 ```
-*Arrow function cannot be used as constructor*
+*note : Arrow function cannot be used as constructor*
 
 ---
 ### Singelton
