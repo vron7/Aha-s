@@ -131,3 +131,13 @@ let o = {
 ```  
 
 ---
+
+### globalThis
+*(ES2020)*
+
+**globalThis** proprety contains the global **this** value accross all environments (window and non-window)
+```js
+window === globalThis; // true
+``` 
+
+---
