@@ -138,6 +138,7 @@ let o = {
 **globalThis** proprety contains the global **this** value accross all environments (window and non-window)
 ```js
 window === globalThis; // true
+global === globalThis; // true in Node.js
 ``` 
 
 ---
