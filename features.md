@@ -149,6 +149,10 @@ global === globalThis; // true in Node.js
 **bigInt** - is a new javascript type, we can use to make calculations which are bigger than Number.MAX_SAFE_INTEGER
 ```js
 typeof 1n // returns bigin
+
+r = Number.MAX_SAFE_INTEGER
+r + 10 // returns incorrect calculation, since r is set to maximum safe integer value
+BigInt(r) + 10n // return correct calculation
 ``` 
 
 ---
