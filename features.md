@@ -157,19 +157,13 @@ BigInt(r) + 10n // return correct calculation
 
 ---
 
-### optional chaining operator (?)
+### optional chaining operator ( ? )
 *(ES2020)*
 
-obj.val?.prop    
-obj.val?.[expr]  
-obj.arr?.[index]  
-obj.func?.(args)  
-
 ```js
-if (wizard?.gandalf?.hasStaff) { 
-  do smth 
-}
-
+wizard.gandalf?.hasStaff
+wizard.gandalf?.weapons?[0]
+wizard.gandalf?.fireball?(1000)
 ``` 
 
 ---
