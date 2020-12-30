@@ -146,7 +146,7 @@ global === globalThis; // true in Node.js
 ### bigInt
 *(ES2020)*
 
-**bigInt** - is a new javascript type
+**bigInt** - is a new javascript type, we can use to make calculations which are bigger than Number.MAX_SAFE_INTEGER
 ```js
 typeof 1n // returns bigin
 ``` 
