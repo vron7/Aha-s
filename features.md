@@ -142,3 +142,13 @@ global === globalThis; // true in Node.js
 ``` 
 
 ---
+
+### bigInt
+*(ES2020)*
+
+**bigInt** - is a new javascript type
+```js
+typeof 1n // returns bigin
+``` 
+
+---
