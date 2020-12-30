@@ -167,3 +167,19 @@ wizard.gandalf?.fireball?(1000)
 ``` 
 
 ---
+
+### nullish coalescing operator (??)
+*(ES2020)*
+
+```js
+wizard = {
+  name: 'Gandalf',
+  power: 0
+}
+power = wizard.power || 'no power'; // returns 'no power' - checks if value is 'falsey'
+power = wizard.power ?? 'no power'; // returns 0 - checks if value is null/undefined
+``` 
+
+---
+
+
