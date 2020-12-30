@@ -156,3 +156,20 @@ BigInt(r) + 10n // return correct calculation
 ``` 
 
 ---
+
+### optional chaining operator (?)
+*(ES2020)*
+
+obj.val?.prop    
+obj.val?.[expr]  
+obj.arr?.[index]  
+obj.func?.(args)  
+
+```js
+if (wizard?.gandalf?.hasStaff) { 
+  do smth 
+}
+
+``` 
+
+---
