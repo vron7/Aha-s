@@ -182,4 +182,18 @@ power = wizard.power ?? 'no power'; // returns 0 - checks if value is null/undef
 
 ---
 
+### Promise.allSetteled
+*(ES2020)*
+
+```js
+const p1 = new Promise((resolve, reject) => {resolve()})
+const p2 = new Promise((resolve, reject) => {reject()})
+
+Promise.all([p1,p2]).then(data => console.log(data)) // throws error since it expects all promises to be resolved
+
+Promise.allSettled([p1,p2]).then(data => console.log(data)) // all good
+``` 
+
+---
+
 
