@@ -1,4 +1,4 @@
-***UNICODE
+***UNICODE***
 
 **Timeline:**
 
@@ -22,4 +22,8 @@ In Unicode, characters map to a code points, for example U+0041 maps to characte
 **UTF-8** is a system of storing Unicode code points in memory using 8 bit bytes.  
 Every code point from 0-127 is stored in single byte.
 Codes 128 and above are stored using 2, 3 and up to 6 bytes.  
-This means English text looks same in UTF-8 as in ASCII/ANSI/OEM. For example U+0041 will be stored as 41(hex).
+This means English text looks same in UTF-8 as in ASCII/ANSI/OEM. For example U+0041 will be stored as 41(hex).  
+For example in case of Greek letters, you have to use several bytes to store a single code point.
+
+
+**It does not make sense to have a string without knowing what encoding it uses!!**
