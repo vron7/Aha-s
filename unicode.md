@@ -1,5 +1,7 @@
 ***UNICODE***
 
+![alt text](https://github.com/vron7/Aha-s/blob/master/images/a.jpg "Letter A")  
+
 **Timeline:**
 
 **ASCII** - a character set which can be stored in 7 bits (0 - 127) (decimals) 
