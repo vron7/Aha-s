@@ -507,7 +507,7 @@ let b = 'Polo!'
 window.a // returns 'Marco!'
 window.b // returns undefined :( whyyy??
 ```
-Both are still **global**, var is stored in window object, let/const is stored in declarative environment,
+Both are still **global** - var is stored in window object, let/const is stored in declarative environment,
 they do not create properties of the window object when declared globally.
 
 ---
