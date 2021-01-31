@@ -512,3 +512,28 @@ they do not create properties of the window object when declared globally.
 
 ---
 
+**Hoisiting**
+
+```js
+b() //returns bar!
+a //returns undefined :(
+c //returns Error - c is not defined
+ 
+var a = 'foo!'
+function b(){
+   return 'bar!';
+}
+```
+**Why??** - execution context is created in two phases:  
+1) **Creation phase:**  
+	* global object, this and outer environment is created 
+	* parser sets up memory space for variables and functions
+	* variables are assigned undefined as their value
+	* functions are placed into memory in their entirety
+2) **Execution phase:**   
+	* code starts to execute line by line, we can now access these variables and functions
+	* variables are assigned a value as the code executes
+
+---
+
+
