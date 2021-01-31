@@ -525,14 +525,16 @@ function b(){
 }
 ```
 **Why??** - execution context is created in two phases:  
-1) **Creation phase:**  
+**1) Creation phase:**  
 	* global object, this and outer environment is created 
 	* parser sets up memory space for variables and functions
-	* variables are assigned undefined as their value
-	* functions are placed into memory in their entirety
-2) **Execution phase:**   
+	* variables are assigned **undefined** as their value
+	* functions are placed into memory in their **entirety**
+**2) Execution phase:**   
 	* code starts to execute line by line, we can now access these variables and functions
 	* variables are assigned a value as the code executes
+
+What I write is not what's directly being executed!
 
 ---
 
