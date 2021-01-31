@@ -524,7 +524,8 @@ function b(){
    return 'bar!';
 }
 ```
-**Why??** - execution context is created in two phases:  
+**Why??** - execution context is created in two phases:    
+
 **1) Creation phase:**  
 	* global object, this and outer environment is created 
 	* parser sets up memory space for variables and functions
