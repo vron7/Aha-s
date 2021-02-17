@@ -536,9 +536,7 @@ What I write is not what's directly being executed!
 
 ---
 
-Function **invocation**
-
-Every time a function is called:   
+Every time a function is **invoked** (invocation):   
 * a new execution context is created for that function
 * execution context is put at the top of the execution stack
 * when funtion is finished the execution context is popped off the stack
