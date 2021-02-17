@@ -545,12 +545,12 @@ Every time a function is called:
 ```js
 function b(){
 	// b is invoked, a new execution context is created and placed to the top of execution stack
-	return // execution context is popped off the stack
+	return // execution context for b is popped off the stack
 }
 function a(){
 	// a is invoked, a new execution context is created and placed to the top execution stack
 	b(); // invoke function b
-	return // execution context is popped off the stack
+	return // execution context for a is popped off the stack
 }
  
 a(); // global -> a -> b -> a -> global
