@@ -69,10 +69,6 @@ var a = 0;
 a 	// returns 1 
 ```
 
------------------------------------------------------------------------------------------------------------------------------
-
-Prefer **querySelector** over getElementBy, it has css syntax and is more powerful
-
 ------------------------------------------------------------------------------------------------------------------------------
 ```js
 btn.addEventListener("click",handler) - handler is treated as callback
@@ -537,6 +533,28 @@ function b(){
 	* variables are assigned a value as the code executes
 
 What I write is not what's directly being executed!
+
+---
+
+Function **invocation**
+
+Every time a function is called:   
+* a new execution context is created for that function
+* execution context is put at the top of the execution stack
+* when funtion finished it is popped off
+```js
+function b(){
+	// b is invoked, a new execution context is created and placed to the top of execution stack
+	return // execution context is popped off the stack
+}
+function a(){
+	// a is invoked, a new execution context is created and placed to the top execution stack
+	b(); // invoke function b
+	return // execution context is popped off the stack
+}
+ 
+a(); // global -> a -> b -> a -> global
+```
 
 ---
 
