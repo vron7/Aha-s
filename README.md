@@ -541,7 +541,7 @@ Function **invocation**
 Every time a function is called:   
 * a new execution context is created for that function
 * execution context is put at the top of the execution stack
-* when funtion finished it is popped off
+* when funtion is finished the execution context is popped off the stack
 ```js
 function b(){
 	// b is invoked, a new execution context is created and placed to the top of execution stack
