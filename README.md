@@ -628,6 +628,13 @@ function +(a, b) {
 }
 ```
 
+---
+
+operator **precedence** and **associativity**
+```js
+var n = 2 + 3 * 4 // precedence determines which operator is run first
+var m = 2 + 3 + 4 // associatity determines in which order operators with the same precedence are run
+```
 
 ---
 
