@@ -641,7 +641,9 @@ var m = 2 + 3 + 4 // associatity determines in which order operators with the sa
 
 **cohersion** - converting a value from one type to another
 ```js
-var n = '1' + 2 // '12'
+var n = '1' + 2; // '12'
+var m = 3 < 2 < 1; // true - why?? 3 < 2 returns false, false < 1 returns true because false is cohersed to 0
+
 ```
 Since operator is a **function**, cohersion is part of the process of calling the function.
 
