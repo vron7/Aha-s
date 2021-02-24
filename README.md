@@ -606,4 +606,12 @@ b();
 
 ---
 
+Use **null** when you want to set variables to nothing, leave **undefined** for Javascript engine.  
 
+```js
+var n = 1;
+n = null;
+n = undefined; // DON'T
+```
+
+---
