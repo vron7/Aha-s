@@ -558,7 +558,7 @@ a(); // global -> a -> b -> a -> global
 
 **scope chain**
 
-Along with execution context, each function gets a reference to its outer lexical environment.   
+Along with execution context, each function gets a reference to its **outer lexical environment**.   
 Lexical meaning - where the funtion sits inside the code?
 
 ```js
@@ -573,7 +573,7 @@ var n = 1;
 b();
 ```
 
-Why?
+Why?  
 Because function **a** sits lecically in the global environment, it gets reference to the global environment.  
 It does not find variable n from its own execution contexts, so it tries to find it from its outer lexical environment.
 
