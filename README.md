@@ -643,6 +643,7 @@ var m = 2 + 3 + 4 // associatity determines in which order operators with the sa
 ```js
 var n = '1' + 2 // '12'
 ```
+Since operator is a **function**, cohersion is part of the process of calling the function.
 
 ---
 
