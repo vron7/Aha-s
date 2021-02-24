@@ -582,22 +582,25 @@ The scope chain runs all the way up to the global environment.
 function b(){
 	function a(){
 		// a sits lecically inside b, it goes to b to look for n
-		// it finds n from b, no need to look fruther
-		// n is undefined because a is invoked before n gets a value
+		// it finds n from b, n is undefined because a is invoked before n gets a value
 		console.log(n); // undefined
 	}
 	function c(){
 		// c sits lexically inside b
+		// c finds n from b
+		console.log(n); // 2
+
 		// it does not find m from b 
 		// it goes fruter in scope chain and finds m from global
-		console.log(m); // 2
+		console.log(m); // 3
 	}
 	a();
-	c();
 	var n = 2;
+	c();
+	
 }
 var n = 1;
-var m = 2;
+var m = 3;
 b();
 ```
 
