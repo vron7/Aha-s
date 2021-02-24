@@ -574,6 +574,7 @@ b();
 ```
 
 Why?  
+
 Because function **a** sits lecically in the global environment, it gets reference to the global environment.  
 It does not find variable n from its own execution contexts, so it tries to find it from its outer lexical environment.  
 The scope chain runs all the way up to the global environment.
@@ -615,3 +616,18 @@ n = undefined; // DON'T
 ```
 
 ---
+
+**operator** is just a special function which is syntatically different
+```js
+var n = 1 + 2; // infix notation - function name (the operator) sits between the parameters
+sum(1, 2); // funtion notation
+
+// conceptually it can be like ...
+function +(a, b) { 
+	return; // add the parameters
+}
+```
+
+
+---
+
