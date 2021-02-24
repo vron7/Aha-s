@@ -619,13 +619,14 @@ n = undefined; // DON'T
 
 **operator** is just a special function which is syntatically different
 ```js
-var n = 1 + 2; // infix notation - function name (the operator) sits between the parameters
 sum(1, 2); // funtion notation
 
-// conceptually it can be like ...
-function +(a, b) { 
-	return; // add the parameters
-}
+var n = 1 + 2; // infix notation - function name (the operator) sits between the parameters
+
+// conceptually var n = 1 + 2; can be written as:
+function +(a, b) { return a + b}
+function =(a, b){ return a = b}
+=(n, sum(a,b))
 ```
 
 ---
