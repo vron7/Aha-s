@@ -575,7 +575,31 @@ b();
 
 Why?  
 Because function **a** sits lecically in the global environment, it gets reference to the global environment.  
-It does not find variable n from its own execution contexts, so it tries to find it from its outer lexical environment.
+It does not find variable n from its own execution contexts, so it tries to find it from its outer lexical environment.  
+The scope chain runs all the way up to the global environment.
+
+```js
+function b(){
+	function a(){
+		// a sits lecically inside b, it goes to b to look for n
+		// it finds n from b, no need to look fruther
+		// n is undefined because a is invoked before n gets a value
+		console.log(n); // undefined
+	}
+	function c(){
+		// c sits lexically inside b
+		// it does not find m from b 
+		// it goes fruter in scope chain and finds m from global
+		console.log(m); // 2
+	}
+	a();
+	c();
+	var n = 2;
+}
+var n = 1;
+var m = 2;
+b();
+```
 
 ---
 
