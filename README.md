@@ -684,10 +684,15 @@ Imagine them being inside the single file.
 object **.** property
 ```js
 var person = {name:'John'}
-person.name // 
+// operator takes object and propery name, and looks for the name on this object
+person.name // member access operator
 person["name"] // computed member access operator
-person       ["name"] // also works, sicne it's an operatpr
-person  .  name // also works, since it's an operator
+person   ["name"]  // also works, sicne it's an operator
+person  .  name    // also works, since it's an operator
+window  .  alert() // jep, same - parser will igure it out
+
+person.address = {}
+person.address.street = 'wall-street' // 3 operators here, .(person, address) .(adress, street) =(street, f'wall-street')
 
 ```
 
