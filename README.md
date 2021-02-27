@@ -676,22 +676,20 @@ Imagine them being inside the single file.
 
 ---
 
-**Dot** is just an operator! :o  
+**Dot** is just an operator :o  
 **.** is an operator which accepts two parameters:
 1. object
 2. name of property   
 
 object **.** property
 ```js
-var person = {name:'John'}
 // operator takes object and propery name, and looks for the name on this object
-person.name // member access operator
+person.name // member access operator, parser will convert name to "name"
 person["name"] // computed member access operator
-person   ["name"]  // also works, sicne it's an operator
+person   ["name"]  // there is space? no problem, also works, sicne it's an operator
 person  .  name    // also works, since it's an operator
-window  .  alert() // jep, same - parser will igure it out
+window  .  alert() // jep, same
 
-person.address = {}
 person.address.street = 'wall-street' // 3 operators here, .(person, address) .(adress, street) =(street, f'wall-street')
 
 ```
