@@ -661,7 +661,8 @@ var name = params.name || 'john' // setting default value
 
 ---
 
-All these scrips operate in the same global execution context.
+All these scrips operate in the same global execution context.   
+Imagine them being inside the single file.
 ```js
 <html>
 <head></head>
