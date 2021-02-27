@@ -690,7 +690,7 @@ person   ["name"]  // there is space? no problem, also works, sicne it's an oper
 person  .  name    // also works, since it's an operator
 window  .  alert() // jep, same
 
-person.address.street = 'wall-street' // 3 operators here, .(person, address) .(adress, street) =(street, f'wall-street')
+person.address.street = 'wall-street' // 3 operators here, .(person, address) .(adress, street) =(street, 'wall-street')
 
 ```
 
