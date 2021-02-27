@@ -676,3 +676,15 @@ Imagine them being inside the single file.
 
 ---
 
+**Dot** is just an operator! :o 
+**.** is an operator which accepts two parameters:
+* object
+* property
+```js
+var person = {name:'John'}
+person.name // . is just an operator, which accepts two
+
+```
+
+---
+
