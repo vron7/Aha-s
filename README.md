@@ -687,7 +687,7 @@ object **.** property
 person.name // member access operator, parser will convert name to "name"
 person["name"] // computed member access operator
 person   ["name"]  // there is space? no problem, also works, sicne it's an operator
-person  .  name    // also works, since it's an operator
+person  .  name    // same
 window  .  alert() // jep, same
 
 person.address.street = 'wall-street' // 3 operators here, .(person, address) .(adress, street) =(street, 'wall-street')
