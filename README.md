@@ -663,11 +663,14 @@ var name = params.name || 'john' // setting default value
 
 All these scrips operate in the same global execution context.
 ```js
+<html>
+<head></head>
 <body>
-	<script src='start.js'></script>
-	<script src='lib1.js'></script>
-	<script src='lib2.js'></script>
+	<script src='start.js'></script> // var n = 1;
+	<script src='lib1.js'></script> // var n = 2;
+	<script src='lib2.js'></script>	// var n = 3; THE FINAL VALUE!
 </body>
+</html>
 ```
 
 ---
