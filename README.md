@@ -651,7 +651,7 @@ Since operator is a **function**, cohersion is part of the process of calling th
 
 ---
 
-**||** - operator takes two values and returns a first one which coherses to **true**
+**||** - (or) operator takes two values and returns a first one which coherses to **true**
 ```js
 false || true; // true
 "carrots" || null // carrots
