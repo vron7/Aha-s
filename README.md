@@ -679,7 +679,8 @@ Imagine them being inside the single file.
 **Dot** is just an operator! :o  
 **.** is an operator which accepts two parameters:
 1. object
-2. property  
+2. property    
+
 object **.** property
 ```js
 var person = {name:'John'}
