@@ -619,7 +619,7 @@ n = undefined; // DON'T
 
 **operator** is just a special function which is syntatically different
 ```js
-sum(1, 2); // funtion notation
+sum(1, 2); // function notation
 
 var n = 1 + 2; // infix notation - function name (the operator) sits between the parameters
 
