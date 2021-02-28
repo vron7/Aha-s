@@ -355,9 +355,10 @@ class Hooman {
 }
 class Worker extends Hooman{
 	constructor(name, profession) {
-		console.log(this.name); //returns error, call super first!
-		super(name) //access parents properties and functions
-		console.log(this.name); //returns name
+		console.log(this.name); // returns error, call super first!
+		// since we extend Hooman, we must call super in order to invoke the constructor function of the Hooman
+		super(name) // access parents properties and functions
+		console.log(this.name); // returns name
 		this.profession = profession;
 	}
 }
