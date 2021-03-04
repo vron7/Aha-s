@@ -35,10 +35,6 @@ typeof(wizard); 	 // returns "object"
 wizard.name = 'Gandalf'; // returns error
 ```
 
------------------------------------------------------------------------------------------------------------
-
-**JS types:** Number, String, Object, Null, Undefined, Boolean, Symbol
-
 ---------------------------------------------------------------------------------------------------------
 
 **Arguments** vs **Parameters**
@@ -73,7 +69,7 @@ a 	// returns 1
 ```js
 btn.addEventListener("click",handler) - handler is treated as callback
 
-<button onclick=”handler()”></button> - handler is string treated as JS expression
+<button onclick=”handler()”></button> - handler is a string, treated as JS expression
 ```
 
 For example can be: *onclick="handler();alert(77);"*
