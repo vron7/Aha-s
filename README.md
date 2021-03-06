@@ -689,6 +689,9 @@ window  .  alert() // jep, same
 
 person.address.street = 'wall-street' // 3 operators here, .(person, address) .(adress, street) =(street, 'wall-street')
 
+var computer = {}
+computer.software.os = 'Linux' // error: software is undefined - two operators, left to right associativity - software is not found on computer object
+
 ```
 
 ---
