@@ -690,7 +690,10 @@ window  .  alert() // jep, same
 person.address.street = 'wall-street' // 3 operators here, .(person, address) .(adress, street) =(street, 'wall-street')
 
 var computer = {}
-computer.software.os = 'Linux' // error: software is undefined - two operators, left to right associativity - software is not found on computer object
+computer.software.os = 'Linux' // Uncaught TypeError: Cannot set property 'os' of undefined
+// two operators, left to right associativity
+// first operator (computer . software) returns undefined
+// second operator (software . os ) returns error, since software is undefined
 
 ```
 
