@@ -699,3 +699,13 @@ computer.software.os = 'Linux' // Uncaught TypeError: Cannot set property 'os' o
 
 ---
 
+Every valid JSON is also a valid Javascript Object literal.   
+Not every valid Javascript Object literal is a valid JSON.
+```js
+{ "name": "John" } // valid JSON and also a valid Object literal
+{ name: "John" } // valid Object literal but invalid JSON because of quotes missing from property name
+
+```
+
+---
+
