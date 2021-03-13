@@ -515,7 +515,7 @@ d() // return Error - d is not a function
  
 var a = 'foo!'
 function b(){ return 'b'} // function declatarion is hoisted
-var d = function(){ return 'd'} // function expression is not hoisted
+var d = function(){ return 'd'} // function expression is not hoisted (variables are assigned undefined)
 ```
 **Why??** - execution context is created in two phases:    
 
