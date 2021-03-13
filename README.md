@@ -508,14 +508,14 @@ they do not create properties of the window object when declared globally.
 **Hoisiting**
 
 ```js
-b() //returns bar!
-a //returns undefined :(
-c //returns Error - c is not defined
+b() // returns bar!
+a   // returns undefined :(
+c   // returns Error - c is not defined
+d() // return Error - d is not a function
  
 var a = 'foo!'
-function b(){
-   return 'bar!';
-}
+function b(){ return 'b'} // function declatarion is hoisted
+var d = function(){ return 'd'} // function expression is not hoisted
 ```
 **Why??** - execution context is created in two phases:    
 
@@ -707,5 +707,17 @@ Not every valid Javascript Object literal is a valid JSON.
 
 ```
 
+---
+
+**Function** is an **Object**
+
+```js
+function greet(){return 'helloo'} ;
+greet.foo = 'bar'; // we can add primitives, objects, funtions to a function
+greet.name 	// returns "greet" - functions can have special propery called name
+greet 		// returns the function code as text
+greet() 	// invoke the function code
+
+```
 ---
 
