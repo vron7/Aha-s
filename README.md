@@ -712,11 +712,11 @@ Not every valid Javascript Object literal is a valid JSON.
 **Function** is an **Object**
 
 ```js
-function greet(){return 'helloo'} ;
-greet.foo = 'bar'; // we can add primitives, objects, funtions to a function
-greet.name 	// returns "greet" - functions can have special propery called name
-greet 		// returns the function code as text
-greet() 	// invoke the function code
+function greet(){ return 'helloo' } ;
+greet.foo = 'bar';  // we can add primitives/objects/funtions
+greet.name 	    // returns "greet" - functions can have special propery called name
+greet 		    // returns the function code as text
+greet() 	    // invoke the function code
 
 ```
 ---
