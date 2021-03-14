@@ -721,3 +721,16 @@ greet() 	    // invoke the function code
 ```
 ---
 
+More **execution context**
+
+```js
+const a = 1;
+const exec = () => {
+    console.log(a); // undefined
+    var a = a;      // when execution context is created, all variables are set to undefined, now during execution phase, we set a to its own value - undefined
+    console.log(a); // undefined
+}
+exec();
+```
+
+---
