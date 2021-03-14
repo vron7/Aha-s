@@ -724,10 +724,12 @@ greet() 	    // invoke the function code
 More **execution context**
 
 ```js
-const a = 1;
+const a = 1; // is ignored, since function exec finds 'a' from its own variable space
 const exec = () => {
     console.log(a); // undefined
-    var a = a;      // when execution context is created, all variables are set to undefined, now during execution phase, we set a to its own value - undefined
+    // 1) when execution context is created, all variables are set to undefined 
+    // 2) now during execution phase, we set 'a' to its own value, which is undefined
+    var a = a;     
     console.log(a); // undefined
 }
 exec();
