@@ -731,6 +731,9 @@ function **expression** (always results in a value)
 var helloo = function(){};     
 // returns an object
 // created during execution phase - cannot be hoisted
+
+helloo(function(){}); 
+// also an expression, we create a function object on the fly and pass it to another function as argument
 ```
 
 ---
