@@ -717,8 +717,22 @@ greet.foo = 'bar';  // we can add primitives/objects/funtions
 greet.name 	    // returns "greet" - functions can have special propery called name
 greet 		    // returns the function code as text
 greet() 	    // invoke the function code
+greet(function hi(){}); // function is an object, we can create it on the fly and pass it to other functions
 
 ```
+function **statement**
+```js
+function helloo(){}	     
+// defines an object in current execution context
+// created during creation phase - can be hoisted
+```
+function **expression** (always results in a value)
+```js
+var helloo = function(){};     
+// returns an object
+// created during execution phase - cannot be hoisted
+```
+
 ---
 
 More **execution context**
