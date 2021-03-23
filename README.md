@@ -335,7 +335,19 @@ var w3 = JSON.parse(JSON.stringify(w)); //Object is converted to string and then
 ```js
 console.log(this); //returns Window (in browser)
 function a(){ console.log(this) }; //returns Window 
-var obj = { a: function(){ console.log(this) } }; //returns obj
+var obj = { 
+	a: function(){
+		var self = this;
+		console.log(this) // returns obj
+		var b = function(){
+			console.log(this) // returns Window :o - just how JS works
+			console.log(self) // returns obj - wohoo workaround
+			// b goes out to its lexical environment to find self
+		}
+	} 
+}; 
+
+
 ```
 ---
 
