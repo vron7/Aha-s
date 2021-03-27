@@ -765,3 +765,22 @@ exec();
 ```
 
 ---
+
+automatic **;**
+```js
+function getSomething() {
+	return // js parser automatically adds  a semicolon here because it sees a cartridge return (enter press)
+	{
+		name: 'Something'
+	}
+}
+getObject(); // return undefined :o
+function getSomething() {
+	return {
+		name: 'Something'
+	}
+}
+getObject(); // returns an object as expected
+```
+
+---
