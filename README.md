@@ -769,12 +769,13 @@ exec();
 automatic **;**
 ```js
 function getSomething() {
-	return // js parser automatically adds  a semicolon here because it sees a cartridge return (enter press)
-	{
+	return  // js parser automatically adds  a semicolon here because it sees a cartridge return (enter press)
+	{ 	// this part never reached because of return;
 		name: 'Something'
 	}
 }
-getObject(); // return undefined :o
+getObject(); // returns undefined :o
+
 function getSomething() {
 	return {
 		name: 'Something'
