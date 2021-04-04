@@ -787,16 +787,19 @@ getObject(); // returns an object as expected
 ---
 **IIFE**
 ```js
-// returns an error, since parser sees word function and expects a function statement with function name
-function(name){
-	console.log('greetings!' + name)
+function(param){
+	console.log('hello! ' + param)
 } 
+// returns an error, since parser sees word function and expects a function statement with function name
 
-// no error, since its inside parentheses and is exexuted as an expression, IIFE classical implementation
-// it creates a function object on the fly and then invokes it
-(function(name){
-	console.log('greetings ' + name)
-}('John'))
+------------------------
+
+(function(param){
+	console.log('hello! ' + param)
+}('World'))
+// IIFE classical implementation
+// no error, since it's inside parentheses and is exexuted as an expression
+// it creates a function object on the fly and then invokes its code
 ```
 
 ---
