@@ -803,3 +803,28 @@ function(param){
 ```
 
 ---
+
+Inside **closures**  
+```js
+function greet(whatToSay){
+	return function(name){
+		console.log(whatToSay + ' ' + name)
+	}
+}
+sayHi = greet('Hola')
+sayHi('John') // Hola John
+```
+So what happens here?
+1. When greet function is invoked a new execution context is created and variable whatToSay is sitting in its variable environment
+2. A new function object is created on the fly and returned
+3. After a return, greet execution context is popped of the stack, its gone
+4. But every execution context has its space in memory where variables and functions created inside of it live
+5. On the normal circumstances, at some point this memory space is cleared up by GC when the execution context goes away
+6. Function sayHi is invoked and a new execution contexts is created
+7. Inside sayHi, when JS engine finds whatToSay variable, it goes up the scope chain to find it (from outer lexical environment reference)
+8. Even though the greet function ended, every function inside it will still have a reference to that greet functions memory space
+9. So we can say that the execution context has CLOSED in its outer variables
+10. JS engine will always make sure that whatever function I'm running, it will have access to the variables it should have access to!
+
+---
+
