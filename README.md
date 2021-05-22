@@ -828,3 +828,52 @@ So what happens here?
 
 ---
 
+more **closures**
+
+```js
+function build(){
+    var arr = [];
+    for (var i = 0; i < 3; i++){
+        arr.push(
+            function(){ 
+	    	// when this function get invoked it will start to look for variable i
+	    	// it goes up the scope chain to find it from its outer environment
+		// i will have its final value as a result of the for loop
+	    	console.log(i); // 3	    	
+	    } 
+        )
+    }
+    return arr;
+}
+var b = build();
+b[0](); // returns 3
+b[1](); // returns 3
+b[2](); // returns 3
+```
+
+how to **fix** using IIFE?
+
+```js
+function build(){
+    var arr = [];
+    for (var i = 0; i < 3; i++){
+        arr.push(
+            (function(j){  // here we get the value of the i 
+	    	return function(){
+			// when this function get invoked it will start to look for variable j
+			// it will find j stored in a closure from its outer function (as a parameter)
+			console.log(j); 
+		}	    	   	
+	    }(i)) // immideately invoke and store current value of i
+        )
+    }
+    return arr;
+}
+var b = build();
+b[0](); // returns 0
+b[1](); // returns 1
+b[2](); // returns 2
+```
+
+---
+
