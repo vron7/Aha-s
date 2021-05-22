@@ -851,7 +851,7 @@ b[1](); // 3
 b[2](); // 3
 ```
 
-how to **"fix"** using IIFE? (I want to print out the value of **i** in each loop cycle)
+how to **"fix"** using IIFE? ( I want to print out the intermediate value of **i** in each loop cycle)
 
 ```js
 function build(){
