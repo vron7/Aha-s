@@ -838,6 +838,7 @@ function build(){
             function(){ 
 	    	// when this function get invoked it will start to look for variable i
 	    	// it goes up the scope chain to find it from its outer environment
+		// execution context for build function is gone, but memory space is still preserved thaks to the closure
 		// i will have its final value as a result of the for loop
 	    	console.log(i); // 3	    	
 	    } 
