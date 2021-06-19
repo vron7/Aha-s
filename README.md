@@ -878,3 +878,31 @@ b[2](); // 2
 
 ---
 
+**call, bind, apply**    
+These are methods on a function object and they all let you decide on what **this** should be
+```js
+var person = { 
+	name: 'John', 
+	getName: function() {
+		return this.name;
+	}
+};
+logName = function(num = 1) {
+	console.log(this.name, num);
+}
+
+// bind creates and returns a copy of the function with this already binded to a passed object
+logNameBinded = logName.bind(person);
+logNameBinded(); // John 1
+logNameBinded(2); // John 2
+
+// call invokes the function
+logName.call(person); // John 1
+logName.call(person, 2); // John 2
+
+// apply does same as call, but arguments need to be passed as an array
+logName.apply(person, [2]); // John 2
+```
+
+---
+
