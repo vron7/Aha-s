@@ -902,6 +902,13 @@ logName.call(person, 2); // John 2
 
 // apply does same as call, but arguments need to be passed as an array
 logName.apply(person, [2]); // John 2
+
+//an example of a currying using bind - creating a copy of a function with some present parameters
+function multiply(a, b) {
+	return a * b;
+}
+var multiplyByTwo = multiply.bind(this, 2); // giving arguments sets the permanent parameter value when the copy is made
+multiplyByTwo(5); // 10
 ```
 
 ---
