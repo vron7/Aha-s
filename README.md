@@ -913,3 +913,17 @@ multiplyByTwo(5); // 10
 
 ---
 
+**prototypal inheritance**  
+*inheritance* - object gets access to another object properties and methods    
+All objects in javascripts (including functions) have a **prototype** property - its a reference to another object, a proto.
+```js
+var person = {};
+person.__proto__.name = 'Ivan';
+person.name // returns Ivan, js engine first looks name property from person, if not found then from proto
+
+var person2 = {};
+person.name // returns Ivan, both objects reference the same proto
+```
+
+---
+
