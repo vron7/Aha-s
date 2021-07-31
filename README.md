@@ -928,6 +928,14 @@ var arr = [1, 2];
 arr.__proto__ = {}; // we remove the array proto
 arr.pop(); // error : pop is not a function
 
+
+var a = [];
+a.__proto__.__proto__ // returns Object, we reached the bottom of prototype chain, the base object
+var b = {};
+b.__proto__.__proto__ // returns null, object proto is already the base object
+var c = function(){ };
+v.__proto__.__proto__ // returns Object, , we reached the bottom of prototype chain, the base object
+
 ```
 
 ---
