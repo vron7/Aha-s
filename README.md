@@ -923,6 +923,11 @@ person.name // returns Ivan, js engine first looks name property from person, if
 
 var person2 = {};
 person.name // returns Ivan, both objects reference the same proto
+
+var arr = [1, 2];
+arr.__proto__ = {}; // we remove the array proto
+arr.pop(); // error : pop is not a function
+
 ```
 
 ---
