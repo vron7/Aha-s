@@ -928,13 +928,25 @@ var arr = [1, 2];
 arr.__proto__ = {}; // we remove the array proto
 arr.pop(); // error : pop is not a function
 
-
+// EVERYTHING IS AN OBJECT
 var a = [];
+a.__proto__.push(1)   // push method comes from arrays proto
 a.__proto__.__proto__ // returns Object, we reached the bottom of prototype chain, the base object
-var b = {};
-b.__proto__.__proto__ // returns null, object proto is already the base object
-var c = function(){ };
-v.__proto__.__proto__ // returns Object, , we reached the bottom of prototype chain, the base object
+
+var b = function() { };
+b.__proto__.apply()   // apply method comes from functions proto
+b.__proto__.__proto__ // returns Object, we reached the bottom of prototype chain, the base object
+
+var c = { };
+c.__proto__.toString() // toString method comes from objsets proto
+c.__proto__.__proto__  // returns null, Objects proto is already the base object
+
+a.__proto__.__proto__.toString = null
+c.toString() // error, toString is not a function
+// MEANING:
+// everything is an Object
+// everything points to the same base Object
+
 
 ```
 
