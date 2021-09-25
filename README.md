@@ -952,3 +952,7 @@ c.toString() // error, toString is not a function
 
 ---
 
+**Javascript** name was created to attract **Java** developers :o
+
+---
+
