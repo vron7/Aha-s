@@ -959,3 +959,7 @@ c.toString() // error, toString is not a function
 
 ---
 
+**Function constructor** - a function that is used to create objects.   
+When invoked with the **new** operator, **this** is sent to an empty object and that object is returned automagically. 
+
+---
