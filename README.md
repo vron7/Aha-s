@@ -492,14 +492,22 @@ When a function is executed with **new**, following occurs:
 
 ```js
 function User(name) {
-  // this = {};  (implicitly)
+  // this = {};  (implicitly by js engine)
 
   // add properties to this
   this.name = name;
   this.isAdmin = false;
 
-  // return this;  (implicitly)
+  // return this;  (implicitly by js engine), unless function itself returns a value
 }
+
+var john = new User('John'); // { name: 'John', isAdmin: false }
+var mary = User('Mary');     // mary is undefined
+
+// when using new operator, could think of it as following:
+var john = {};
+User.call(john, 'John');
+
 ```
 
 ---
