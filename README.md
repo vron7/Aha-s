@@ -485,23 +485,18 @@ arr.splice(index, 0, n) // instead of arr[i] = n
 
 **new** operator
 
-When a function is executed with **new**, following occurs:  
+When a function is executed with **new** keyword, following occurs:  
 * a new empty object is created and assigned to **this**
-* the function body executes. Usually it modifies **this**, adds new properties to it.
-* the value of **this is returned**.
+* the value of **this** is **returned**.
 
 ```js
 function User(name) {
   // this = {};  (implicitly by js engine)
-
-  // add properties to this
   this.name = name;
-  this.isAdmin = false;
-
   // return this;  (implicitly by js engine), unless function itself returns a value
 }
 
-var john = new User('John'); // { name: 'John', isAdmin: false }
+var john = new User('John'); // {name: 'John'}
 var mary = User('Mary');     // mary is undefined
 
 // when using new operator, could think of it as following:
