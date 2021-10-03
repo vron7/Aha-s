@@ -960,6 +960,11 @@ c.toString() // error, toString is not a function
 ---
 
 **Function constructor** - a function that is used to create objects.   
-When invoked with the **new** operator, **this** is sent to an empty object and that object is returned automagically. 
-
+When invoked with the **new** operator, **this** is set to an empty object and that object is returned automagically. 
+```js
+function Person(name){
+	this.name = name;
+}
+var john = new Person('John');
+```
 ---
