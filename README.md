@@ -985,9 +985,11 @@ f.prototype.__proto__ === f.__proto__.__proto__ // true, eventually point to the
 var Person = function(name) {
 	this.name = name;
 	// we could also define getName method here as this.getName = function (name) {...}
-	// but this is not good because it 
+	// but funtions in js are objects and they take up memory space
+	// every single Person object would get a copy of getName function
 }
 
+// for efficiency its better to put methods on prototype
 Person.prototype.getName = function() {
 	return this.name;
 }
