@@ -968,3 +968,28 @@ function Person(name) {
 var john = new Person('John');
 ```
 ---
+
+**Function Constructor and prototype**
+Every function in javascript has a **prototype** property. It's not the prototype of the function, it's the prototype of the object which is created when
+using the function as a function constructor ( **new** keyword )
+```js
+var n = {};
+n.prototype // undefined, only funtions have the prototype property
+
+var f = function() { }
+f.prototype // an empty object
+f.__proto__ // functions prototype
+f._proto__ === f.prototype // false, not the same
+f.prototype.__proto__ === f.__proto__.__proto__ // true, eventually point to the same base object
+
+var Person = function(name) {
+	this.name = name;
+}
+Person.prototype.getName = function() {
+	return this.name;
+}
+var john = new Person('John'); // new keyword sets the prototype of newly created object to the prototype property of the function which created the object
+john.__proto__ === Person.prototype // true
+```
+
+---
