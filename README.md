@@ -993,10 +993,6 @@ Person.prototype.getName = function() {
 }
 
 // new keyword sets the prototype of the newly created object to the prototype property of the function which created the object
-// imagine it like following when using new keyword:
-// n = {}
-// n.__proto__ = Person.prototype
-// return n
 var john = new Person('John'); 
 john.__proto__ === Person.prototype // true
 
