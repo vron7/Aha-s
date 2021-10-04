@@ -986,7 +986,7 @@ var Person = function(name) {
 	this.name = name;
 	// we could also define getName method here as this.getName = function (name) {...}
 	// but funtions in js are objects and they take up memory space
-	// every single Person object would get a copy of getName function
+	// every single Person object would get a copy of the getName function
 }
 
 // for efficiency its better to put methods on prototype
