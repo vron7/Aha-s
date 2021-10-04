@@ -992,14 +992,19 @@ Person.prototype.getName = function() {
 	return this.name;
 }
 
-var john = new Person('John'); // new keyword sets the prototype of the newly created object to the prototype property of the function which created the object
+// new keyword sets the prototype of the newly created object to the prototype property of the function which created the object
+// imagine it like following when using new keyword:
+// n = {}
+// n.__proto__ = Person.prototype
+// return n
+var john = new Person('John'); 
 john.__proto__ === Person.prototype // true
 
 // Wohoom, since protype is passed by reference, we can add new methods even after creating the object!
 Person.prototype.shout = function(what) {
 	console.log(what);
 }
-john.shout('Wohoooo');
+john.shout('Wohoooo!'); // Wohoooo!
 ```
 
 ---
