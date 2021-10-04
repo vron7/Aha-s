@@ -1001,6 +1001,8 @@ Person.prototype.shout = function(what) {
 	console.log(what);
 }
 john.shout('Wohoooo!'); // Wohoooo!
+john.call(); // error, it does not get the prototype of function, it gets the prototype property of the function
+
 ```
 
 ---
