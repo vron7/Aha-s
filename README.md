@@ -989,7 +989,7 @@ var Person = function(name) {
 	// every single Person object would get a copy of the getName function
 }
 
-// for efficiency its better to put methods on prototype
+// for efficiency its better to put methods on prototype, it's only created once
 Person.prototype.getName = function() {
 	return this.name;
 }
