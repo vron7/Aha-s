@@ -1012,6 +1012,13 @@ john.call(); // error, it does not get the prototype of function, it gets the pr
 **Built-In Function Constructors** 
 
 ```js
+typeof(String)       // function
+String.indexOf('o')  // error indexOf is not a function, its not part of String prototype
+String.prototype.indexOf('o') // -1, indexOf belongs to Strings prototype property
+var s = new String('John') // an object in created, not a primitive
+s.indexOf('o')      // 1
+"John".indexOf('o') // 1
+
 var n = new Number(3)
 typeof(n) // object
 n == 3 // true, cohersion
