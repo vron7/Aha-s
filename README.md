@@ -1008,3 +1008,14 @@ john.call(); // error, it does not get the prototype of function, it gets the pr
 ```
 
 ---
+
+**Built-In Function Constructors** 
+
+```js
+var n = new Number(3)
+typeof(n) // object
+n == 3 // true, cohersion
+n === 3 // false :(
+```
+
+---
