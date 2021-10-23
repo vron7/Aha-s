@@ -1032,8 +1032,9 @@ String.prototype.isLengthGreaterThan = function(limit) {
 	return this.length > limit;
 }
 "John".isLengthGreaterThan(3) // true, primitive converted to object
-
-// Lets try on numbers
+```
+Let's try same on numbers
+```js
 Number.prototype.isPositive = function() {
 	return this > 0;
 }
