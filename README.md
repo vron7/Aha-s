@@ -1024,8 +1024,14 @@ s.__proto__ === j.__proto__ // true, js engine converts primitive to a string ob
 s.indexOf('h')		    // 2
 j.indexOf('h')		    // 2, primitive converted to object
 "John".indexOf('h')         // 2, primitive converted to object
-
 "John".__proto__ === String.prototype // true, wohooooo
+
+// Lets say we want to add a feature to all strings in js
+// We modify the prototype property of built-in function constructor
+String.prototype.isLengthGreaterThan = function(limit) {
+	return this.length > limit;
+}
+"John".isLengthGreaterThan(3) // true, primitive converted to object
 
 
 var n = new Number(3)
