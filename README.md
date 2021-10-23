@@ -1040,6 +1040,7 @@ Number.prototype.isPositive = function() {
 }
 var n = new Number(7)
 var m = 7
+m === n	           // false, primitive vs object
 n.isPositive()     // true
 m.isPositive()     // true
 7.isPositive()     // error, js engine gets 7.0isPositive, i is unexpected token since there is no dot opetator
