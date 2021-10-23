@@ -1033,11 +1033,24 @@ String.prototype.isLengthGreaterThan = function(limit) {
 }
 "John".isLengthGreaterThan(3) // true, primitive converted to object
 
+// Lets try on numbers
+Number.prototype.isPositive = function() {
+	return this > 0;
+}
+var n = new Number(7)
+var m = 7
+n.isPositive()     // true
+m.isPositive()     // true
+7.isPositive()     // error, js engine gets 7.0isPositive, i is unexpected token since there is no dot opetator
+7..isPositive()    // true, js engine gets 7.0.isPositive()
+7.0.isPositive()   // true
 
-var n = new Number(3)
-typeof(n) // object
-n == 3 // true, cohersion
-n === 3 // false :(
+-7..isPositive()   // returns -1, why???? its a result of precedence plus coercion!
+// 1) . operator has higher precedence than -
+// 2) 7..isPositive() is executed first, which returns true
+// 3) - is applied to the returned true, which js engine converts intro -1
+(-7.).isPositive() // returns false, all good now
+
 ```
 
 ---
