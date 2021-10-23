@@ -1012,17 +1012,21 @@ john.call(); // error, it does not get the prototype of function, it gets the pr
 **Built-In Function Constructors** 
 
 ```js
-typeof(String)       // function
-String.indexOf('o')  // error indexOf is not a function, its not part of String prototype
-String.prototype.indexOf('o') // -1, indexOf belongs to Strings prototype property
-var s = new String('John') // an object in created, not a primitive
-s.indexOf('o')      // 1
-"John".indexOf('o') // 1, js engine converts string to a string object in order to access the indexOf
-var r = "John"
-r.indexOf('o') // 1
-s.__proto__ === String.prototype // true
-"John".__proto__ === String.prototype // true
-r.__proto__ === String.prototype // true
+typeof(String) 		  // function, a constructor function
+String.indexOf 		  // undefined, indexOf is not in String prototype
+String.prototype.indexOf  // function, indexOf belongs to String prototype property
+
+var s = new String('John')  // a string object in created, not a primitive
+var j = 'John' 	 	    // a string primitive
+s == j 			    // true, coercion
+s === j 		    // false, object vs primitive
+s.__proto__ === j.__proto__ // true, js engine converts primitive to a string object
+s.indexOf('h')		    // 2
+j.indexOf('h')		    // 2, primitive converted to object
+"John".indexOf('h')         // 2, primitive converted to object
+
+"John".__proto__ === String.prototype // true, wohooooo
+
 
 var n = new Number(3)
 typeof(n) // object
