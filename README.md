@@ -1017,7 +1017,12 @@ String.indexOf('o')  // error indexOf is not a function, its not part of String 
 String.prototype.indexOf('o') // -1, indexOf belongs to Strings prototype property
 var s = new String('John') // an object in created, not a primitive
 s.indexOf('o')      // 1
-"John".indexOf('o') // 1
+"John".indexOf('o') // 1, js engine converts string to a string object in order to access the indexOf
+var r = "John"
+r.indexOf('o') // 1
+s.__proto__ === String.prototype // true
+"John".__proto__ === String.prototype // true
+r.__proto__ === String.prototype // true
 
 var n = new Number(3)
 typeof(n) // object
