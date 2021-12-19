@@ -1060,6 +1060,55 @@ m.isPositive()     // true
 **Promise** is a standardized approach to dealign with asynchronous events and callbacks   
 Lets write one
 ```js
+const PENDING = 0;
+const FULFILLED = 1;
+const REJECTED = 2;
 
+function MyPromise(executor) {
+    let state = PENDING;
+    let value = null;
+    let handlers = []
 
+    // resolve function will be passed to the executor funtion
+    // executor funtion calls resolve with a result
+    function resolve(result) {
+        if(state !== PENDING) return; // resolve only once
+
+        state = FULFILLED;
+        value = result;
+
+        // pass result to the handlers
+        handlers.forEach((h) => h(value));
+    }
+
+    // reject will be passed to the executor funtion
+    function reject(err) {
+        if (state !== PENDING) return; // reject only once
+        state = REJECTED;
+        value = err;
+        // add logic here to handle reject
+    }
+
+    // accepts a callback and depending on state,
+    // execute immideately or when promise is resolved 
+    this.then = function(callback) {        
+        if (state === FULFILLED) {
+            callback(value);
+        } else {
+            handlers.push(callback);
+        }
+    }
+
+    // finally run the executor funtion, which means
+    // the creation of the Promise starts the actual work!
+    executor(resolve, reject);
+}
+
+// lets use our promise
+// define an executor function
+const work = (res, rej) => {
+    setTimeout(() => { res("Work Done!") }, 1000)
+}
+let promise = new MyPromise(work);
+promise.then((result) => console.log(result));
 ```
