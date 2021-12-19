@@ -1056,3 +1056,10 @@ m.isPositive()     // true
 ```
 
 ---
+
+**Promise** is a standardized approach to dealign with asynchronous events and callbacks   
+Lets write one
+```js
+
+
+```
