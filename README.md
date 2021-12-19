@@ -1057,8 +1057,7 @@ m.isPositive()     // true
 
 ---
 
-**Promise** is a standardized approach to dealign with asynchronous events and callbacks   
-Lets write one
+**Promise** is a standardized approach to dealign with asynchronous events and callbacks. now lets write one
 ```js
 const PENDING = 0;
 const FULFILLED = 1;
@@ -1110,5 +1109,5 @@ const work = (res, rej) => {
     setTimeout(() => { res("Work Done!") }, 1000)
 }
 let promise = new MyPromise(work);
-promise.then((result) => console.log(result));
+promise.then((result) => console.log(result)); // Work Done!
 ```
