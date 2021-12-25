@@ -1111,3 +1111,8 @@ const work = (res, rej) => {
 let promise = new MyPromise(work);
 promise.then((result) => console.log(result)); // Work Done!
 ```
+
+---
+**thenable** - basically an object with a **then** mehtod 
+
+---
