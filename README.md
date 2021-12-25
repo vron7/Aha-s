@@ -1113,6 +1113,6 @@ promise.then((result) => console.log(result)); // Work Done!
 ```
 
 ---
-**thenable** - basically an object with a **then** mehtod 
+**thenable** - any object with a **then** mehtod 
 
 ---
