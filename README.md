@@ -1113,7 +1113,7 @@ promise.then((result) => console.log(result)); // Work Done!
 ```
 
 ---
-**thenable** - any object with a **then** mehtod 
+**Thenable** - any object with a **then** mehtod 
 ```js
 var myCustomObject = { 
     then: (cb) => cb('hola!')  // do some work          
