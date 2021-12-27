@@ -1123,3 +1123,12 @@ Promise.resolve()
 .then(console.log) // 'hola!'
 ```
 ---
+
+Need to convert something into a  **number** fast? Use unrary plus operator
+```js
++"5"   // 5
++true  // 1
++false // 0
+```
+
+---
