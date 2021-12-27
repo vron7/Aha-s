@@ -639,6 +639,9 @@ var n = 1 + 2; // infix notation - function name (the operator) sits between the
 function +(a, b) { return a + b}
 function =(a, b){ return a = b}
 =(n, sum(a,b))
+
++5    // unary operator (single operand)
+1 + 5 // binary operator (two operands)
 ```
 
 ---
@@ -1124,7 +1127,7 @@ Promise.resolve()
 ```
 ---
 
-Need to convert something into a  **number** fast? Use unrary plus operator
+Need to convert something into a  **number** fast? Use **unary plus** operator
 ```js
 +"5"   // 5
 +true  // 1
