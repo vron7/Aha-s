@@ -3,7 +3,7 @@
 **Type assignments**
 ```js
 // no need to explicitly assign a type here since TS will 
-// implicitly determine it by itself based on the value
+// implicitly determine it by itself based on the value (inference)
 const number1 = 5;
 
 // let's assign a type here, because we do not initiate number2 
