@@ -54,6 +54,12 @@ const logOther = function(): undefined {
   console.log('hola!');
   return; // when you want to use undefined type, you must use empty return statement
 }
+
+//function type
+let fn1: (a: number) => boolean; // fn1 variable accepts a function which has a
+                                 // number parameter and returns a boolean
+const fn2 = (num: number) => num > 0
+fn1 = fn2 // no error, type matching
 ```
 
 ------
