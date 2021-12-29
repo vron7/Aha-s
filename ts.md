@@ -4,14 +4,27 @@
 ```js
 // no need to explicitly assign a type here since TS will 
 // implicitly determine it by itself based on the value (inference)
-const number1 = 5;
+const num = 5;
 
 // let's assign a type here, because we do not initiate number2 
 // with a value but we want it to be a number
-let number2: number; 
+let num1: number; 
 
 // any type since there is no value nor explicit type assigment 
-let number3;          
+let input;
+
+// union type, can be either
+let input1: string | number
+
+// literal type
+let pasta1: 'spaghetti'
+
+// union type with literal types
+let pasta2: 'fussili' | 'penne'
+
+const eatPasta = (pasta: 'spaghetti' | 'penne') => {console.log('om nom nom')}
+eatPasta(pasta1);
+eatPasta(pasta2); // error type 'fussili' not assignable to 'spaghetti' | 'penne'
 ```
 
 ------
