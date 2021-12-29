@@ -16,7 +16,7 @@ let input;
 // union type, can be either
 let input1: string | number
 
-//literal type
+// literal type
 let pasta1: 'spaghetti'
 
 // union type with literal types
@@ -55,11 +55,18 @@ const logOther = function(): undefined {
   return; // when you want to use undefined type, you must use empty return statement
 }
 
-//function type
+// function type
 let fn1: (a: number) => boolean; // fn1 variable accepts a function which has a
                                  // number parameter and returns a boolean
 const fn2 = (num: number) => num > 0
 fn1 = fn2 // no error, type matching
+
+// callbacks 
+// (note: by returning void we say that we don't care whats returned)
+function orderPasta(name: GoodPastas, cb: (name: GoodPastas) => void) {
+    cb(name);
+}
+orderPasta('penne', (name) => console.log('ordered', name));
 ```
 
 ------
