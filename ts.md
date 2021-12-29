@@ -44,6 +44,11 @@ eatGoodPasta("fussili");
 
 type Pasta = {name: GoodPastas, cookingTime: number}
 const makePasta = function(pasta: Pasta) {console.log('made pasta:', pasta.name)}
+
+// if function does not have return statement, the return type is void by default
+const log = function(): void {
+  console.log('hola!')
+}
 ```
 
 ------
