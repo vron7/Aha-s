@@ -42,6 +42,8 @@ let goodPasta: GoodPastas;
 const eatGoodPasta = function(pasta: GoodPastas) {console.log('om nom nom')}
 eatGoodPasta("fussili");
 
+type Pasta = {name: GoodPastas, cookingTime: number}
+const makePasta = function(pasta: Pasta) {console.log('made pasta:', pasta.name)}
 ```
 
 ------
