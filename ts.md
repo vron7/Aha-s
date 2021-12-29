@@ -36,6 +36,12 @@ jackpot(notWin) // error type 'number' not assignable to type '777'
 // literal + union
 let isFoodGood: true | false; // same as isFoodGood:boolean
 
+// type alias
+type GoodPastas = 'fussili' | 'penne' | 'spaghetti'
+let goodPasta: GoodPastas;
+const eatGoodPasta = function(pasta: GoodPastas) {console.log('om nom nom')}
+eatGoodPasta("fussili");
+
 ```
 
 ------
