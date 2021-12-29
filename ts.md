@@ -17,6 +17,9 @@ let input;
 let input1: string | number
 
 // literal type
+let isFoodGood: true | false; // same as isFoodGood:boolean
+
+//literal type
 let pasta1: 'spaghetti'
 
 // union type with literal types
@@ -25,6 +28,14 @@ let pasta2: 'fussili' | 'penne'
 const eatPasta = (pasta: 'spaghetti' | 'penne') => {console.log('om nom nom')}
 eatPasta(pasta1);
 eatPasta(pasta2); // error type 'fussili' not assignable to 'spaghetti' | 'penne'
+
+//more about literal types
+const win1 = 777; // also a literal type since its a constant
+let win2 = 5;     // type number
+const jackpot = (num: 777) => {alert('JACKPOT!')}
+jackpot(win)
+jackpot(notWin) // error type 'number' not assignable to type '777'
+
 ```
 
 ------
