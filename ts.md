@@ -69,6 +69,8 @@ function orderPasta(name: GoodPastas, cb: (name: GoodPastas) => void) {
 orderPasta('penne', (name) => console.log('ordered', name));
 
 // unknown type
+// a bit better than any, use when you don't know 
+// the type, for example when fetching some data
 let input1: any;
 let input2: unknown;
 input1.toUpperCase() // no error, TS ignores type checking for any
