@@ -71,7 +71,7 @@ orderPasta('penne', (name) => console.log('ordered', name));
 // unknown type
 let input1: any;
 let input2: unknown;
-input1.toUpperCase() // no error, TS does not care about any
+input1.toUpperCase() // no error, TS ignores type checking for any
 input2.toUpperCase() // TS error, indexOf does not exist on type unknown
 if (typeof input2 === 'string') {
   input2.toUpperCase() // works, unknown requires some sort of type check
