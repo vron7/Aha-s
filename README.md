@@ -1137,9 +1137,11 @@ Need to convert something into a  **number** fast? Use **unary plus** operator
 ---
 
 **destructing** object with new variable name and default value
+```js
 const person = { name: 'Paul' }; 
 const { name:firstname = 'John', surname = 'Smith' } = person;
 console.log(firstname, surname); // Paul Smith
 console.log(name); // toyota is not defined
+```
 
 ---
