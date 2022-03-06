@@ -81,3 +81,23 @@ if (typeof input2 === 'string') {
 ```
 
 ------
+
+**private vs protected**
+```js
+class Animal {
+    // shorthand initialization of class properties
+    // this.id = id;
+    constructor(private id: number, protected species: string, public name: string) { }
+  }
+
+class Lion extends Animal {
+    constructor(name: string) {
+        super(0, "cats", name);
+        this.id = 1; // compilation error, private is only accessible in class where its defined
+        this.species = "lizards"; // all good here, protected is accessible by extended classes
+    }
+}
+const lion = new Lion("Leo");
+lion.name = "John"; // all good here, public properties can be accessed outside the class
+```
+------
