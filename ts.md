@@ -113,7 +113,7 @@ abstract class Animal {
     // abstract method, cannot be implemented in base class
     // must be implemented in inherited classes
     abstract makeSomeNoise(): void;
-  }
+}
 
 class Lion extends Animal {
     sound = "Roaaarr!"
@@ -135,15 +135,17 @@ lion.makeSomeNoise() // Roaaarr!
 ```js
 class Animal {
     constructor(private species: string) { }
+    
     // getter, writtern like method, accessable like a property
     get group() {
         return this.species;
     }
+    
     // setter, writtern like method, accessable like a property
     set group(species: string) {
         this.species = species;
     }
-  }
+}
 
 
 const animal = new Animal("cats");
