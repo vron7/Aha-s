@@ -153,3 +153,20 @@ console.log(animal.group); // cats
 animal.group = "dogs"; // setter can be used like a property
 ```
 ------
+
+**Singelton and private constructor**
+```js
+class Animal {
+    static instance: Animal;
+
+    // private constructor prevents creating new Animal outside the class
+    private constructor() { }
+
+    static getInstance() {
+        return this.instance ? this.instance : new Animal()
+    }
+  }
+
+const animal = Animal.getInstance();
+```
+------
