@@ -101,3 +101,36 @@ const lion = new Lion("Leo");
 lion.name = "John"; // all good here, public properties can be accessed outside the class
 ```
 ------
+
+**abstract, getters, setters**
+```js
+abstract class Animal {
+    constructor(private species: string) { }
+    // getter, writtern like method, accessable like a property
+    get group() {
+        return this.species;
+    }
+    // setter, writtern like method, accessable like a property
+    set group(species: string) {
+        this.species = species;
+    }
+    // abstract method, cannot be implemented in base class
+    // must be implemented in inherited classes
+    abstract makeSomeNoise(): void;
+  }
+
+class Lion extends Animal {
+    constructor(public name: string) {
+        super("cats");
+    }
+    makeSomeNoise() {
+        console.log("Roaaaaar!");
+    }
+}
+
+const animal = new Animal(); // error, cannot create instance of abstract class
+const lion = new Lion("Leo");
+console.log(lion.group); // cats
+lion.group = "dogs"; // setter can be used like a property
+```
+------
