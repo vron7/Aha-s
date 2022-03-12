@@ -105,7 +105,9 @@ lion.name = "John"; // all good here, public properties can be accessed outside 
 **abstract**
 ```js
 abstract class Animal {
-    abstract sound: string; // abstract property, cannot be implemented in base class
+    // abstract property, cannot be implemented in base class
+    // must be implemented in inherited classes
+    abstract sound: string; 
     constructor() { }
 
     // abstract method, cannot be implemented in base class
