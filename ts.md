@@ -170,3 +170,9 @@ class Animal {
 const animal = Animal.getInstance();
 ```
 ------
+
+**Interface** allows us to define the structure of an object
+
+
+------
+
