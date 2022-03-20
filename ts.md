@@ -171,8 +171,36 @@ const animal = Animal.getInstance();
 ```
 ------
 
-**Interface** allows us to define the structure of an object
+**Interface** allows us to define the structure of an object.    
+```js
+interface Levelable {
+  level: number;
+}
 
+interface Magical extends Levelable {
+  shootFireball(): void;
+  pickUpPotion(n: string): number;
+}
+
+class Hero implements Magical {
+  level = 1;
+  constructor(private readonly name: string) {
+    this.greet();
+  }
+
+  greet() {
+    console.log(`Greetings, I'm level ${this.level} hero, and my name is ${this. name}`);
+  }
+
+  shootFireball(): void {
+    console.log("Woooooosh!");
+  }
+
+  pickUpPotion(n: string): number {
+    return n === "+10health" ? 10 : 0;
+  }
+}
+```
 
 ------
 
