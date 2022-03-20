@@ -171,7 +171,8 @@ const animal = Animal.getInstance();
 ```
 ------
 
-**Interface** allows us to define the structure of an object.    
+**Interface** allows us to define the structure of an object.       
+Prefer interface to custom types when defining the object structure.
 ```js
 interface Levelable {
   level: number;
@@ -183,7 +184,7 @@ interface Magical extends Levelable {
 }
 
 class Hero implements Magical {
-  level = 1;
+  level = 1; // Typescript throws error if level property is missing on Hero class
   constructor(private readonly name: string) {
     this.greet();
   }
@@ -192,14 +193,20 @@ class Hero implements Magical {
     console.log(`Greetings, I'm level ${this.level} hero, and my name is ${this. name}`);
   }
 
+  // Typescript throws error if shootFireball method is missing on Hero class
   shootFireball(): void {
     console.log("Woooooosh!");
   }
 
+  // Typescript throws error if pickUpPotion method is missing on Hero class
   pickUpPotion(n: string): number {
     return n === "+10health" ? 10 : 0;
   }
 }
+
+
+
+
 ```
 
 ------
