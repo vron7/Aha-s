@@ -344,6 +344,10 @@ var obj = {
 			console.log(self) // returns obj - wohoo workaround
 			// b goes out to its lexical environment to find self
 		}
+		// arrow function preserver the context of this
+		var c = () => {
+			console.log(this) // returns obj
+		}
 	} 
 }; 
 
