@@ -353,7 +353,22 @@ var obj = {
 const a = obj.a;
 a(); // returns window (undefined in strict mode), since this gets lost when function in detached from object;
 
-
+```
+```js
+class Robot {
+    id = "BB-MT1";
+    f1 = () => console.log("helloo: ", this.id)
+    f2 = function() {console.log("helloo: ", this.id)}    
+    f3() { console.log("helloo: ", this.id)}
+}
+const robot = new Robot();
+robot.f1(); // returns id
+robot.f2(); // returns id
+robot.f3(); // returns id
+const { f1, f2, f3 } = robot; // destructing, this gets lost
+f1(); // returns id since arrow funtion preserves its context and has a closure to this
+f2(); // returns error sice this is undefined (Classes use strict mode, otherwise would return Window)
+f3(); // same as f2
 ```
 ---
 
