@@ -350,6 +350,8 @@ var obj = {
 		}
 	} 
 }; 
+const a = obj.a;
+a(); // returns window (undefined in strict mode), since this gets lost when function in detached from object;
 
 
 ```
