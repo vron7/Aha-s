@@ -358,7 +358,8 @@ a(); // returns window (undefined in strict mode), since this gets lost when fun
 ---
 
 **Classes**
-Javascript classes are special functions (syntactical sugar to prototype inheritance). 
+Javascript classes are special functions (syntactical sugar to prototype inheritance).    
+Classes user strict mode by default.
 
 *super* - refers to parent class, it is used to call the constructor of the parent’s class and access its properties and functions.
 ```js
