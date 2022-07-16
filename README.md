@@ -357,9 +357,9 @@ a(); // returns window (undefined in strict mode), since this gets lost when fun
 ```js
 class Robot {
     id = "BB-MT1";
-    f1 = () => console.log("helloo: ", this.id)
-    f2 = function() {console.log("helloo: ", this.id)}    
-    f3() { console.log("helloo: ", this.id)}
+    f1 = () => console.log(this.id) // field
+    f2 = function() {console.log(this.id)}  //field  
+    f3() {console.log(this.id)} //method
 }
 const robot = new Robot();
 robot.f1(); // returns id
