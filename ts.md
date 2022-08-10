@@ -176,6 +176,7 @@ Prefer interface to custom types when defining the object structure.
 ```js
 // extends - will get all properties and methods of the parent class / interface.   
 // implements - will obligate us to implement all of the properties and methods defined in the interface.
+
 interface Levelable {
   level: number;
 }
