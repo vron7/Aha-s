@@ -174,9 +174,6 @@ const animal = Animal.getInstance();
 **Interface** allows us to define the structure of an object.       
 Prefer interface to custom types when defining the object structure.   
 ```js
-// extends - will get all properties and methods of the parent class / interface.   
-// implements - will obligate us to implement all of the properties and methods defined in the interface.
-
 interface Levelable {
   level: number;
 }
@@ -186,6 +183,7 @@ interface Magical extends Levelable {
   pickUpPotion(n: string): number;
 }
 
+// implements - will obligate us to implement all of the properties and methods defined in the interface.
 class Hero implements Magical {
   level = 1; // Typescript throws error if level property is missing on Hero class
   constructor(private readonly name: string) {
