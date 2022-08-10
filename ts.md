@@ -172,7 +172,9 @@ const animal = Animal.getInstance();
 ------
 
 **Interface** allows us to define the structure of an object.       
-Prefer interface to custom types when defining the object structure.
+Prefer interface to custom types when defining the object structure.   
+**extends** will get all properties and methods of the parent class.   
+**implements** will obligate us to implement all of the properties and methods defined in the interface.
 ```js
 interface Levelable {
   level: number;
