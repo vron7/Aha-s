@@ -715,9 +715,15 @@ Imagine them being inside the single file.
 <html>
 <head></head>
 <body>
+	<script>
+		var n = 0;
+	</script>
 	<script src='start.js'></script> // var n = 1;
 	<script src='lib1.js'></script> // var n = 2;
 	<script src='lib2.js'></script>	// var n = 3; THE FINAL VALUE!
+	<script>
+		console.log(n); // 3
+	</script>
 </body>
 </html>
 ```
