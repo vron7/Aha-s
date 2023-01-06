@@ -212,3 +212,19 @@ class Hero implements Magical {
 
 ------
 
+**How to use javascript libraries with TS ??**
+
+1) Install type definitions for this specific library (if avaiable), for example:   
+```js
+  // let say we want to use lodash library in our TS project
+  // so we need to provide our project with translations 
+  // otherwise there will be compilation errors 
+  npm install --save @types/lodash
+```
+2) Using **declare**   
+```js
+  declare var GLOBAL: string; // GLOBAL in a global variable which we know is there
+```
+
+------
+
