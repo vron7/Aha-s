@@ -223,7 +223,9 @@ class Hero implements Magical {
 ```
 2) Using **declare**   
 ```js
-  declare var GLOBAL: string; // GLOBAL in a global variable which we know is there
+  // GLOBAL in a global variable which we know is there
+  // but our file/project does not know about it
+  declare var GLOBAL: string; 
 ```
 
 ------
