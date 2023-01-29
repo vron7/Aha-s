@@ -1191,8 +1191,8 @@ function jsengine(code) {
 }
 jsengine("const n = 10"); //  ['const', 'n', '=', '10']
 ```
-This basic engine demonstrate how js parser reads code and breaks it into tokens.
-An abstract syntax tree is then formed of the tokens.
+This basic engine demonstrate how js parser reads code and breaks it into tokens.   
+An abstract syntax tree is then formed of the tokens.   
 Check https://astexplorer.net/
 
 ---
