@@ -1184,3 +1184,15 @@ console.log(name); // toyota is not defined
 ```
 
 ---
+Let's write our own **javascript engine**
+```js
+function jsengine(code) {
+	return code.split(/\s+/);
+}
+jsengine("const n = 10"); //  ['const', 'n', '=', '10']
+```
+This basic engine demonstrate how js parser reads code and breaks it into tokens.
+An abstract syntax tree is then formed of the tokens.
+Check https://astexplorer.net/
+
+---
