@@ -1195,3 +1195,18 @@ This basic engine demonstrate how js parser reads code and breaks it into tokens
 An abstract syntax tree is then formed out of the tokens, check it in action at https://astexplorer.net/
 
 ---
+
+Positional vs named arguments in js
+```js
+// positional arguments
+function greet(firstName, lastName, age) {
+	return "Helloo " + firstName + ", " + lastName + ", " + age;
+}
+
+// named arguments
+function greet({firstName, lastName, age}) {
+	return "Helloo " + firstName + ", " + lastName + ", " + age;
+}
+```
+
+---
