@@ -1196,7 +1196,7 @@ An abstract syntax tree is then formed out of the tokens, check it in action at 
 
 ---
 
-Positional vs named arguments in js
+**positional** vs **named** arguments in js
 ```js
 // positional arguments
 function greet(firstName, lastName) {
@@ -1215,11 +1215,11 @@ greet({firstName: "Hoze", lastName: "Gonzalez"});
 ```
 benefits of using **named arguments** :   
 - easier typings ( can use one block for types vs have to add types inline )
-- we do not have to keep order of arguments in mind, less bugs
-- we can skip arguments we don't want to provdie
+- we do not have to keep the order of arguments (less bugs)
+- we can skip arguments we don't want to provdie   
 
+But we can also use the **combination** of both, for example fetch method:
 ```js
-// POWER OF BOTH WORLDS
 // request with url as positional arg and options as named args.
 fetch('https://google.com', {
   method: 'POST',
