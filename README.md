@@ -1232,3 +1232,14 @@ fetch('https://google.com', {
 fetch('https://google.com');
 ```
 ---
+
+Some fun:
+```js
+// How to get funtion name?
+function helloWorld(){
+	console.log(arguments.callee.name); // helloWorld
+}
+// How to log funtion properties?
+dir(hellooWorld);
+```
+---
