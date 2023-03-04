@@ -1254,6 +1254,12 @@ dir(hellooWorld);
 
 ```js
 // normal funtion invocation (not method)
+var fn = function fun1() {
+    console.log(this); // window       
+}
+fn();
+	
+// normal funtion invocation inside an object
 var obj = {
     run: function() {
         console.log(this); // obj
