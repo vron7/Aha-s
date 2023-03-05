@@ -1312,7 +1312,7 @@ var obj4 = {
 obj4.run(); // obj4
 // here again, it does not matter run is defined inside obj3, since its referenced and invoked by obj4, this is bound to obj4
 ```
-Now what will this be if we add a method to a function object itself?
+Now what will **this** be if we add a method to a function and then invoke it?
 ```js
 var fn = function(){};
 fn.fn1 = function(){
