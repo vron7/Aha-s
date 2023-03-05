@@ -1318,7 +1318,7 @@ var fn = function(){};
 fn.fn1 = function(){
 	console.log("dbg", this);
 }
-fn.fn1() // prints out the function itself:
+fn.fn1() // prints out the function (function code):
 // ƒ (){
 // 	console.log("dbg", this, this.name);
 // }
