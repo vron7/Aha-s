@@ -1271,4 +1271,42 @@ var obj = {
 }
 obj.run();
 ```
+```js
+// MOST IMPORTANT LESSON:
+// THIS is determined HOW funtion is invoked, not where it is invoked
+var fn = function fun1() {
+    console.log("log", this);    
+}
+var obj1 = {
+	fn: fn // reference
+}
+var obj2 = {
+	fn: function(){
+		console.log("log1", this);
+		var fn2 = function(){
+			console.log("log2", this);
+		}
+		fn2(); // here fn2 is not bound to obj2
+	}
+}
+
+fn(); // log Window
+obj1.fn(); // log obj1
+obj2.fn(); // log1 obj2, log2 Window
+
+// recap:
+// fn() can be also written as this.fn() or window.fn(), meaning this will be bound to global window object
+// obj1.fn() means that this will be bound to the obj1 itself
+
+// methods
+var obj3 = {
+    run: function() {
+    	console.log(this);
+    }
+}
+var obj4 = {
+    run: obj3.run
+}
+obj4.run(); // obj4
+```
 ---
