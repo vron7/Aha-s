@@ -1257,7 +1257,7 @@ dir(hellooWorld);
 var fn = function fun1() {
     console.log(this); // window       
 }
-fn();
+fn(); // can also be read as this.fn() or window.fn()
 	
 // normal funtion invocation inside an object
 var obj = {
