@@ -1247,7 +1247,7 @@ dir(hellooWorld);
 
 **this** is:
 - this is established at the runtime, when funtion is invoked
-- determined by how funtion is invoked (not where)
+- determined by how funtion is invoked, not where it is invoked
 - is a reference to the object
 
 **this** is not the funtion itself
