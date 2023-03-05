@@ -1297,8 +1297,10 @@ obj2.fn(); // log1 obj2, log2 Window
 // recap:
 // fn() can be also written as this.fn() or window.fn(), meaning this will be bound to global window object
 // obj1.fn() means that this will be bound to the obj1 itself
+// it will always be bound to an object
 
-// methods
+// ------------------------->
+// methods 
 var obj3 = {
     run: function() {
     	console.log(this);
@@ -1308,5 +1310,6 @@ var obj4 = {
     run: obj3.run
 }
 obj4.run(); // obj4
+// here again, it does not matter run is defined inside obj3, since its referenced and invoked by obj4, this is bound to obj4
 ```
 ---
