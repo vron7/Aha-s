@@ -1247,7 +1247,7 @@ dir(hellooWorld);
 
 **this** is:
 - this is established at the runtime, when funtion is invoked
-- determined by how funtion is invoked, not where it is invoked
+- determined by how funtion is invoked, not where it is defined
 - is a reference to the object
 
 **this** is not the funtion itself
@@ -1273,7 +1273,7 @@ obj.run();
 ```
 ```js
 // MOST IMPORTANT LESSON:
-// THIS is determined HOW funtion is invoked, not where it is invoked
+// THIS is determined HOW funtion is invoked, not where it is defined
 var fn = function fun1() {
     console.log("log", this);    
 }
