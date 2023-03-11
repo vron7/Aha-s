@@ -1324,3 +1324,22 @@ fn.fn1() // prints out the function (function code):
 // }
 ```
 ---
+**prototypes**
+```js
+const obj = {};
+"toString" in obj; // true, finds it in prototype
+obj.hasOwnProperty("toString"); // false
+
+obj.toString = () => {console.log("oops")};
+"toString" in obj; // true
+obj.hasOwnProperty("toString"); // true
+
+obj.toString = null; // set to null, but property still remains on the object
+"toString" in obj; // true
+obj.hasOwnProperty("toString"); // true
+obj.toString(); // error, not a funtion
+
+delete obj.toString; // property removed from object
+obj.toString() // from proto again
+```
+---
