@@ -940,6 +940,8 @@ logName = function(num = 1) {
 logNameBinded = logName.bind(person);
 logNameBinded(); // John 1
 logNameBinded(2); // John 2
+logNameBinded.call("whatever", 1); // John 1, you cannot override bind with call/apply
+//binded this takes the higher precedence
 
 // call invokes the function
 logName.call(person); // John 1
