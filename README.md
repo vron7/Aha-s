@@ -1346,10 +1346,10 @@ obj.toString() // from proto again
 ```
 ---
 **constructor function**
-*Constructor is a function that is invoked using keyword **new**
-*Use it to create multiple similar object
-*It returns an object
-*Returned object share the same prototype which comes from constructor function
+* Constructor is a function that is invoked using keyword **new**
+* Use it to create multiple similar object
+* It returns an object
+* Returned object share the same prototype which comes from constructor function
 
 ```js
 function Greeting(name) {
