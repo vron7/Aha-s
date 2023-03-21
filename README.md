@@ -1345,3 +1345,22 @@ delete obj.toString; // property removed from object
 obj.toString() // from proto again
 ```
 ---
+**constructor function**
+-Constructor is a funtion that is invoked using keyword **new**
+-Use to create similar object
+
+```js
+function Greeting(name) {
+    this.name = name;
+    this.greet = function(){
+        console.log("Hi " + this.name);
+    }
+}
+
+// invoking without new
+Greeting("John"); // dangerous, name and greet funtion will be defined on Global object (Window)
+
+// invoking with new
+new Greeting("John");
+```
+---
