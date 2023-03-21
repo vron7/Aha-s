@@ -1346,8 +1346,10 @@ obj.toString() // from proto again
 ```
 ---
 **constructor function**
--Constructor is a funtion that is invoked using keyword **new**
--Use to create similar object
+*Constructor is a function that is invoked using keyword **new**
+*Use it to create multiple similar object
+*It returns an object
+*Returned object share the same prototype which comes from constructor function
 
 ```js
 function Greeting(name) {
@@ -1361,6 +1363,6 @@ function Greeting(name) {
 Greeting("John"); // dangerous, name and greet funtion will be defined on Global object (Window)
 
 // invoking with new
-new Greeting("John");
+var greet = new Greeting("John");
 ```
 ---
