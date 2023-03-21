@@ -1345,11 +1345,11 @@ delete obj.toString; // property removed from object
 obj.toString() // from proto again
 ```
 ---
-**constructor function**
+**Constructor function**
 * Constructor is a function that is invoked using keyword **new**
-* Use it to create multiple similar object
 * It returns an object
-* Returned object share the same prototype which comes from constructor function
+* Use it to create multiple similar objects
+* Returned object share the same prototype which comes from the Constructor function
 
 ```js
 function Greeting(name) {
