@@ -1289,12 +1289,15 @@ var obj2 = {
 			console.log("log2", this);
 		}
 		fn2(); // here fn2 is not bound to obj2
+		
+		var fn3 = () => console.log("log3", this);
+		fn3(); // since arrow funtion is lexically scoped, it is bound to obj2
 	}
 }
 
 fn(); // log Window
 obj1.fn(); // log obj1
-obj2.fn(); // log1 obj2, log2 Window
+obj2.fn(); // log1 obj2, log2 Window, log3 obj2
 
 // recap:
 // fn() can be also written as this.fn() or window.fn(), meaning this will be bound to global window object
