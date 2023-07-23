@@ -1377,6 +1377,7 @@ const obj = {
 	model: "Toyota",
 	vinCode: "584HY53DD2445VVAA1"
 }
+
 // make single property immutable
 Object.defineProperty(obj, "vinCode", { writable: false });
 
