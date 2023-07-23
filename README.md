@@ -1368,4 +1368,23 @@ Greeting("John"); // dangerous, name and greet funtion will be defined on Global
 // invoking with new
 var greet = new Greeting("John");
 ```
+
+---
+
+**immutable** objects:
+```js
+const obj = {
+	model: "Toyota",
+	vinCode: "584HY53DD2445VVAA1"
+}
+// make single property immutable
+Object.defineProperty(obj, "vinCode", { writable: false });
+
+// cannot add or remove properties but can modify existing ones
+Object.seal(obj);
+
+// cannot add or remove or modify properties
+Object.freeze(obj);
+
+```
 ---
