@@ -1389,3 +1389,27 @@ Object.freeze(obj);
 
 ```
 ---
+
+more **scope**:
+```js
+var num1 = 1;
+function test() {
+    var num2 = 2;
+    function test2() {
+        var num3 = 3;
+        console.log(num4); // all good - num4 not inside test2 but let's look outside and find it from test scope
+    }
+    if(true) {
+        var num4 = 4;
+        let num5 = 5;
+    }
+    test2();
+    console.log(num1); // all good - num1 not inside test, so let's look outside
+    console.log(num2); // all good - num2 inside test
+    console.log(num3); // error - test2 is inside test but we cannot access anything inside test2
+    console.log(num4); // all good - num4 inside test
+    console.log(num5); // error - num4 inside test but let has a block scope (if block in this case)
+}
+test();
+```
+---
