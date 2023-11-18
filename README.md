@@ -710,7 +710,8 @@ var name = params.name || 'john' // setting default value
 ---
 
 All these scrips operate in the same global execution context.   
-Imagine them being inside the single file.
+Imagine them being inside the single file.   
+Same applies if we use const instead of var.
 ```js
 <html>
 <head></head>
