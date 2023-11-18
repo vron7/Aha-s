@@ -730,9 +730,9 @@ Same applies if we use **const** instead of **var**.
 ```
 ---
 Javascript **Native Modules**(ES6)   
-Declaring js file as a **module** removes its variables from the global context.
-An **export** keyword must be used to make a variable/function inside the module public.  
-An **import** keyword must be used to import something from the module.  
+Declaring js file as a **module** removes its variables from the global context.   
+An **export** keyword must be used to make a variable/function inside the module public.     
+An **import** keyword must be used to import something from the module.     
 ```js
 //utils.js
 const something = "smth"; // will not be in the global scope
