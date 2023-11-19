@@ -199,9 +199,10 @@ Javascript **Native Modules** (ES6)
 - Adding **type="module** propery on a script defines it as a module.
 - Modules have a **module scope** - anything defined in a module cannot be accessed from outside unless you **export** it.
 - Module code runs only when module is **imported**. When imported multiple times, it runs on the first import.
-- File which imports a module must itself also be a module
-- Modules use strict mode
-- **this** inside a module is **undefined**
+- File which imports a module must itself also be a module.
+- Modules use strict mode.
+- **this** inside a module is **undefined**.
+- Module scripts are laoded with **defer**
    
 An **export** keyword must be used to make a variable/function inside the module public.     
 An **import** keyword must be used to import something from the module.   
