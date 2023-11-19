@@ -202,7 +202,7 @@ Javascript **Native Modules** (ES6)
 - File which imports a module must itself also be a module.
 - Modules use strict mode.
 - **this** inside a module is **undefined**.
-- Module scripts are laoded with **defer**
+- Module scripts are loaded with **defer** (they use defer atribute by default)
    
 An **export** keyword must be used to make a variable/function inside the module public.     
 An **import** keyword must be used to import something from the module.   
