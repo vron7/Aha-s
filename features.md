@@ -196,19 +196,26 @@ Promise.allSettled([p1,p2]).then(data => console.log(data)) // all good
 
 ---
 Javascript **Native Modules** (ES6)   
-Declaring js file as a **module** removes its variables from the global context.   
+- Adding **type="module** propery on a script defines it as a module.
+- Modules have a module scope - anything defined in a module cannot be accessed from outside unless you **export** it.
+- Module code runs only when module is imported. When imported multiple times, it runs on the first import.
+- File which imports a module must itself also be a module
+- Modules use strict mode
+   
 An **export** keyword must be used to make a variable/function inside the module public.     
-An **import** keyword must be used to import something from the module.     
+An **import** keyword must be used to import something from the module.   
+    
 ```js
-//utils.js
+// utils.js
 const something = "smth"; // will not be in the global scope
 const saySomething = function() {
 	return something;
 }
+console.log("Helloo Utils!"); // runs only once and only when this module is imported
 export { saySomething }
 ```
 ```js
-//main.js
+// main.js
 import { saySomething } from "./utils.js"
 saySomething(); // "smth"
 ```
