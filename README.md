@@ -750,12 +750,14 @@ saySomething(); // "smth"
 <html>
 <head></head>
 <body>
-	<script src="utils.js" type="module"></script> // const something = "smth"
-	<script src="main.js" type="module"></script> // console.log(something) // undefined :(
+	<script src="utils.js" type="module"></script>
+	<script src="main.js" type="module"></script>
+	<script>
+		console.log(something); // undefined
+	</script>
 </body>
 </html>
 ```
-
 
 ---
 
