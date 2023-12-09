@@ -1472,10 +1472,20 @@ console.log(person.constructor === Person) // false
 console.log(person instanceof Person) // true
 
 // What happened? 
-// Why the constructor does not reference the constructor function anymore?
+// Why the person constructor does not reference the Person constructor function anymore?
 // Reason is simple:
-// When we assign a Person prototype property, the constructor of the personProto
-// will override the constructor property of the Person.
+// The constructor comes from Person.prototype.constructor
+// When we assign a Person prototype property to the personProto, the constructor
+// now comes from personProto constructor property, we simply overwrite it
+
 console.log(person.constructor === personProto.__proto__.constructor) // true
+console.log(person.constructor === personProto.constructor) // true, same thing
+```
+Now how to fix?
+```js
+Person.prototype.constructor = Person;
+console.log(person.constructor === Person) // true
+console.log(person instanceof Person) // true
+// VOILA!
 ```
 ---
