@@ -1444,3 +1444,38 @@ function test() {
 test();
 ```
 ---
+
+**prototype** and **constructor** property    
+Let's create a new object using constructor function
+```js
+const Person = function(name) {
+    this.name = name;
+}
+const person = new Person("Anatoli")
+
+console.log(person.constructor === Person) // true
+console.log(person instanceof Person) // true
+
+// all good here, constructor property points to the constructor funtion!
+```
+Now lets try to set our own prototype!
+```js
+const personProto = {
+    sayHelloo: function() {
+        console.log("Helloo, my name is " + this.name)
+    }
+}
+Person.prototype = personProto;
+const person = new Person("Vitali")
+
+console.log(person.constructor === Person) // false
+console.log(person instanceof Person) // true
+
+// What happened? 
+// Why the constructor does not reference the constructor function anymore?
+// Reason is simple:
+// When we assign a Person prototype property, the constructor of the personProto
+// will override the constructor property of the Person.
+console.log(person.constructor === personProto.__proto__.constructor) // true
+```
+---
