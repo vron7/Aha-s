@@ -1483,9 +1483,10 @@ console.log(person.constructor === personProto.constructor) // true, same thing
 ```
 Now how to fix?
 ```js
-Person.prototype.constructor = Person;
+Person.prototype.constructor = Person; // let's assign our original constructor function
+
 console.log(person.constructor === Person) // true
 console.log(person instanceof Person) // true
-// VOILA!
+// and VOILA!
 ```
 ---
