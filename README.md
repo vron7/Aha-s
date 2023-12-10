@@ -1499,8 +1499,7 @@ But how to build longer **prototype** chains (**extends**) ???
 ```js
 function Base() {}
 function Derived() {}
-// Set the `[[Prototype]]` of `Derived.prototype`
-// to `Base.prototype`
+// Set the `[[Prototype]]` of Derived.prototype to Base.prototype
 Object.setPrototypeOf(Derived.prototype, Base.prototype);
 
 const obj = new Derived();
