@@ -1488,5 +1488,9 @@ Person.prototype.constructor = Person; // let's assign our original constructor 
 console.log(person.constructor === Person) // true
 console.log(person instanceof Person) // true
 // and VOILA!
+
+// another way of doing this is instead of Person.prototype = personProto, use:
+Object.setPrototypeOf(Person.prototype, personProto);
+// that will automagically set the constructor property to Person
 ```
 ---
