@@ -1495,7 +1495,7 @@ Object.setPrototypeOf(Person.prototype, personProto);
 ```
 ---
 
-but how to build longer **prototype** chains(**extends**)??   
+But how to build longer **prototype** chains (**extends**) ???  
 ```js
 function Base() {}
 function Derived() {}
