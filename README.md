@@ -1494,3 +1494,24 @@ Object.setPrototypeOf(Person.prototype, personProto);
 // that will automagically set the constructor property to Person
 ```
 ---
+
+but how to build longer **prototype** chains(**extends**)??   
+```js
+function Base() {}
+function Derived() {}
+// Set the `[[Prototype]]` of `Derived.prototype`
+// to `Base.prototype`
+Object.setPrototypeOf(Derived.prototype, Base.prototype);
+
+const obj = new Derived();
+// obj ---> Derived.prototype ---> Base.prototype ---> Object.prototype ---> null
+```
+In class terms, this is equivalent to using the **extends** syntax.
+```js
+class Base {}
+class Derived extends Base {}
+
+const obj = new Derived();
+// obj ---> Derived.prototype ---> Base.prototype ---> Object.prototype ---> null
+```
+---
