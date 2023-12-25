@@ -1515,7 +1515,7 @@ const obj = new Derived();
 ```
 ---
 
-change a property on a **prototype**
+try to change a property on a **prototype**
 ```js
 const maleProto = {
     gender: "male",
@@ -1530,7 +1530,7 @@ female.gender = "female"; // this is now set on an instance, not on a prototype
 console.log(female.gender); // female, comes now from instance
 female.whatsMyGender(); // female
 console.log(female.__proto__.gender) // male, notice prototype is not overriden with "female"
-delete female.gender
+delete female.gender // lets delete the property on an instance
 console.log(female.gender) // male, voilaa, again comes from the proto
 ```
 ---
