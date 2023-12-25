@@ -1514,3 +1514,23 @@ const obj = new Derived();
 // obj ---> Derived.prototype ---> Base.prototype ---> Object.prototype ---> null
 ```
 ---
+
+change a property on a **prototype**
+```js
+const maleProto = {
+    gender: "male",
+    whatsMyGender: function() {
+        console.log("My gender is " + this.gender )
+    }
+}
+const female = Object.create(maleProto);
+female.whatsMyGender(); // male
+console.log(female.gender); // male, comes from the prototype
+female.gender = "female"; // this is now set on an instance, not on a prototype
+console.log(female.gender); // female, comes now from instance
+female.whatsMyGender(); // female
+console.log(female.__proto__.gender) // male, notice prototype is not overriden with "female"
+delete female.gender
+console.log(female.gender) // male, voilaa, again comes from the proto
+```
+---
