@@ -1515,22 +1515,41 @@ const obj = new Derived();
 ```
 ---
 
-try to change a property on a **prototype**
+let's try to change a property on a **prototype**
 ```js
 const maleProto = {
     gender: "male",
-    whatsMyGender: function() {
+    sayGender: function() {
         console.log("My gender is " + this.gender )
     }
 }
 const female = Object.create(maleProto);
-female.whatsMyGender(); // male
+female.sayGender(); // male
 console.log(female.gender); // male, comes from the prototype
 female.gender = "female"; // this is now set on an instance, not on a prototype
 console.log(female.gender); // female, comes now from instance
-female.whatsMyGender(); // female
+female.sayGender(); // female
 console.log(female.__proto__.gender) // male, notice prototype is not overriden with "female"
 delete female.gender // lets delete the property on an instance
 console.log(female.gender) // male, voilaa, again comes from the proto
+```
+but how can we change the property on a **prototype** ?
+```js
+const counterProto = {
+    _count: 0,
+    set count(count){
+        counterProto._count = count;
+    },
+    get count(){
+        return counterProto._count;
+    }
+}
+const counter1 = Object.create(counterProto);
+const counter2 = Object.create(counterProto);
+console.log(counter1.count); // 0
+console.log(counter2.count); // 0
+counter1.count = 1 // this will now be set on the proto itself
+console.log(counter1.count); // 1 - comes from the proto
+console.log(counter2.count); // 1 - comes from the proto
 ```
 ---
