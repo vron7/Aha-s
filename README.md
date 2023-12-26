@@ -1549,8 +1549,9 @@ console.log(counter1.count); // 1 - comes from the proto
 console.log(counter2.count); // 1 - comes from the proto
 ```
 ---
-when we invoke **constructor** function without the **new** keyword, **this** inside the construcor will point to the **window** object    
-how to make it safe???
+When invoking the **constructor** function without the **new** keyword,      
+**this** inside the **construcor** will point to the **window** object    
+how to make sure it does not happen **???**
 ```js
 const Player = function(level) {	
     if(this instanceof Player) {
