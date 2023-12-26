@@ -1514,7 +1514,6 @@ const obj = new Derived();
 // obj ---> Derived.prototype ---> Base.prototype ---> Object.prototype ---> null
 ```
 ---
-
 let's try to change a property on a **prototype**
 ```js
 const counterProto = {
@@ -1548,5 +1547,22 @@ console.log(counter2.count); // 0
 counter1.count = 1 // this will now be set on the proto itself
 console.log(counter1.count); // 1 - comes from the proto
 console.log(counter2.count); // 1 - comes from the proto
+```
+---
+when we invoke **constructor** function without the **new** keyword, **this** inside the construcor will point to the **window** object    
+how to make it safe???
+```js
+const Player = function(level) {	
+    if(this instanceof Player) {
+	// new keyword has been used to invoke this constructor function, we can proceed
+        this.level = level;
+    } else {
+	// when we end up here, it means the new keyword was not used when invoking the constructor function
+	// so we can make sure to return a new object ourselves
+        return new Player(level);
+    }
+}
+const player1 = new Player(1);
+const player2 = Player(2);
 ```
 ---
