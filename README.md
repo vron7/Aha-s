@@ -1577,3 +1577,62 @@ console.log(Object.getPrototypeOf(obj)); // null
 // Small performance gains, less memory impact.
 ```
 ---
+**Classes** and the **prototype**   
+Javascript classes are just a syntactic sugar for the prototype-based inheritance 
+```js
+class Main {
+    // code is defined on an instance of the Main class
+    code = 777;
+    // execute is defined on Main function prototype property
+    execute() {
+        console.log("dbg Main!");
+    }	
+}
+console.log(Main.prototype.execute) // function
+```
+What if I want to add a property on a Class prototype?
+```js
+Main.prototype.counter = 0; // simple right !?
+```
+What about **static** properties?
+```js
+class Main {
+    static code = 777;
+    static execute() {
+        console.log("dbg execute!")
+    }
+}
+console.log(Main.code); // 777
+console.log(Main.execute()); // dbg execute!
+console.log(Main.prototype.code); // undefined, notice static properties are not added to the prototype
+console.log(Main.prototype.execute); // undefined, same
+```
+How about **extended** classes?
+```js
+class Main {
+    execute() {
+        console.log("main");
+    }
+}
+
+class Derived extends Main {
+    // here we override the execute method
+    // meaning it will be added to the Derived prototype
+    execute() {
+        console.log("derived");
+    }
+}
+
+Derived.prototype.execute(); // derived
+Main.prototype.execute(); // main
+
+// Now lets do something evil ?
+
+const d = new Derived();
+d.execute(); // derived
+delete Derived.prototype.execute
+d.execute(); // main
+
+// We just proved that classes are just a syntactic sugar and do not work as in other languages like Java and C++
+```
+---
