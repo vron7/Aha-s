@@ -1633,6 +1633,7 @@ d.execute(); // derived
 delete Derived.prototype.execute
 d.execute(); // main
 
-// We just proved that classes are just a syntactic sugar and do not work as in other languages like Java and C++
+// Here we just proved that classes are just a syntactic sugar and 
+// do not work as classes in other languages like Java and C++
 ```
 ---
