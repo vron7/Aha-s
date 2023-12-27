@@ -1637,3 +1637,5 @@ d.execute(); // main
 // do not work as classes in other languages like Java and C++
 ```
 ---
+Polymorphism in programming gives a program the ability to redefine methods for derived classes.
+---
