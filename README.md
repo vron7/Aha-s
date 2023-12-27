@@ -1569,10 +1569,11 @@ const player2 = Player(2);
 ---
 An object **without** a **prototype**
 ```js
-const obj = Object.create(null)
+const obj = Object.create(null);
 console.log(obj.__proto__); // undefined
 console.log(Object.getPrototypeOf(obj)); // null
 // Good for what ???
-// It can prevent accidental property name collisions, small performance gains, less memory impact.
+// It can prevent accidental property name collisions with inherited methods or properties from Object.prototype.
+// Small performance gains, less memory impact.
 ```
 ---
