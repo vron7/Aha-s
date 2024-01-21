@@ -1641,3 +1641,38 @@ d.execute(); // main
 **Polymorphism** in programming gives a program the ability to redefine methods for derived classes.
 
 ---
+Overridding **setters** and **getters**   
+When we override setter, we also have to override the getter.   
+JS engine will not look to base class for the getter anymore when there is a setter on the extended class.
+```js
+class Wizard
+{
+  constructor(name)
+  {
+    this._name = name;
+  }
+
+  get name() { return this._name; }
+  set name(value) { this._name = value; }
+}
+
+class WhiteWizard extends Wizard
+{
+  constructor(name)
+  {
+    super(name);
+  }
+	
+  set name(value)
+  {
+    this._name = value + " The White!";
+  }
+}
+
+
+const potter = new Wizard("Harry");
+const gandalf = sq = new WhiteWizard("Gandalf");
+console.log(potter.name); // Harry
+console.log(gandalf.name); // undefined, there is no getter on extended class 
+```
+---
