@@ -1642,8 +1642,8 @@ d.execute(); // main
 
 ---
 Overridding **setters** and **getters**   
-When we override setter, we also have to override the getter.   
-JS engine will not look to base class for the getter anymore when there is a setter on the extended class.
+When we override the **setter**, we also have to provide the implementation of the **getter** for the derived class.   
+Javascript engine finds the propery from the derived class, so it does not go and look for it from the base class (prototype).
 ```js
 class Wizard
 {
@@ -1662,7 +1662,7 @@ class WhiteWizard extends Wizard
   {
     super(name);
   }
-	
+  // we have overriden the setter, but not the getter	
   set name(value)
   {
     this._name = value + " The White!";
@@ -1671,8 +1671,8 @@ class WhiteWizard extends Wizard
 
 
 const potter = new Wizard("Harry");
-const gandalf = sq = new WhiteWizard("Gandalf");
+const gandalf = new WhiteWizard("Gandalf");
 console.log(potter.name); // Harry
-console.log(gandalf.name); // undefined, there is no getter on extended class 
+console.log(gandalf.name); // undefined, there is no getter on the derived class 
 ```
 ---
