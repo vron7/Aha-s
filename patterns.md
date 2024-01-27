@@ -158,3 +158,63 @@ d.addEntry('I cried today.');
 const p = new PersistenceManager();
 p.saveToFile(d, 'c:/temp/journal.txt');
 ```
+---
+### Open-Closed Principle
+A class is open for extension but closed for modification
+```js
+// enums
+const Color = Object.freeze({
+    red: 'red',
+    green: 'green',
+    yellow: 'yellow'
+});
+
+const Size = Object.freeze({
+    small: 'small',
+    medium: 'medium',
+    large: 'large',
+});
+
+class Fruit {
+    constructor(name, color, size) {
+        this.name = name;
+        this.color = color;
+        this.size = size;
+    }
+}
+
+class FruitFilter {
+    filterByColor(products, color) {
+        return products.filter(p => p.color === color);
+    }
+
+    filterBySize(products, size) {
+        return products.filter(p => p.size === size);
+    }
+
+    filterBySizeAndColor(products, size, color) {
+        return products.filter(p =>
+            p.size === size && p.color === color);
+    }
+
+    // the problem comes when we have to introduce new filters
+    // 1 - let say we have to introduce a new criteria eg. Taste, Origin
+    // 2 - and we also have to implement OR filter eg. filter fruits which are large OR green
+    // by introducing new filters, we have to modify this class
+    // it will create something called "state space explosion"
+    // adding new criterias = 3 criteria (+weight) = 7 new methods (NO THANKS)
+    // OCP = open for extension, closed for modification
+}
+
+const fruits = [
+    new Fruit('Apple', Color.green, Size.medium),
+    new Fruit('Kiwi', Color.green, Size.medium),
+    new Fruit('Cherry', Color.red, Size.small),
+    new Fruit('Melon', Color.yellow, Size.large)
+];
+
+const fruitFilter = new FruitFilter();
+for (const fruit of fruitFilter.filterByColor(fruits, Color.green)) {
+    console.log(` * ${fruit.name} is green`);
+}
+```
