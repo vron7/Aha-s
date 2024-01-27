@@ -206,6 +206,12 @@ class FruitFilter {
     // OCP = open for extension, closed for modification
 }
 
+// but why is this a problem?
+// let say this class is already tested, deployed and used by others
+// it means others will have to take the changes for this class, redo the testing and redeploy
+// also the class will have unneccesary amount of code which might not even be used by others
+// so instead of modifing, prefer extending(inherticance)
+
 const fruits = [
     new Fruit('Apple', Color.green, Size.medium),
     new Fruit('Kiwi', Color.green, Size.medium),
@@ -217,4 +223,58 @@ const fruitFilter = new FruitFilter();
 for (const fruit of fruitFilter.filterByColor(fruits, Color.green)) {
     console.log(` * ${fruit.name} is green`);
 }
+```
+Let's try out extension instead of modification
+```js
+class ColorSpecification {
+    constructor(color) {
+        this.color = color;
+    }
+
+    isSatisfied(item) {
+        return item.color === this.color;
+    }
+}
+
+class SizeSpecification {
+    constructor(size) {
+        this.size = size;
+    }
+
+    isSatisfied(item) {
+        return item.size === this.size;
+    }
+}
+
+class BetterFilter {
+    filter(items, spec) {
+        return items.filter(x => spec.isSatisfied(x));
+    }
+}
+
+// specification combinator
+class AndSpecification {
+    constructor(...specs) {
+        this.specs = specs;
+    }
+
+    isSatisfied(item) {
+        return this.specs.every(x => x.isSatisfied(item));
+    }
+}
+
+const betterFilter = new BetterFilter();
+console.log(`Green products (new):`);
+for (const fruit of betterFilter.filter(fruits,
+    new ColorSpecification(Color.green))) {
+    console.log(` * ${fruit.name} is green`);
+}
+
+console.log(`Large and green products:`);
+let spec = new AndSpecification(
+    new ColorSpecification(Color.green),
+    new SizeSpecification(Size.large)
+);
+for (let fruit of betterFilter.filter(fruits, spec))
+    console.log(` * ${fruit.name} is large and green`);
 ```
