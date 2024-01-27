@@ -108,7 +108,8 @@ class DearDiary {
 ```
 Currently the Diary class has two responsibilities:   
 * managing the entries
-* managing the loading and saving of the diary
+* managing the loading and saving of the diary   
+ 
 Whats the problem? Let's say we want to have some common processing when we load/save the diary.      
 Or we might have 10 different classes in out project, which we want to load/save.
 It makes sense to take all the presistance functionality and add them to separate component,
