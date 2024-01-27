@@ -224,7 +224,7 @@ for (const fruit of fruitFilter.filterByColor(fruits, Color.green)) {
     console.log(` * ${fruit.name} is green`);
 }
 ```
-Let's try out extension instead of modification
+Let's try out **extension** instead of **modification**
 ```js
 class ColorSpecification {
     constructor(color) {
@@ -263,15 +263,16 @@ class AndSpecification {
     }
 }
 
+// this approach is more modular and flexible
+
 const betterFilter = new BetterFilter();
-console.log(`Green products (new):`);
 for (const fruit of betterFilter.filter(fruits,
     new ColorSpecification(Color.green))) {
     console.log(` * ${fruit.name} is green`);
 }
 
 console.log(`Large and green products:`);
-let spec = new AndSpecification(
+const spec = new AndSpecification(
     new ColorSpecification(Color.green),
     new SizeSpecification(Size.large)
 );
