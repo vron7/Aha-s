@@ -151,4 +151,10 @@ class PersistenceManager {
         // load from the filesystem
     }
 }
+
+const d = new DeadDiary();
+d.addEntry('I cried today.');
+
+const p = new PersistenceManager();
+p.saveToFile(d, 'c:/temp/journal.txt');
 ```
