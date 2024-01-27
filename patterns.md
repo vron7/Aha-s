@@ -68,3 +68,79 @@ const pm = Singelton.getProcessManager();
 const pm2 = Singelton.getProcessManager();
 pm === pm2 // return true, they point to the same reference on memory
 ```
+---
+### Single Responsibility Priniciple
+```js
+class DearDiary {
+    count = 0;
+
+    constructor() {
+        this.entries = {};
+    }
+
+    addEntry(text) {
+        let c = ++this.count;
+        this.entries[c] = `${c}: ${text}`;
+        return c;
+    }
+
+    removeEntry(index) {
+        delete this.entries[index];
+    }
+
+    toString() {
+        return Object.values(this.entries).join('\n');
+    }
+
+    save(filename) {
+        // save a diary to filesystem
+        // fs.writeFileSync(filename, this.toString());
+    }
+
+    load(filename) {
+        // load a diary from the filesystem
+    }
+
+    loadFromUrl(url) {
+        // load a diary from the url
+    }
+}
+```
+Intead do this:
+```js
+class DearDiary {
+    count = 0;
+
+    constructor() {
+        this.entries = {};
+    }
+
+    addEntry(text) {
+        let c = ++this.count;
+        this.entries[c] = `${c}: ${text}`;
+        return c;
+    }
+
+    removeEntry(index) {
+        delete this.entries[index];
+    }
+
+    toString() {
+        return Object.values(this.entries).join('\n');
+    }
+}
+
+class PersistenceManager {
+    preprocess(j) {
+        //
+    }
+
+    saveToFile(diary, filename) {
+        fs.writeFileSync(filename, diary.toString());
+    }
+
+    load(filename) {
+        // load from the filesystem
+    }
+}
+```
