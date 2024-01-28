@@ -301,13 +301,6 @@ class Relationships {
             to: child
         });
     }
-
-
-    findAllChildrenOf(name) {
-        return this.data.filter(r =>
-            r.from.name === name
-        ).map(r => r.to);
-    }
 }
 
 // HIGH-LEVEL MODULE (RESEARCH)
