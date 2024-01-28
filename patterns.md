@@ -279,3 +279,127 @@ const spec = new AndSpecification(
 for (let fruit of betterFilter.filter(fruits, spec))
     console.log(` * ${fruit.name} is large and green`);
 ```
+---
+### Dependency Inversion Principle
+DIP states that high level modules should not directly depend on low level modules
+```
+Let's try out **extension** instead of **modification**
+```js
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+// LOW-LEVEL MODULE (STORAGE)
+class Relationships {
+    constructor() {
+        this.data = [];
+    }
+
+    addParentAndChild(parent, child) {
+        this.data.push({
+            from: parent,
+            to: child
+        });
+    }
+
+
+    findAllChildrenOf(name) {
+        return this.data.filter(r =>
+            r.from.name === name
+        ).map(r => r.to);
+    }
+}
+
+// HIGH-LEVEL MODULE (RESEARCH)
+class Research {
+    // Here we directly depend on the implementaion details of the low level module(relationships)
+    // What if relationships.data changes from an array to a map or some other structure
+    // We would have to refactor our Research class    
+    constructor(relationships)
+    {
+      // problem: direct dependence ↓↓↓↓ on storage mechanic (relationships.data)
+      let relations = relationships.data;
+      for (let rel of relations.filter(r =>
+        r.from.name === 'John'
+      ))
+      {
+        console.log(`John has a child named ${rel.to.name}`);
+      }
+    }
+}
+
+let parent = new Person('John');
+
+// low-level module
+let rels = new Relationships();
+rels.addParentAndChild(parent, new Person('Chris'));
+rels.addParentAndChild(parent, new Person('Matt'));
+
+new Research(rels);
+```
+```js
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+// LOW-LEVEL (STORAGE)
+class RelationshipBrowser {
+    constructor() {
+        // ABSTRACT CLASS IN JS
+        if (this.constructor.name === 'RelationshipBrowser')
+            throw new Error('RelationshipBrowser is abstract!');
+    }
+
+    findAllChildrenOf(name) { }
+}
+
+class Relationships extends RelationshipBrowser {
+    constructor() {
+        super();
+        this.data = [];
+    }
+
+    addParentAndChild(parent, child) {
+        this.data.push({
+            from: parent,
+            to: child
+        });
+    }
+
+
+    findAllChildrenOf(name) {
+        return this.data.filter(r =>
+            r.from.name === name
+        ).map(r => r.to);
+    }
+}
+
+// HIGH-LEVEL MODULE (RESEARCH)
+// DIP states that high level modules should not directly depend on low level modules
+// They should rather depend on abstractions(abstract classes/interfaces)
+class Research {
+    // Here we have an abstraction, we do not depend on storage mechanic
+    constructor(browser) {
+        for (let p of browser.findAllChildrenOf('John')) {
+            console.log(`John has a child named ${p.name}`);
+        }
+    }
+}
+
+let parent = new Person('John');
+let child1 = new Person('Chris');
+let child2 = new Person('Matt');
+
+// low-level module
+let rels = new Relationships();
+rels.addParentAndChild(parent, child1);
+rels.addParentAndChild(parent, child2);
+
+new Research(rels);
+```
