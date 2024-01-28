@@ -281,11 +281,8 @@ for (let fruit of betterFilter.filter(fruits, spec))
 ```
 ---
 ### Dependency Inversion Principle
-DIP states that high level modules should not directly depend on low level modules
-```
-Let's try out **extension** instead of **modification**
+**DIP** states that high level modules should not directly depend on low level modules
 ```js
-
 class Person {
     constructor(name) {
         this.name = name;
@@ -340,8 +337,8 @@ rels.addParentAndChild(parent, new Person('Matt'));
 
 new Research(rels);
 ```
+Let's apply **DIP**
 ```js
-
 class Person {
     constructor(name) {
         this.name = name;
@@ -391,15 +388,4 @@ class Research {
         }
     }
 }
-
-let parent = new Person('John');
-let child1 = new Person('Chris');
-let child2 = new Person('Matt');
-
-// low-level module
-let rels = new Relationships();
-rels.addParentAndChild(parent, child1);
-rels.addParentAndChild(parent, child2);
-
-new Research(rels);
 ```
