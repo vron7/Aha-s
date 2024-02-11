@@ -301,7 +301,7 @@ class Discount {
   }
 }
 ```
-Let's say we need to implement a new customer type - we would need to modify the current class          
+Let's say we need to implement a new customer type - we would need to modify the current funtionality of the class          
 Let's fix this by implementing Discount class by applying **OCP**
 ```js
 interface Customer {
