@@ -286,3 +286,50 @@ class BlogPostDisplay {
 
 ------
 
+**OPEN CLOSED PRINCIPLE (OCP)**   
+A software entity(class/module/function) should be **open** for extension but **closed** for modification
+```js
+class Discount {
+  giveDiscount(customerType: "premium" | "regular"): number {
+    if (customerType === "regular") {
+      return 10;
+    } else if (customerType === "premium") {
+      return 20;
+    } else {
+      return 10;
+    }
+  }
+}
+```
+Currently if we want to implement new customer type, we would need to modify the current class          
+Let's apply **OCP**
+```js
+interface Customer {
+  giveDiscount(): number;
+}
+
+class RegularCustomer implements Customer {
+  giveDiscount(): number {
+    return 10;
+  }
+}
+
+class PremiumCustomer implements Customer {
+  giveDiscount(): number {
+    return 20;
+  }
+}
+
+class Discount {
+  giveDiscount(customer: Customer): number {
+    return customer.giveDiscount();
+  }
+}
+
+const premiumCustomer: PremiumCustomer = new PremiumCustomer();
+const discount: Discount = new Discount();
+console.log(discount.giveDiscount(premiumCustomer))
+```
+
+------
+
