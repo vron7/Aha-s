@@ -247,7 +247,7 @@ class BlogPost {
   }
 
   createPost() {} // not implemented
-  updatePost() {} // not implemented
+
   deletePost() {} // not implemented
 
   displayHTML() {
@@ -255,7 +255,10 @@ class BlogPost {
   }
 }
 ```
-Let's apply SRP and implement display in separate class
+Currently the he blog post class has two responsibilites:   
+1 - to create/update/delete the properties of the blog post.
+2 - to display the html
+Let's apply **SRP** and implement the display of the blog post in a separate class
 ```js
 class BlogPost {
   title: string;
@@ -265,8 +268,9 @@ class BlogPost {
     this.title = title;
     this.content = content;
   }
+
   createPost() {} // not implemented
-  updatePost() {} // not implemented
+
   deletePost() {} // not implemented
 }
 
