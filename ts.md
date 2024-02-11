@@ -235,7 +235,7 @@ class Hero implements Magical {
 ------
 
 **SINGLE RESPONSIBILITY PRINCIPLE (SRP)**   
-A class should only have one reason to change. (It should have only one responsibility / job)
+A class should only have **one** reason to change. (It should have only **one** responsibility / job)
 ```js
 class BlogPost {
   title: string;
@@ -256,8 +256,8 @@ class BlogPost {
 }
 ```
 Currently the he blog post class has two responsibilites:   
-1 - to create/update/delete the properties of the blog post.
-2 - to display the html
+1. to create/update/delete the properties of the blog post.
+2. to display the html   
 Let's apply **SRP** and implement the display of the blog post in a separate class
 ```js
 class BlogPost {
