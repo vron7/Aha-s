@@ -234,15 +234,49 @@ class Hero implements Magical {
 
 ------
 
-**OPEN/CLOSED PRINCIPLE**
-
-Bla bla bla 
+**SINGLE RESPONSIBILITY PRINCIPLE (SRP)**   
+A class should only have one reason to change. (It should have only one responsibility / job)
 ```js
+class BlogPost {
+  title: string;
+  content: string;
 
+  constructor(title: string, content: string) {
+    this.title = title;
+    this.content = content;
+  }
+
+  createPost() {} // not implemented
+  updatePost() {} // not implemented
+  deletePost() {} // not implemented
+
+  displayHTML() {
+    return `<h1>${this.title}</h1><p>${this.content}</p>`;
+  }
+}
 ```
-Bla bla bla
+Let's apply SRP and implement display in separate class
 ```js
+class BlogPost {
+  title: string;
+  content: string;
 
+  constructor(title: string, content: string) {
+    this.title = title;
+    this.content = content;
+  }
+  createPost() {} // not implemented
+  updatePost() {} // not implemented
+  deletePost() {} // not implemented
+}
+
+class BlogPostDisplay {
+  constructor(public blogPost: BlogPost) {}
+
+  displayHTML() {
+    return `<h1>${this.blogPost.title}</h1><p>${this.blogPost.content}</p>`;
+  }
+}
 ```
 
 ------
