@@ -230,3 +230,20 @@ class Hero implements Magical {
 
 ------
 
+# SOLID DESIGN PRINCIPLES IN TS
+
+------
+
+**OPEN/CLOSED PRINCIPLE**
+
+Bla bla bla 
+```js
+
+```
+Bla bla bla
+```js
+
+```
+
+------
+
