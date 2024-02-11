@@ -69,10 +69,10 @@ const pm2 = Singelton.getProcessManager();
 pm === pm2 // return true, they point to the same reference on memory
 ```
 ---
-### SOLID DESIGN PRINCIPLES --->
+### <--- SOLID DESIGN PRINCIPLES --->
 ---
 ### Single Responsibility Priniciple
-A class should have only one responsibility/job.
+A class should have only one responsibility / job.
 ```js
 class DearDiary {
     count = 0;
