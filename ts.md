@@ -333,7 +333,8 @@ console.log(discount.giveDiscount(premiumCustomer))
 
 ------
 
-**SINGELTON (a creational pattern)**   
+**SINGELTON (a creational pattern)**
+
 The **Singleton** pattern is used to ensure that a class has only one instance and provides a global point of access to that instance.
 
 **Usecases**  
