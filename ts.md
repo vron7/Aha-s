@@ -334,12 +334,15 @@ console.log(discount.giveDiscount(premiumCustomer))
 ------
 
 **SINGELTON (a creational pattern)**   
-The **Singleton** pattern is used to ensure that a class has only one instance and provides a global point of access to that instance.   
-When to use ?   
-1. Managing shared resources (like database connections, filesystem), 
-2. Maintaining a single configuration object throughout an application, or creating a central point for managing application state.   
-Problems ?
-It introduces a global state, which might lead to tight coupling and make testing more challenging.
+The **Singleton** pattern is used to ensure that a class has only one instance and provides a global point of access to that instance.
+
+**Usecases**  
+- Managing shared resources (like database connections, filesystem).     
+- Maintaining a single configuration object throughout an application, or creating a central point for managing application state.
+
+**Problems**  
+- It introduces a global state, which might lead to tight coupling and make testing more challenging.  
+  (tests need to reset singeltons state for each test)  
 ```js
 class Singleton {
   private static intance: Singleton;
