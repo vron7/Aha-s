@@ -378,3 +378,39 @@ console.log(instance1 === instance2); // true
 
 ------
 
+**PROTOTYPE (a creational pattern)**
+
+The **Prototype** pattern is used when the construction of a new object is more efficient by copying an    
+existing instance rather than creating a new one from scratch.
+
+**Usecases**  
+- Cloning existing objects is less resource-intensive or complex compared to creating a new objects.    
+- When you need multiple instances of similar objects with minor variations.
+
+**Problems**  
+- If your objects contain nested or complex structures, cloning them shallowly might lead to unintended sharing of references. 
+```js
+class Prototype {
+    property1: string;
+    property2: number;
+
+    constructor(property1: string, property2: number) {
+        this.property1 = property1;
+        this.property2 = property2;
+    }
+
+    clone(): this {
+        const clone = Object.create(this);
+        return clone;
+    }
+}
+
+// Usage
+const prototypeInstance = new Prototype("value1", 123);
+const clonedInstance = prototypeInstance.clone();
+
+console.log(clonedInstance.property1); // Output: value1
+console.log(clonedInstance.property2); // Output: 123
+```
+------
+
