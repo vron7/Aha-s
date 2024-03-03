@@ -516,16 +516,8 @@ class MotorcycleBuilder implements Builder {
 }
 
 class Director {
-  public buildFerrari(): Car {
-    return new CarBuilder().setSeats(2).setEngine("V-12").getResult();
-  }
-
   public buildToyota(): Car {
     return new CarBuilder().setSeats(7).setEngine("V-6").getResult();
-  }
-
-  public buildHonda(): Motorcycle {
-    return new MotorcycleBuilder().setSeats(2).setEngine("V-4").getResult();
   }
 
   public buildYamaha(): Motorcycle {
@@ -542,11 +534,50 @@ const motorcycle = new MotorcycleBuilder()
 
 // Example code using the director
 const director = new Director();
-director.buildFerrari();
 director.buildToyota();
-
-director.buildHonda();
 director.buildYamaha();
+```
+Another example
+```js
+ interface User {
+  name: string;
+  age: number;
+  gender: "male" | "female" | "unspecified";
+}
+
+class UserBuilder {
+  private readonly _user: User;
+
+  constructor() {
+    this._user = {
+      name: "",
+      age: 0,
+      gender: "unspecified"
+    };
+  }
+
+  name(name: string): UserBuilder {
+    this._user.name = name;
+    return this;
+  }
+  
+  age(age: number): UserBuilder {
+    this._user.age = age;
+    return this;
+  }
+
+  build(): User {
+    return this._user;
+  }
+}
+
+// Example of usage
+const userWithName: User = new UserBuilder()
+  .name("John")
+  .build();
+
+// Versus without builder
+const user: User = { name: "John", age: 0, gender: "male" }
 ```
 ------
 
