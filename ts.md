@@ -593,7 +593,7 @@ instances of different classes without exposing the instantiation logic to the c
 - Use the Factory Pattern when you want to create objects without specifying the exact class of object that will be created.
 - If the process of object creation involves complex logic or conditions, a factory method can encapsulate this logic in one place.
 - If you supposed to create different types of objects, and you don't know what these objects will be until runtime.
-- If you're dealing with a large number of similar classes that share a common superclass and you often need to instantiate one of these classes,  
+- If you're dealing with a large number of similar classes that share a common superclass and you often need to instantiate one of these classes,
   but you don't know ahead of time which one you'll need to instantiate.
 - If your code involves conditional creation of objects based on certain parameters or environmental conditions,  
   a Factory Method can encapsulate this conditional logic and make your code easier to read and maintain.
