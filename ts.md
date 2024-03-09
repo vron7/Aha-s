@@ -592,6 +592,11 @@ instances of different classes without exposing the instantiation logic to the c
 **When to use**  
 - Use the Factory Pattern when you want to create objects without specifying the exact class of object that will be created.
 - If the process of object creation involves complex logic or conditions, a factory method can encapsulate this logic in one place.
+- If you supposed to create different types of objects, and you don't know what these objects will be until runtime.
+- If you're dealing with a large number of similar classes that share a common superclass and you often need to instantiate one of these classes,  
+  but you don't know ahead of time which one you'll need to instantiate.
+- If your code involves conditional creation of objects based on certain parameters or environmental conditions,  
+  a Factory Method can encapsulate this conditional logic and make your code easier to read and maintain.
 
 **Problems**  
 - Factory methods usually provide a static interface, which can make it difficult to subclass or modify the behavior of the factory without modifying its code directly.
@@ -608,6 +613,8 @@ instances of different classes without exposing the instantiation logic to the c
   In frontend development, UI component libraries often utilize the Factory Pattern to create various types of UI components (e.g., buttons, forms, modals) based on configuration options provided by developers.
 - **API Clients**  
   A factory can be used to create instances of API clients tailored to different endpoints, versions, or authentication methods, while abstracting away the creation details from the client code.
+- **Game Development**  
+  Factories can be used to create various types of game objects (e.g., characters, weapons, enemies) based on game states, levels, or player actions.
 
 ```js
 interface GameCharacter {
