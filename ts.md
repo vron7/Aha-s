@@ -585,15 +585,20 @@ const user: User = { name: "John", age: 0, gender: "male" }
 
 **FACTORY (a creational pattern)**
 
-The **Prototype** pattern is used when the construction of a new object is more efficient by copying an    
-existing instance rather than creating a new one from scratch.
+The **Factory** pattern is used to centralize object creation logic, providing a flexible way to create instances of  
+different classes without exposing the instantiation logic to the client code
 
-**Usecases**  
-- Cloning existing objects is less resource-intensive or complex compared to creating a new objects.    
-- When you need multiple instances of similar objects with minor variations.
+**When to use**  
+-Use the Factory Pattern when you want to create objects without specifying the exact class of object that will be created.
+-If the process of object creation involves complex logic or conditions, a factory method can encapsulate this logic in one place.
 
 **Problems**  
-- If your objects contain nested or complex structures, cloning them shallowly might lead to unintended sharing of references. 
+-Factory methods usually provide a static interface, which can make it difficult to subclass or modify the behavior of the factory without modifying its code directly.
+-Introducing a factory can add complexity to the codebase, especially if it's not necessary for the scale of the project.
+
+**Usecases**  
+-Database access - Factories can be employed to create database connection instances, allowing for flexibility in choosing the type of database or connection parameters at runtime.
+
 ```js
 interface GameCharacter {
     attack(): void;
