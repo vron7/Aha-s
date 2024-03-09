@@ -418,7 +418,7 @@ console.log(clonedInstance.property2); // Output: 123
 
 The **builder** pattern is used to create complex objects step by step.
 
-**Usecases**  
+**When to use**  
 - Simplify the construction process of complex object.    
 - Can be used to create different representations of objects.  
 
@@ -426,6 +426,7 @@ The **builder** pattern is used to create complex objects step by step.
 - Increased code complexity.
 - Potential for misuse by other developers.
 - Learning curve.
+
 ```js
 interface Builder {
   setSeats(seats: number): this;
@@ -585,19 +586,28 @@ const user: User = { name: "John", age: 0, gender: "male" }
 
 **FACTORY (a creational pattern)**
 
-The **Factory** pattern is used to centralize object creation logic, providing a flexible way to create instances of  
-different classes without exposing the instantiation logic to the client code
+The **Factory** pattern is used to centralize object creation logic, providing a flexible way to create   
+instances of different classes without exposing the instantiation logic to the client code
 
 **When to use**  
--Use the Factory Pattern when you want to create objects without specifying the exact class of object that will be created.
--If the process of object creation involves complex logic or conditions, a factory method can encapsulate this logic in one place.
+- Use the Factory Pattern when you want to create objects without specifying the exact class of object that will be created.
+- If the process of object creation involves complex logic or conditions, a factory method can encapsulate this logic in one place.
 
 **Problems**  
--Factory methods usually provide a static interface, which can make it difficult to subclass or modify the behavior of the factory without modifying its code directly.
--Introducing a factory can add complexity to the codebase, especially if it's not necessary for the scale of the project.
+- Factory methods usually provide a static interface, which can make it difficult to subclass or modify the behavior of the factory without modifying its code directly.
+- Introducing a factory can add complexity to the codebase, especially if it's not necessary for the scale of the project.
 
 **Usecases**  
--Database access - Factories can be employed to create database connection instances, allowing for flexibility in choosing the type of database or connection parameters at runtime.
+- **Database access**   
+  Factories can be employed to create database connection instances, allowing for flexibility in choosing the type of database or connection parameters at runtime.
+- **Object Pooling**   
+  Factories can be used to manage object pools, where a fixed set of objects is created and reused to improve performance in scenarios with high object creation costs.
+- **Dependency Injection**  
+  Factories are often used in Dependency Injection frameworks to instantiate objects dynamically based on configuration or runtime conditions.
+- **UI Component Libraries**  
+  In frontend development, UI component libraries often utilize the Factory Pattern to create various types of UI components (e.g., buttons, forms, modals) based on configuration options provided by developers.
+- **API Clients**  
+  A factory can be used to create instances of API clients tailored to different endpoints, versions, or authentication methods, while abstracting away the creation details from the client code.
 
 ```js
 interface GameCharacter {
