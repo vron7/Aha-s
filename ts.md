@@ -576,8 +576,74 @@ const userWithName: User = new UserBuilder()
   .name("John")
   .build();
 
-// Versus without builder
+// Versus without the builder
+// Here we must specify all the parameters
+// When we want to apply test cases, we would always need to add all the values
 const user: User = { name: "John", age: 0, gender: "male" }
 ```
 ------
+
+**FACTORY (a creational pattern)**
+
+The **Prototype** pattern is used when the construction of a new object is more efficient by copying an    
+existing instance rather than creating a new one from scratch.
+
+**Usecases**  
+- Cloning existing objects is less resource-intensive or complex compared to creating a new objects.    
+- When you need multiple instances of similar objects with minor variations.
+
+**Problems**  
+- If your objects contain nested or complex structures, cloning them shallowly might lead to unintended sharing of references. 
+```js
+interface GameCharacter {
+    attack(): void;
+}
+
+class Warrior implements GameCharacter {
+    attack(): void {
+        console.log('Warrior attacks with sword!');
+    }
+}
+
+class Mage implements GameCharacter {
+    attack(): void {
+        console.log('Mage casts a fireball spell!');
+    }
+}
+
+class Archer implements GameCharacter {
+    attack(): void {
+        console.log('Archer shoots an arrow!');
+    }
+}
+
+class CharacterFactory {
+    // Factory method to create characters based on type
+    static createCharacter(type: string): GameCharacter {
+        switch (type) {
+            case 'warrior':
+                return new Warrior();
+            case 'mage':
+                return new Mage();
+            case 'archer':
+                return new Archer();
+            default:
+                throw new Error('Invalid character type');
+        }
+    }
+}
+
+// Client code
+const warrior = CharacterFactory.createCharacter('warrior');
+warrior.attack(); // Output: Warrior attacks with sword!
+
+const mage = CharacterFactory.createCharacter('mage');
+mage.attack(); // Output: Mage casts a fireball spell!
+
+const archer = CharacterFactory.createCharacter('archer');
+archer.attack(); // Output: Archer shoots an arrow!
+```
+------
+
+
 
