@@ -667,5 +667,76 @@ archer.attack(); // Output: Archer shoots an arrow!
 ```
 ------
 
+**ABSTRACT FACTORY (a creational pattern)**
+
+The **Abstract Factory** involves multiple Factory mehtods, one for each type of object to be created.
+
+**When to use**  
+TODO
+
+**Problems**  
+TODO
+
+**Usecases**  
+TODO
+
+```js
+interface Button {
+  render(): void;
+  onClick(f: Function): void;
+}
+
+interface GUIFactory {
+  createButton(): Button;
+}
+
+class WindowsButton implements Button {
+  public render(): void {
+    console.log("Render a button in Windows Style");
+  }
+  public onClick(f: Function): void {
+    console.log("Windows button was clicked");
+    f();
+  }
+}
+
+class MacOSButton implements Button {
+  public render(): void {
+    console.log("Render a button in MacOS Style");
+  }
+  public onClick(f: Function): void {
+    console.log("MacOS button was clicked");
+    f();
+  }
+}
+
+class WindowsFactory implements GUIFactory {
+  public createButton(): Button {
+    return new WindowsButton();
+  }
+}
+
+class MacOsFactory implements GUIFactory {
+  public createButton(): Button {
+    return new MacOSButton();
+  }
+}
+
+// Client Code
+function renderUI(factory: GUIFactory) {
+  const button = factory.createButton();
+
+  button.render();
+
+  button.onClick(() => {
+    console.log("Button Clicked");
+  });
+}
+
+renderUI(new WindowsFactory());
+renderUI(new MacOsFactory());
+```
+------
+
 
 
