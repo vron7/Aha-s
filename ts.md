@@ -671,14 +671,23 @@ archer.attack(); // Output: Archer shoots an arrow!
 
 The **Abstract Factory** involves multiple Factory mehtods, one for each type of object to be created.
 
-**When to use**  
-TODO
+**When to use**    
+- When you need to create families of related objects, where each family consists of objects that are designed to work together.  
+- When different families of objects need to be swapped interchangeably, like when supporting multiple database engines in an application.  
+- When you want to ensure that groups of related objects are created together and are compatible, such as various UI elements in a graphical interface.    
+- When you need to test or mock complex systems by abstracting object creation behind interfaces, facilitating unit testing and code maintenance.  
 
-**Problems**  
-TODO
+**Pros**  
+- By separating the responsibility of object creation from the client code, Abstract Factory promotes a clean separation of concerns.      
+ This enhances code readability, maintainability, and scalability, especially in large or complex systems.   
+ 
+**Problems**    
+- Increased complexity.  
+- Increased abstraction.  
+- More rigid codebase.  
 
 **Usecases**  
-TODO
+- Similar to Factory pattern
 
 ```js
 interface Button {
