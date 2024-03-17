@@ -749,7 +749,7 @@ renderUI(new MacOsFactory());
 
 **FACADE PATTERN (a structural pattern)**
 
-The **Facade** provides a simplified interface to a complex system, subsystem, or set of interfaces. 
+The **Facade** provides a simplified interface to a complex system, subsystem, or set of interfaces.   
 It aims to hide the complexities of the underlying system and present a unified interface to the client code.
 
 **When to use**    
