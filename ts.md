@@ -747,5 +747,98 @@ renderUI(new MacOsFactory());
 ```
 ------
 
+**FACADE PATTERN (a structural pattern)**
+
+The **Facade** provides a simplified interface to a complex system, subsystem, or set of interfaces. 
+It aims to hide the complexities of the underlying system and present a unified interface to the client code.
+
+**When to use**    
+- When you need to hide the complexities of the subsystem and provide a single, straightforward interface for interacting with it.
+- When you need to encapsulate the interactions with the subsystem within a single class.
+
+**Pros**  
+- Reduces coupling between client code and the subsystem, as clients interact with the facade rather than directly with subsystem components.
+- Improves the readability of client code by abstracting away the details of the subsystem.
+- Encapsulates the complexities of the subsystem, promoting encapsulation and information hiding.
+-  
+**Problems**    
+- May limit flexibility in certain scenarios, as it provides a fixed interface to the subsystem.
+- Adds an additional layer of abstraction, which may introduce some overhead, especially in performance-critical systems.
+- While it simplifies the interface for client code, it might add complexity to the facade itself, especially if the subsystem evolves over time.
+
+**Usecases**  
+- **Game Engines**  
+  Provides simplified API for game developers, hiding complexities of underlying engine subsystems
+
+```js
+// Subsystem components
+class InputSystem {
+    constructor() {
+        console.log("Input system initialized");
+    }
+
+    handleInput(): void {
+        console.log("Handling user input");
+    }
+}
+
+class GraphicsSystem {
+    constructor() {
+        console.log("Graphics system initialized");
+    }
+
+    render(): void {
+        console.log("Rendering graphics");
+    }
+}
+
+class AudioSystem {
+    constructor() {
+        console.log("Audio system initialized");
+    }
+
+    playSound(): void {
+        console.log("Playing game sounds");
+    }
+}
+
+// Facade
+class GameEngineFacade {
+    private inputSystem: InputSystem;
+    private graphicsSystem: GraphicsSystem;
+    private audioSystem: AudioSystem;
+
+    constructor() {
+        this.inputSystem = new InputSystem();
+        this.graphicsSystem = new GraphicsSystem();
+        this.audioSystem = new AudioSystem();
+    }
+
+    startGame(): void {
+        console.log("Game started");
+    }
+
+    updateGame(): void {
+        this.inputSystem.handleInput();
+        this.graphicsSystem.render();
+        this.audioSystem.playSound();
+    }
+
+    stopGame(): void {
+        console.log("Game stopped");
+    }
+}
+
+// Client code
+const gameEngine = new GameEngineFacade();
+
+// Using the facade
+gameEngine.startGame();
+gameEngine.updateGame();
+gameEngine.stopGame();
+
+```
+------
+
 
 
