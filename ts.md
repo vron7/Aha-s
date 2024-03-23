@@ -861,10 +861,6 @@ or extend either part independently
 - More classes
 - Increased complexity
 
-**Usecases**  
-- **Graphic libraries**  
-- **Cross-platform apps**  
-
 ```js
 // Abstraction
 interface GameObject {
