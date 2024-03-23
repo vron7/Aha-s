@@ -839,6 +839,83 @@ gameEngine.stopGame();
 
 ```
 ------
+**BRIDGE PATTERN (a structural pattern)**
+
+The **Bridge** pattern lets you split a large class or a set of closely related classes into two separate hierarchies -      
+abstraction and implementation, which can be developed independently of each other. It allows you to decouple the    
+abstraction (what you want to achieve) from the implementation (how you achieve it), making it easier to change   
+or extend either part independently 
+
+**When to use**    
+- When you want to hide implementation details from clients.
+- When you want to switch implementations at runtime.
+- When you need to support multiple platforms or systems.
+
+**Pros**  
+- Decoupling of Abstraction and Implementation.
+- Provides clear interfaces for the client.
+- Facilitates platform independance.
+
+**Problems**    
+- Possible overengineering
+- More classes
+- Increased complexity
+
+**Usecases**  
+- **Graphic libraries**  
+- **Cross-platform apps**  
+
+```js
+// Abstraction
+interface GameObject {
+    draw(): void;
+}
+
+// Implementor
+interface RenderingEngine {
+    render(x: number, y: number): void;
+}
+
+// Concrete Implementor 1
+class WebGLRenderer implements RenderingEngine {
+    render(x: number, y: number): void {
+        console.log(`Drawing object at (${x}, ${y}) using WebGL`);
+    }
+}
+
+// Concrete Implementor 2
+class Canvas2DRenderer implements RenderingEngine {
+    render(x: number, y: number): void {
+        console.log(`Drawing object at (${x}, ${y}) using 2D Canvas`);
+    }
+}
+
+// Refined Abstraction
+class GameObject2D implements GameObject {
+    private x: number;
+    private y: number;
+    private renderingEngine: RenderingEngine;
+
+    constructor(x: number, y: number, renderingEngine: RenderingEngine) {
+        this.x = x;
+        this.y = y;
+        this.renderingEngine = renderingEngine;
+    }
+
+    draw(): void {
+        this.renderingEngine.render(this.x, this.y);
+    }
+}
+
+// Usage
+const object1 = new GameObject2D(100, 200, new WebGLRenderer());
+const object2 = new GameObject2D(300, 400, new Canvas2DRenderer());
+
+object1.draw();
+object2.draw();
+
+```
+------
 
 
 
