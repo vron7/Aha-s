@@ -766,10 +766,6 @@ It aims to hide the complexities of the underlying system and present a unified 
 - Adds an additional layer of abstraction, which may introduce some overhead, especially in performance-critical systems.
 - While it simplifies the interface for client code, it might add complexity to the facade itself, especially if the subsystem evolves over time.
 
-**Usecases**  
-- **Game Engines**  
-  Provides simplified API for game developers, hiding complexities of underlying engine subsystems
-
 ```js
 // Subsystem components
 class InputSystem {
@@ -850,16 +846,6 @@ or extend either part independently
 - When you want to hide implementation details from clients.
 - When you want to switch implementations at runtime.
 - When you need to support multiple platforms or systems.
-
-**Pros**  
-- Decoupling of Abstraction and Implementation.
-- Provides clear interfaces for the client.
-- Facilitates platform independance.
-
-**Problems**    
-- Possible overengineering
-- More classes
-- Increased complexity
 
 ```js
 // Abstraction
