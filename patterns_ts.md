@@ -677,7 +677,6 @@ The client code can treat both types of elements in the same way (treat a file s
 **When to use**    
 - You want to perform operations on a collection of objects the same way you’d perform them on individual objects.
 - The structure of objects forms a tree-like pattern.
-- When you need to support multiple platforms or systems.
 
 ```js
 // Component interface - an interface for all objects in the composition
