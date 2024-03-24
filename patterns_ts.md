@@ -666,3 +666,73 @@ object2.draw();
 
 ```
 ------
+**COMPOSITE PATTERN (a structural pattern)**
+
+The **Composite** pattern lets you compose objects into tree-like structures and then work    
+with these structures as if they were individual objects.
+
+The main benefit of this design pattern is that it allows you to run operations over both simple and complex elements.         
+The client code can treat both types of elements in the same way (treat a file same way as a folder).     
+
+**When to use**    
+- You want to perform operations on a collection of objects the same way you’d perform them on individual objects.
+- The structure of objects forms a tree-like pattern.
+- When you need to support multiple platforms or systems.
+
+```js
+// Component interface - an interface for all objects in the composition
+interface GameObject {
+    name: string;
+    render(): void;
+}
+
+// Leaf -  defines the behavior for the elements in the composition. It has no children.
+class Sprite implements GameObject {
+    constructor(public name: string) {}
+
+    render(): void {
+        console.log(`Rendering Sprite: ${this.name}`);
+    }
+}
+
+// Composite - stores child components and implements child-related operations in the component interface.
+class Scene implements GameObject {
+    private children: GameObject[] = [];
+
+    constructor(public name: string) {}
+
+    add(object: GameObject): void {
+        this.children.push(object);
+    }
+
+    remove(object: GameObject): void {
+        const index = this.children.indexOf(object);
+        if (index !== -1) {
+            this.children.splice(index, 1);
+        }
+    }
+
+    render(): void {
+        console.log(`Rendering Scene: ${this.name}`);
+        this.children.forEach(child => {
+            child.render();
+        });
+    }
+}
+
+// Client code
+const sprite1 = new Sprite("Character");
+const sprite2 = new Sprite("Enemy");
+
+const mainScene = new Scene("MainScene");
+mainScene.add(sprite1);
+mainScene.add(sprite2);
+
+const world = new Scene("World");
+world.add(mainScene);
+
+// Rendering the game world
+world.render();
+
+```
+------
