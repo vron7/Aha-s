@@ -679,7 +679,7 @@ The client code can treat both types of elements in the same way (treat a file s
 - The structure of objects forms a tree-like pattern.
 
 **Usecases**  
-- **GUI Components**
+- **GUI Components**   
   The Composite Pattern helps simplify working with complex GUI elements like panels and simple ones like buttons by
   treating them uniformly in a tree-like structure. For example they all have common render method.
 
