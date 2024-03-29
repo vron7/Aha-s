@@ -756,7 +756,7 @@ This pattern is particularly useful when you want to modify the behavior of an o
 
 **Usecases**  
 - Middleware in web dev
-- **GUI toolkits**
+- **GUI toolkits**   
   Instead of having many sublasses (WindowWithScrollbar, WindowWithMenu, WindowWithScrollbarAndMenu), you can use decorators to add   
   each feature individually to a Window object. 
 
