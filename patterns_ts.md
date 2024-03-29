@@ -840,4 +840,39 @@ const basicButton: Button = new BasicButton();
 const hoverButton: Button = new HoverButton(basicButton);
 const hoverFXButton: Button = new FXButton(hoverButton);
 ```
+One more example
+```js
+// Base Character interface
+interface Character {
+    attack(): void;
+}
+
+// Concrete implementation of the base Character
+class BasicCharacter implements Character {
+    attack(): void {
+        console.log("Basic Attack");
+    }
+}
+
+// Character decorator representing equipped items
+class EquipmentDecorator implements Character {
+    constructor(private character: Character, private equipments: string[]) {}
+
+    attack(): void {
+        this.character.attack();
+        for (const equipment of this.equipments) {
+            console.log(`Attacking with ${equipment}`);
+        }
+    }
+}
+
+// Usage
+const basicCharacter: Character = new BasicCharacter();
+const characterWithSwordAndMagic: Character = new EquipmentDecorator(basicCharacter, ["Sword", "Magic Wand"]);
+
+basicCharacter.attack();
+console.log("------");
+characterWithSwordAndMagic.attack();
+
+```
 ------
