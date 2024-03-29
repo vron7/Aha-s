@@ -798,4 +798,46 @@ const basicButton: Button = new BasicButton();
 const hoverButton: Button = new HoverButton(basicButton);
 const hoverFXButton: Button = new FXButton(hoverButton);
 ```
+Same example but with having an abstract class for decorators
+```js
+// Base Button interface
+interface Button {
+    render(): void;
+}
+
+// Concrete implementation of the Base Button
+class BasicButton implements Button {
+    render(): void {
+        console.log("Rendering Basic Button");
+    }
+}
+
+// Abstract class for button decorators
+abstract class ButtonDecorator implements Button {
+    constructor(protected button: Button) {}
+
+    abstract render(): void;
+}
+
+// Decorator for adding hover effect
+class HoverButton extends ButtonDecorator {
+    render(): void {
+        this.button.render();
+        console.log("Adding Hover Effect");
+    }
+}
+
+// Decorator for adding special effects
+class FXButton extends ButtonDecorator {
+    render(): void {
+        this.button.render();
+        console.log("Adding Special FX");
+    }
+}
+
+// Usage
+const basicButton: Button = new BasicButton();
+const hoverButton: Button = new HoverButton(basicButton);
+const hoverFXButton: Button = new FXButton(hoverButton);
+```
 ------
