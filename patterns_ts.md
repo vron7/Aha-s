@@ -757,10 +757,45 @@ This pattern is particularly useful when you want to modify the behavior of an o
 **Usecases**  
 - Middleware in web dev
 - **GUI toolkits**   
-  Instead of having many sublasses (WindowWithScrollbar, WindowWithMenu, WindowWithScrollbarAndMenu), you can use decorators to add   
-  each feature individually to a Window object. 
+  Instead of having many sublasses (WindowWithScrollbar, WindowWithMenu, WindowWithScrollbarAndMenu),
+  you can use decorators to add each feature individually to a Window object. 
 
 ```js
+// Base Button interface
+interface Button {
+    render(): void;
+}
 
+// Concrete implementation of the Base Button
+class BasicButton implements Button {
+    render(): void {
+        console.log("Rendering Basic Button");
+    }
+}
+
+// Decorator for adding hover effect
+class HoverButton implements Button {
+    constructor(private button: Button) {}
+
+    render(): void {
+        this.button.render();
+        console.log("Adding Hover Effect");
+    }
+}
+
+// Decorator for adding special effects
+class FXButton implements Button {
+    constructor(private button: Button) {}
+
+    render(): void {
+        this.button.render();
+        console.log("Adding Special FX");
+    }
+}
+
+// Usage
+const basicButton: Button = new BasicButton();
+const hoverButton: Button = new HoverButton(basicButton);
+const hoverFXButton: Button = new FXButton(hoverButton);
 ```
 ------
