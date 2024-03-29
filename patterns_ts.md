@@ -740,3 +740,27 @@ world.render();
 
 ```
 ------
+
+**DECORATOR PATTERN (a structural pattern)**
+
+The **Decorator** pattern allows you to dynamically add or override behaviour in an existing object without changing its implementation.    
+
+This pattern is particularly useful when you want to modify the behavior of an object without affecting other objects of the same class.     
+
+**When to use**    
+- Is a good alternative to subclassing when you need to add functionality at runtime.
+- You want to add a few additional properties to some objects, but not to all.
+- When extending class functionality is not a viable option.
+- You want to ensure that the system can be easily extended in the future.
+- You need to add responsibilities to an object that can be withdrawn later. 
+
+**Usecases**  
+- Middleware in web dev
+- **GUI toolkits**
+  Instead of having many sublasses (WindowWithScrollbar, WindowWithMenu, WindowWithScrollbarAndMenu), you can use decorators to add   
+  each feature individually to a Window object. 
+
+```js
+
+```
+------
