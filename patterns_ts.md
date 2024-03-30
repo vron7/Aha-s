@@ -797,6 +797,12 @@ class FXButton implements Button {
 const basicButton: Button = new BasicButton();
 const hoverButton: Button = new HoverButton(basicButton);
 const hoverFXButton: Button = new FXButton(hoverButton);
+
+// OR can also be written as
+let myButton basicButton: Button = new BasicButton();
+myButton = new HoverButton(myButton);
+myButton = new FXButton(myButton);
+
 ```
 Same example but with having an abstract class for decorators
 ```js
