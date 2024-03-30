@@ -877,8 +877,70 @@ const basicCharacter: Character = new BasicCharacter();
 const characterWithSwordAndMagic: Character = new EquipmentDecorator(basicCharacter, ["Sword", "Magic Wand"]);
 
 basicCharacter.attack();
-console.log("------");
 characterWithSwordAndMagic.attack();
-
 ```
 ------
+
+**ADAPTER PATTERN (a structural pattern)**
+
+The **Adapter** pattern allows objects with incompatible interfaces to collaborate.     
+It enables objects to work together even if they have different interfaces, making them compatible without changing their existing code.
+
+**When to use**    
+- You want to integrate new or legacy code into systems without needing to modify the existing codebase extensively.
+- When you want to integrate third-party libraries or APIs that don't directly fit into your application's design.
+- When you need to make disparate parts of a system work together without modifying their original interfaces or implementations.
+- 
+```js
+class Rectangle {
+  constructor(private width: number, private height: number) {}
+
+  public getWidth(): number {
+    return this.width;
+  }
+
+  public getHeight(): number {
+    return this.height;
+  }
+
+  public area(): number {
+    return this.width * this.height;
+  }
+}
+
+class Square {
+  constructor(private side: number) {}
+
+  public getSide(): number {
+    return this.side;
+  }
+
+  public area(): number {
+    return this.side * this.side;
+  }
+}
+
+class SquareToRectangleAdapter {
+  constructor(private square: Square) {}
+
+  public getWidth(): number {
+    return this.square.getSide();
+  }
+
+  public getHeight(): number {
+    return this.square.getSide();
+  }
+
+  public area(): number {
+    return this.square.area();
+  }
+}
+
+// client code
+const square = new Square(5);
+const adapter = new SquareToRectangleAdapter(square);
+
+console.log(adapter.getHeight());
+console.log(adapter.getWidth());
+console.log(adapter.area());
+```
