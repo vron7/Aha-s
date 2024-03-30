@@ -890,7 +890,7 @@ It enables objects to work together even if they have different interfaces, maki
 - You want to integrate new or legacy code into systems without needing to modify the existing codebase extensively.
 - When you want to integrate third-party libraries or APIs that don't directly fit into your application's design.
 - When you need to make disparate parts of a system work together without modifying their original interfaces or implementations.
-- 
+
 ```js
 class Rectangle {
   constructor(private width: number, private height: number) {}
