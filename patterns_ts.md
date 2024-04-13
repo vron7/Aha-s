@@ -1039,8 +1039,10 @@ class ResizeManager {
 class Game {
     constructor(private resizeManager: ResizeManager) {
         this.resizeManager.addObserver(this.handleResize.bind(this));
-        // versus signals? this.emitter.on('resize', this.handleResize.bind(this));
-        // in this case we directly interact with emitter resize event itsef, which creates a more tight coupling vs observer pattern
+        // what about using signals? 
+        // this.emitter.on('resize', this.handleResize.bind(this));
+        // in this case we directly interact with emitter resize event itsef, 
+        // which creates a more tight coupling vs observer pattern
     }
 
     private handleResize(width: number, height: number): void {
