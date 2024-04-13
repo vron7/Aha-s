@@ -944,3 +944,75 @@ console.log(adapter.getHeight());
 console.log(adapter.getWidth());
 console.log(adapter.area());
 ```
+------
+
+**OBSERVER PATTERN (a structural pattern)**
+
+The **Observer** pattern allows you to define or create a subscription mechanism to send notifications    
+to multiple objects about any new events that happen to the object they're observing.    
+
+**When to use**    
+- When your code is constantly checking or "polling" an object to see if its state has changed.
+- When changes in one object need to be propagated to multiple other objects without them being tightly coupled
+- MVC - the views observe changes in the model and update themselves accordingly
+
+```js
+// Define the Subject interface
+interface Subject {
+    addObserver(observer: Observer): void;
+    removeObserver(observer: Observer): void;
+    notifyObservers(): void;
+}
+
+// Define the Observer interface
+interface Observer {
+    update(data: any): void;
+}
+
+// Concrete Subject class
+class ConcreteSubject implements Subject {
+    private observers: Observer[] = [];
+    private data: any;
+
+    addObserver(observer: Observer): void {
+        this.observers.push(observer);
+    }
+
+    removeObserver(observer: Observer): void {
+        this.observers = this.observers.filter(obs => obs !== observer);
+    }
+
+    notifyObservers(): void {
+        this.observers.forEach(observer => observer.update(this.data));
+    }
+
+    setData(data: any): void {
+        this.data = data;
+        this.notifyObservers();
+    }
+}
+
+// Concrete Observer class
+class ConcreteObserver implements Observer {
+    update(data: any): void {
+        console.log("Received data:", data);
+    }
+}
+
+// Usage
+const subject = new ConcreteSubject();
+const observer1 = new ConcreteObserver();
+const observer2 = new ConcreteObserver();
+
+// Add observers to the subject
+subject.addObserver(observer1);
+subject.addObserver(observer2);
+
+// Set some data in the subject
+subject.setData("Hello, observers!");
+
+// Output:
+// Received data: Hello, observers!
+// Received data: Hello, observers!
+
+```
