@@ -1016,3 +1016,43 @@ subject.setData("Hello, observers!");
 // Received data: Hello, observers!
 
 ```
+Concrete example:
+```js
+// Concrete Subject class
+class ResizeManager {
+    private observers: ((width: number, height: number) => void)[] = [];
+
+    addObserver(observer: (width: number, height: number) => void): void {
+        this.observers.push(observer);
+    }
+
+    removeObserver(observer: (width: number, height: number) => void): void {
+        this.observers = this.observers.filter(obs => obs !== observer);
+    }
+
+    notifyObservers(width: number, height: number): void {
+        this.observers.forEach(observer => observer(width, height));
+    }
+}
+
+// Game class subscribing to resize events using Observer pattern
+class Game {
+    constructor(private resizeManager: ResizeManager) {
+        this.resizeManager.addObserver(this.handleResize.bind(this));
+        // versus signals? this.emitter.on('resize', this.handleResize.bind(this));
+        // in this case we directly interact with emitter resize event itsef, which creates a more tight coupling vs observer pattern
+    }
+
+    private handleResize(width: number, height: number): void {
+        console.log(`Game: Window resized to ${width}x${height}.`);
+        // Perform actions based on resize event
+    }
+}
+
+// Usage
+const resizeManager = new ResizeManager();
+const game = new Game(resizeManager);
+
+// Simulate window resize event
+resizeManager.notifyObservers(800, 600);
+```
