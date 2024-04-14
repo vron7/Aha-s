@@ -946,7 +946,7 @@ console.log(adapter.area());
 ```
 ------
 
-**OBSERVER PATTERN (a structural pattern)**
+**OBSERVER PATTERN (a behavioural pattern)**
 
 The **Observer** pattern allows you to define or create a subscription mechanism to send notifications    
 to multiple objects about any new events that happen to the object they're observing.    
@@ -1057,4 +1057,51 @@ const game = new Game(resizeManager);
 
 // Simulate window resize event
 resizeManager.notifyObservers(800, 600);
+```
+------
+
+**STRATEGY PATTERN (a behavioural pattern)**
+
+The **Strategy** enables defining a set of algorithms, encapsulating each one into separate classes, and making them interchangeable.   
+This allows for dynamic behavior changes of an object at runtime without altering its structure.    
+
+**When to use**    
+- When the context class gets bloated with massive conditionals that switch the class's behavior depending on the values of the fields, parameters, or environment.  
+- You want to isolate the implementation details of algorithms from the client code, promoting better code organization and maintainability.  
+- You need to extend or add new algorithms without modifying existing client code, adhering to the Open/Closed Principle of software design.  
+```js
+interface FilterStrategy {
+  apply(image: string): void;
+}
+
+class GreyScaleStrategy implements FilterStrategy {
+  public apply(image: string): void {
+    console.log(`Applying greyscale filter to ${image}`);
+  }
+}
+
+class SepiaStrategy implements FilterStrategy {
+  public apply(image: string): void {
+    console.log(`Applying sepia filter to ${image}`);
+  }
+}
+
+class ImageProcessor {
+  constructor(private strategy: FilterStrategy) {}
+
+  public setFilterStrategy(strategy: FilterStrategy): void {
+    this.strategy = strategy;
+  }
+
+  public applyFilter(image: string): void {
+    this.strategy.apply(image);
+  }
+}
+
+// Client Code
+const imageProcessor = new ImageProcessor(new GreyScaleStrategy());
+imageProcessor.applyFilter("Image.jpg");
+
+imageProcessor.setFilterStrategy(new SepiaStrategy());
+imageProcessor.applyFilter("Image2.jpg");
 ```
