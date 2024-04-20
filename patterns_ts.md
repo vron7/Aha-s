@@ -1105,3 +1105,67 @@ imageProcessor.applyFilter("Image.jpg");
 imageProcessor.setFilterStrategy(new SepiaStrategy());
 imageProcessor.applyFilter("Image2.jpg");
 ```
+------
+
+**TEMPLATE PATTERN (a behavioural pattern)**
+
+The **Template** defines the skeleton of an algorithm in a base class but lets subclasses override specific steps of the algorithm without changing its structure.   
+This pattern allows you to make parts of an algorithm optional, mandatory, or customizable by the subclasses.
+
+**When to use**    
+- When you have a common algorithm or workflow that is shared among multiple classes, but each class may have different implementations for certain steps.
+- When you want to define the basic steps of an algorithm in one place (the superclass) to ensure consistency across subclasses, while still allowing for customization of individual steps.  
+
+```js
+abstract class SlotMachine {
+    // Template method
+    play(): void {
+        this.spinReels();
+        this.calculatePayout();
+        this.displayResult();
+    }
+
+    abstract spinReels(): void;
+    abstract calculatePayout(): void;
+    abstract displayResult(): void;
+}
+
+class RegularSlotMachine extends SlotMachine {
+    spinReels(): void {
+        console.log("Spinning regular slot machine reels...");
+    }
+
+    calculatePayout(): void {
+        console.log("Calculating payout for regular slot machine...");
+    }
+
+    displayResult(): void {
+        console.log("Displaying result for regular slot machine...");
+    }
+}
+
+class LinkAndWinSlotMachine extends SlotMachine {
+    spinReels(): void {
+        console.log("Spinning Link and Win slot machine reels...");
+    }
+
+    calculatePayout(): void {
+        console.log("Calculating payout for Link and Win slot machine...");
+    }
+
+    displayResult(): void {
+        console.log("Displaying result for Link and Win slot machine...");
+    }
+}
+
+// Usage
+const regularSlotMachine = new RegularSlotMachine();
+console.log("Playing Regular Slot Machine...");
+regularSlotMachine.play();
+
+console.log("\n");
+
+const linkAndWinSlotMachine = new LinkAndWinSlotMachine();
+console.log("Playing Link and Win Slot Machine...");
+linkAndWinSlotMachine.play();
+```
