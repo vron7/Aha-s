@@ -1169,3 +1169,103 @@ const linkAndWinSlotMachine = new LinkAndWinSlotMachine();
 console.log("Playing Link and Win Slot Machine...");
 linkAndWinSlotMachine.play();
 ```
+
+------
+
+**COMMAND PATTERN (a behavioural pattern)**
+
+The **Command** pattern turns a request into a standalone object that contains all information about the request.    
+This transformation lets you pass requests as a method arguments, delay or queue a request's execution, and support undoable operations.
+
+**When to use**    
+- The application needs to support a queue of tasks that will be executed at different times.
+- Operations need to be performed at a later time or in a different context.
+- Specify the exact operation at runtime  
+
+```js
+// Define symbols for the reels
+enum Symbol {
+  Cherry,
+  Lemon,
+  Orange,
+  Apple,
+  Grape
+}
+
+// Reel interface
+interface Reel {
+  spin(): Symbol;
+}
+
+// Concrete Reel implementation
+class ConcreteReel implements Reel {
+  private symbols: Symbol[];
+
+  constructor() {
+    this.symbols = [
+      Symbol.Cherry,
+      Symbol.Lemon,
+      Symbol.Orange,
+      Symbol.Apple,
+      Symbol.Grape
+    ];
+  }
+
+  spin(): Symbol {
+    // Randomly select a symbol from the reel
+    const randomIndex = Math.floor(Math.random() * this.symbols.length);
+    return this.symbols[randomIndex];
+  }
+}
+
+// Command interface
+interface SpinCommand {
+  execute(): Symbol;
+}
+
+// Concrete SpinCommand implementation
+class ConcreteSpinCommand implements SpinCommand {
+  private reel: Reel;
+
+  constructor(reel: Reel) {
+    this.reel = reel;
+  }
+
+  execute(): Symbol {
+    return this.reel.spin();
+  }
+}
+
+// Invoker
+class SlotMachine {
+  private commands: SpinCommand[];
+
+  constructor(reels: Reel[]) {
+    this.commands = reels.map(reel => new ConcreteSpinCommand(reel));
+  }
+
+  spin(): Symbol[] {
+    // Spin all the reels
+    return this.commands.map(command => command.execute());
+  }
+
+  checkWin(combination: Symbol[]): boolean {
+    // Check for a winning combination
+    const uniqueSymbols = new Set(combination);
+    return uniqueSymbols.size === 1; // All symbols are the same
+  }
+}
+
+// Example usage
+const reels: Reel[] = [new ConcreteReel(), new ConcreteReel(), new ConcreteReel()];
+const slotMachine = new SlotMachine(reels);
+const result = slotMachine.spin();
+
+console.log("Result:", result);
+
+if (slotMachine.checkWin(result)) {
+  console.log("Congratulations! You win!");
+} else {
+  console.log("Sorry, better luck next time!");
+}
+```
