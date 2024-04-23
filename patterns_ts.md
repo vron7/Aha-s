@@ -1269,3 +1269,70 @@ if (slotMachine.checkWin(result)) {
   console.log("Sorry, better luck next time!");
 }
 ```
+
+------
+
+**STATE PATTERN (a behavioural pattern)**
+
+The **State** pattern allows an object to change its behaviour when its internal state changes.  
+The pattern extracts state-related behaviors into separate state classes and forces the original object to delegate the work to an instance of these classes, instead of acting on its own.
+
+**When to use**    
+- When an object's behavior should change along with its state, and when complex conditions tie object behavior to its state.
+- When have an object that behaves differently based on its internal state, and you're using a lot of if-else or switch-case statements to handle this.
+
+```js
+// Define interface for states
+interface PaintTool {
+    onMouseDown(): void;
+    onMouseUp(): void;
+}
+
+// Concrete states
+class BrushTool implements PaintTool {
+    onMouseDown(): void {
+        console.log("Brush tool: Drawing...");
+    }
+
+    onMouseUp(): void {
+        console.log("Brush tool: Drawing finished.");
+    }
+}
+
+class EraserTool implements PaintTool {
+    onMouseDown(): void {
+        console.log("Erase tool: Erasing...");
+    }
+
+    onMouseUp(): void {
+        console.log("Erase tool: Erasing finished.");
+    }
+}
+
+// Context
+class PaintProgram {
+    constructor(private currentTool: PaintTool) {
+    }
+
+    setTool(tool: PaintTool): void {
+        this.currentTool = tool;
+    }
+
+    onMouseDown(): void {
+        this.currentTool.onMouseDown();
+    }
+
+    onMouseUp(): void {
+        this.currentTool.onMouseUp();
+    }
+}
+
+// Example usage
+const paintProgram = new PaintProgram(new BrushTool());
+paintProgram.onMouseDown(); // Output: Brush tool: Drawing...
+paintProgram.onMouseUp(); // Output: Brush tool: Drawing finished.
+
+paintProgram.setTool(new EraserTool()); // Output: Selected eraser tool.
+paintProgram.onMouseDown(); // Output: Erase tool: Erasing...
+paintProgram.onMouseUp(); // Output: Erase tool: Erasing finished.
+```
