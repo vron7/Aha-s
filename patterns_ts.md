@@ -1280,6 +1280,10 @@ The pattern extracts state-related behaviors into separate state classes and for
 **When to use**    
 - When an object's behavior should change along with its state, and when complex conditions tie object behavior to its state.
 - When have an object that behaves differently based on its internal state, and you're using a lot of if-else or switch-case statements to handle this.
+- For example when video game character has different states jumping / idle / running / attacking etc.
+- For example UI button has different behaviour on different states enabled / disabled / hovered etc.
+- The common factor is that you have an object whose behavior varies depending on its current state, and the rules for transitioning between states can be complex.   
+  The State pattern encapsulates the varying behavior within separate state classes, and it manages state transitions, making the code easier to understand, extend, and maintain.
 
 ```js
 // Define interface for states
