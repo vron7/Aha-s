@@ -1340,3 +1340,102 @@ paintProgram.setTool(new EraserTool()); // Output: Selected eraser tool.
 paintProgram.onMouseDown(); // Output: Erase tool: Erasing...
 paintProgram.onMouseUp(); // Output: Erase tool: Erasing finished.
 ```
+
+------
+
+**CHAIN OF RESPONSIBILITY PATTERN (a behavioural pattern)**
+
+The **Chain of responsibility** pattern lets you pass requests along a chain of handlers.    
+Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+
+**When to use**    
+- When a set of objects should be able to handle a request, but the specific handler isn't known a priori, it can be determined runtime.
+- When the object which sends the request needs to know too much detail about who handles the request, how it is handled, and the sequence of handling.
+- When your code has multiple conditionals (like if/else or switch statements) to determine how to process a certain request.
+- When the processing logic varies often. This could mean that new handlers need to be added or existing ones need to be removed frequently.
+- When the path of processing isn't linear and may change dynamically based on factors that can only be determined at runtime.
+- When a task should be processed sequentially by multiple entities in a specific order,
+
+```js
+class Order {
+  public isValid() {
+    return true;
+  }
+
+  public applyDiscount() {
+    // discount
+  }
+
+  public processPayment() {
+    return true;
+  }
+
+  public ship() {
+    // shippingthe order
+  }
+}
+
+interface Handler {
+  setNext(handler: Handler): Handler;
+  handle(order: Order): string | null;
+}
+
+abstract class AbstractHandler implements Handler {
+  private nextHandler: Handler | null = null;
+
+  public setNext(handler: Handler): Handler {
+    this.nextHandler = handler;
+    return handler;
+  }
+
+  public handle(order: Order): string | null {
+    if (this.nextHandler) {
+      return this.nextHandler.handle(order);
+    }
+    return null;
+  }
+}
+
+class ValidationHandler extends AbstractHandler {
+  public handle(order: Order): string | null {
+    if (order.isValid()) {
+      return super.handle(order);
+    }
+    return "Validation Failed";
+  }
+}
+
+class DiscountHandler extends AbstractHandler {
+  public handle(order: Order): string | null {
+    order.applyDiscount();
+    return super.handle(order);
+  }
+}
+
+class PaymentHandler extends AbstractHandler {
+  public handle(order: Order): string | null {
+    if (order.processPayment()) {
+      return super.handle(order);
+    }
+    return "Payment Failed";
+  }
+}
+
+class ShippingHandler extends AbstractHandler {
+  public handle(order: Order): string | null {
+    order.ship();
+    return "Order processed and shipped";
+  }
+}
+
+// client code
+const order = new Order();
+const orderHandler = new ValidationHandler();
+
+orderHandler
+  .setNext(new DiscountHandler())
+  .setNext(new PaymentHandler())
+  .setNext(new ShippingHandler());
+
+console.log(orderHandler.handle(order));
+```
