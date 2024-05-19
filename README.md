@@ -625,6 +625,7 @@ function a(){
 	console.log(n); // 1
 }
 function b(){
+	console.log(n); // undefined
 	var n = 2;
 	a();
 }
