@@ -318,13 +318,13 @@ For immutable data, the equality is more reliable!
 
 **Cloning objects**
 ```js
-var w = { name: {fn: Harry, sn: Potter}, house: Gryffindor};
+var w = { name: {fn: "Harry", sn: "Potter"}, house: "Gryffindor"};
 
 // Shallow clone
-var w2 = {...w}; //w2 no longer references w but w2.name still references w.name object in memory! Only the first layer is cloned!
+var w2 = {...w}; // w2 no longer references w but w2.name still references w.name object in memory! Only the first layer is cloned!
 
 // Deep clone
-var w3 = JSON.parse(JSON.stringify(w)); //Object is converted to string and then back to object - no more references (Can be slow!).
+var w3 = JSON.parse(JSON.stringify(w)); // Object is converted to string and then back to object - no more references (Can be slow!).
 ```
 
 ---
@@ -333,8 +333,10 @@ var w3 = JSON.parse(JSON.stringify(w)); //Object is converted to string and then
 
 *this* - inside what object am I right now? What’s the context?
 ```js
-console.log(this); //returns Window (in browser)
-function a(){ console.log(this) }; //returns Window 
+console.log(this); // returns Window (in browser)
+
+function a(){ console.log(this) }; // returns Window
+ 
 var obj = { 
 	a: function(){
 		var self = this;
@@ -349,7 +351,8 @@ var obj = {
 			console.log(this) // returns obj
 		}
 	} 
-}; 
+};
+
 const a = obj.a;
 a(); // returns window (undefined in strict mode), since this gets lost when function in detached from object;
 
@@ -365,6 +368,7 @@ const robot = new Robot();
 robot.f1(); // returns id
 robot.f2(); // returns id
 robot.f3(); // returns id
+
 const { f1, f2, f3 } = robot; // destructing, this gets lost
 f1(); // returns id since arrow funtion preserves its context and has a closure to this
 f2(); // returns error sice this is undefined (Classes use strict mode, otherwise would return Window)
