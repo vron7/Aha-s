@@ -421,10 +421,11 @@ class Worker extends Hooman{
 
 **===** or **==** ?
 ```js
-1 == "1"   //returns true, type coercion is applied
-1 === "1"  //returns false, explicit check
-true == 1  //true, 1 is coerced to true by JS
-true === 1 //false
+1 == "1"   // returns true, type coercion is applied
+1 === "1"  // returns false, explicit check
+true == 1  // true, 1 is coerced to true by JS
+true === 1 // false
+undefined == null // true
 ```
 
 ---
