@@ -322,6 +322,8 @@ var w = { name: {fn: "Harry", sn: "Potter"}, house: "Gryffindor"};
 
 // Shallow clone
 var w2 = {...w}; // w2 no longer references w but w2.name still references w.name object in memory! Only the first layer is cloned!
+w2 === w // false
+w2.name === w.name // true, same reference
 
 // Deep clone
 var w3 = JSON.parse(JSON.stringify(w)); // Object is converted to string and then back to object - no more references (Can be slow!).
