@@ -280,8 +280,8 @@ create(‘Whats up’); // Whats up!!!???
 
 **Primitive types** (Known by javascript, immutable) - string, number, boolean, null, undefined
 ```js
-var a = 1; //value gets stored in variable (memory)
-var b = a; //value gets copied to a new variable (new slot in memory)
+var a = 1; // value gets stored in variable (memory)
+var b = a; // value gets copied to a new variable (new slot in memory)
 a === b;   // returns true 
 a = 2;     // here we do not mutate number 1 into 2, we just replace the 1 with 2
 a === b    // returns false, because a holds 2 and b holds 1
@@ -289,7 +289,7 @@ a === b    // returns false, because a holds 2 and b holds 1
 
 Primitive types are immutable, meaning their value(state/structure) cannot be changed after creation.
 ```js
-var name = 'Tim'; //name now points to 'Tim' in memory
+var name = 'Tim'; // name now points to 'Tim' in memory
 name = 'Tom'; // new block of memory is allocated for 'Tom', name now points to 'Tom' in memory,  'Tim' is still in memory and will be garbage collected.
 ```
 
@@ -297,11 +297,11 @@ Using const is just protection, not immutability!
 
 **Reference types** (created by developer) - Object (Array, Function - also technically objects)
 ```js
-var n = { id: 1} //value gets stored in memory, address of the stored object gets stored in variable
-var m = n; //address gets copied, a reference to the value is set
-m === n; //returns true, they both point to a same address
-m.id = 2 //here we mutate the object
-m === n //returns true, they both point to the same mutated object in memory
+var n = { id: 1} // value gets stored in memory, address of the stored object gets stored in variable
+var m = n; // address gets copied, a reference to the value is set
+m === n; // returns true, they both point to a same address
+m.id = 2 // here we mutate the object
+m === n // returns true, they both point to the same mutated object in memory
 m = n = { id: 3 } // new object is created in memory, both variables receive the new reference, reference to the old object is lost, old object can be garbage collected!
 ```
 ```js
@@ -310,8 +310,8 @@ m = n = { id: 3 } // new object is created in memory, both variables receive the
 
 For immutable data, the equality is more reliable!
 ```js
-1 === 1 //true
-{id: 1} === {id: 1} //false
+1 === 1 // true
+{id: 1} === {id: 1} // false
 ```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -320,10 +320,10 @@ For immutable data, the equality is more reliable!
 ```js
 var w = { name: {fn: Harry, sn: Potter}, house: Gryffindor};
 
-//Shallow clone
+// Shallow clone
 var w2 = {...w}; //w2 no longer references w but w2.name still references w.name object in memory! Only the first layer is cloned!
 
-//Deep clone
+// Deep clone
 var w3 = JSON.parse(JSON.stringify(w)); //Object is converted to string and then back to object - no more references (Can be slow!).
 ```
 
