@@ -372,6 +372,7 @@ class Robot {
     f2 = function() {console.log(this.id)}  //field  
     f3() {console.log(this.id)} //method
 }
+
 const robot = new Robot();
 robot.f1(); // returns id
 robot.f2(); // returns id
