@@ -462,8 +462,8 @@ for(car in cars){console.log(car)} //Prints out all the properties
 ```
 ---
 
-**An object** is a collection of properties!
-*Property* - is an association between a name(key) and a value
+**An object** is a collection of properties!   
+*Property* - is an association between a name(key) and a value   
 Property's value can be a function in which case the property is known as a method.
 
 ```js
