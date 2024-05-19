@@ -343,15 +343,21 @@ var obj = {
 	a: function(){
 		var self = this;
 		console.log(this) // returns obj
-		var b = function(){
+
+		// how is calling the b?
+		var b = function() {
 			console.log(this) // returns Window :o - just how JS works
 			console.log(self) // returns obj - wohoo workaround
 			// b goes out to its lexical environment to find self
 		}
+
 		// arrow function preserve the context of this
 		var c = () => {
 			console.log(this) // returns obj
 		}
+
+		b();
+		c();
 	} 
 };
 
