@@ -46,13 +46,17 @@ function checkPasswordLength(password) {
     return password.length >= MIN_PASSWORD;
 }
 ```
+Problems?
 - constant name is not clear enough for what it should represent
-- method name is not clear enough, what it does? what it returns? does it throw error? does it return boolean? what returned boolean means? 
+- method name is not clear enough, what it does? what it returns? does it throw error? does it return boolean? what returned boolean means?
+
+Let's make it better:
 ```js
 // renamed the constant to be more clear what it represents
 const MIN_PASSWORD_LENGTH = 6;
 
 // renamed funtion to indicate that it returns a boolean value by adding *is* as a prefix
+// now it's clear what it means when it returns true (password is long enough) and false (password is not long enough)
 function isPasswordLongEnough(password) {
     return password.length >= MIN_PASSWORD_LENGTH;
 }
