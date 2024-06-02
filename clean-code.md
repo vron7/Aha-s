@@ -67,8 +67,8 @@ function isPasswordLongEnough(password) {
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const result = numbers.reduce((acc, n) => n & 1 ? [...acc, n * n] : acc, [] );
 ```
-A fancy way to write a single line solution using **reduce** and **bitwise AND**.
-In reality we can write the same solution using **filter + map**.
+A fancy way to write a single line solution using **reduce** and **bitwise AND**.  
+In reality we can write the same solution using **filter + map**.  
 It's definitely more readable/maintainable solution.
 ```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
