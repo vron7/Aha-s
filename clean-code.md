@@ -16,7 +16,7 @@ function proccessPlayer(player) {
     }
 }
 ```
-This code is not easy to follow, lets make adjustments.
+This code above is not easy to follow, lets make adjustments.
 ```js
 function proccessPlayer(player) {
     if (player == null) {
