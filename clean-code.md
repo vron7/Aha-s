@@ -1,4 +1,3 @@
----
 ### Avoid unneccesary nesting
 ```js
 function proccessPlayer(player) {
@@ -18,7 +17,6 @@ function proccessPlayer(player) {
 }
 ```
 This code is not easy to follow, lets make adjustments.
-
 ```js
 function proccessPlayer(player) {
     if (player == null) {
@@ -39,6 +37,5 @@ function proccessPlayer(player) {
     showFullVersion();       
 }
 ```
-
 ---
 
